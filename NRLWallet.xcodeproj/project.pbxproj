@@ -17,6 +17,7 @@
 		D7A6E96420AEC1C60075596E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E96320AEC1C60075596E /* Info.plist */; };
 		D7A6E96720AEC2E60075596E /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E96620AEC2E60075596E /* Tutorial.storyboard */; };
 		D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */; };
+		D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D7A6E96620AEC2E60075596E /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		D7A6E97120AECDF90075596E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
+		D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */,
 				D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */,
+				D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			files = (
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */,
+				D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
