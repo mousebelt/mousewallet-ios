@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92B20AEB0570075596E /* AppDelegate.swift */; };
-		D7A6E92E20AEB0570075596E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92D20AEB0570075596E /* ViewController.swift */; };
+		D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */; };
 		D7A6E93120AEB0570075596E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E92F20AEB0570075596E /* Main.storyboard */; };
 		D7A6E93320AEB0570075596E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93220AEB0570075596E /* Assets.xcassets */; };
 		D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */; };
 		D7A6E94120AEB0570075596E /* NRLWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94020AEB0570075596E /* NRLWalletTests.swift */; };
 		D7A6E94C20AEB0570075596E /* NRLWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */; };
+		D7A6E96420AEC1C60075596E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E96320AEC1C60075596E /* Info.plist */; };
+		D7A6E96720AEC2E60075596E /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E96620AEC2E60075596E /* Tutorial.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +38,19 @@
 /* Begin PBXFileReference section */
 		D7A6E92820AEB0570075596E /* NRLWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NRLWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E92B20AEB0570075596E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7A6E92D20AEB0570075596E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1ViewController.swift; sourceTree = "<group>"; };
 		D7A6E93020AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7A6E93220AEB0570075596E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A6E93520AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D7A6E93720AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A6E93C20AEB0570075596E /* NRLWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRLWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E94020AEB0570075596E /* NRLWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletTests.swift; sourceTree = "<group>"; };
 		D7A6E94220AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A6E94720AEB0570075596E /* NRLWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRLWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletUITests.swift; sourceTree = "<group>"; };
 		D7A6E94D20AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7A6E96320AEC1C60075596E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7A6E96620AEC2E60075596E /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		D7A6E97120AECDF90075596E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		D7A6E92A20AEB0570075596E /* NRLWallet */ = {
 			isa = PBXGroup;
 			children = (
+				D7A6E96520AEC21C0075596E /* Storyboards */,
+				D7A6E96220AEC1A80075596E /* Support */,
+				D7A6E96020AEC01F0075596E /* Resources */,
+				D7A6E95F20AEBFFC0075596E /* Utils */,
+				D7A6E95D20AEBFCE0075596E /* Models */,
+				D7A6E95C20AEBFC80075596E /* Views */,
+				D7A6E95920AEB8DF0075596E /* ViewControllers */,
 				D7A6E92B20AEB0570075596E /* AppDelegate.swift */,
-				D7A6E92D20AEB0570075596E /* ViewController.swift */,
-				D7A6E92F20AEB0570075596E /* Main.storyboard */,
-				D7A6E93220AEB0570075596E /* Assets.xcassets */,
-				D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */,
-				D7A6E93720AEB0570075596E /* Info.plist */,
 			);
 			path = NRLWallet;
 			sourceTree = "<group>";
@@ -123,6 +129,86 @@
 				D7A6E94D20AEB0570075596E /* Info.plist */,
 			);
 			path = NRLWalletUITests;
+			sourceTree = "<group>";
+		};
+		D7A6E95920AEB8DF0075596E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E95B20AEBC970075596E /* Auth */,
+				D7A6E95A20AEBC900075596E /* Tutorial */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D7A6E95A20AEBC900075596E /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		D7A6E95B20AEBC970075596E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D7A6E95C20AEBFC80075596E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D7A6E95D20AEBFCE0075596E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7A6E95F20AEBFFC0075596E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7A6E96020AEC01F0075596E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E97020AECDA80075596E /* Fonts */,
+				D7A6E93220AEB0570075596E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7A6E96220AEC1A80075596E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E96320AEC1C60075596E /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		D7A6E96520AEC21C0075596E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E92F20AEB0570075596E /* Main.storyboard */,
+				D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */,
+				D7A6E96620AEC2E60075596E /* Tutorial.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D7A6E97020AECDA80075596E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D7A6E97120AECDF90075596E /* SourceSansPro-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A6E96720AEC2E60075596E /* Tutorial.storyboard in Resources */,
+				D7A6E96420AEC1C60075596E /* Info.plist in Resources */,
 				D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */,
 				D7A6E93320AEB0570075596E /* Assets.xcassets in Resources */,
 				D7A6E93120AEB0570075596E /* Main.storyboard in Resources */,
@@ -259,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A6E92E20AEB0570075596E /* ViewController.swift in Sources */,
+				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +515,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C462ZD5428;
 				INFOPLIST_FILE = NRLWallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +531,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C462ZD5428;
 				INFOPLIST_FILE = NRLWallet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";

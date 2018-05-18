@@ -8,10 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Tutorial1ViewController: UIViewController {
 
+    @IBOutlet var btnGetStarted: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +24,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func setupViews() {
+        self.btnGetStarted.layer.cornerRadius = 4
+        self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
+    }
+    
+    @IBAction func onGetStarted(_ sender: Any) {
+    }
 }
 
