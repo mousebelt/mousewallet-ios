@@ -31,7 +31,18 @@ class Tutorial3ViewController: UIViewController {
     }
     
     @IBAction func onCreateAccount(_ sender: Any) {
-      
+        let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
+        let mnemonicViewController = storyboard.instantiateViewController(withIdentifier: "MnemonicNavVC")
+        let window = UIApplication.shared.keyWindow
+        
+        if let window = window {
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(true)
+                window.rootViewController = mnemonicViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: nil)
+        }
     }
     
     @IBAction func onBack(_ sender: Any) {

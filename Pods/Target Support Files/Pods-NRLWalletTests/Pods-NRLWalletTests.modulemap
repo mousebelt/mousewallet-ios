@@ -1,0 +1,6 @@
+framework module Pods_NRLWalletTests {
+  umbrella header "Pods-NRLWalletTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
