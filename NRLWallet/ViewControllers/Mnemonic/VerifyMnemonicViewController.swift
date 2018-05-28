@@ -53,19 +53,9 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     }
     
     @IBAction func onContinue(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
-        let verifyMnemonicViewController = storyboard.instantiateViewController(withIdentifier: "VerifyMnemonicVC")
-        //        let window = UIApplication.shared.keyWindow
-        //
-        //        if let window = window {
-        //            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-        //                let oldState: Bool = UIView.areAnimationsEnabled
-        //                UIView.setAnimationsEnabled(true)
-        //                window.rootViewController = verifyMnemonicViewController
-        //                UIView.setAnimationsEnabled(oldState)
-        //            }, completion: nil)
-        //        }
-        self.navigationController?.pushViewController(verifyMnemonicViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC")
+        self.navigationController?.pushViewController(PinViewController, animated: true)
     }
     
     @IBAction func onBack(_ sender: Any) {

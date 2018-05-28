@@ -12,6 +12,7 @@ class Tutorial2ViewController: UIViewController {
     
     @IBOutlet weak var btnGotIt: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var cardView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class Tutorial2ViewController: UIViewController {
     func setupViews() {
         self.btnGotIt.layer.cornerRadius = 4
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
+        self.cardView.layer.borderWidth = 2
+        self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
     }
     
     @IBAction func onGotIt(_ sender: Any) {

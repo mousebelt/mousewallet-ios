@@ -3,301 +3,271 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13C09CF3A7C2FD2F842F5DA752FC1191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		2410F622A488DC8825677E9E70E2ECE1 /* Pods-NRLWalletTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1ACF2C27BD1E3BCC78F02882E3AD19 /* Pods-NRLWalletTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2845CE1A792381B6AEE410CD39377284 /* Pods-NRLWalletUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69E61D6F5A5C643A3214A49C1F91F4 /* Pods-NRLWalletUITests-dummy.m */; };
-		347EF2DD6C847A0A31C2B3B96FC8B46E /* Pods-NRLWalletTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E0C2A8E790235933FA27A78141654C /* Pods-NRLWalletTests-dummy.m */; };
-		423891427741BC8CFE9E4B01C655DC48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		447F38410CF567DA4AACF8D8DEE65C3E /* Pods-NRLWallet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CFF7377896AF411250ACCFDEE3DD9DC /* Pods-NRLWallet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DAE3E9DEDD499D28AE56954C1AC74FD /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A348AF8B856B1FF813D2719DC2180E /* TagView.swift */; };
-		5178EDC5026A5248AF1887032162FB73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		551C9790B7B3B64265661C586EE98285 /* TagListView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BEA05E9C9DFFDCD51C6B47230EF66D /* TagListView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		811DAEEDA0F4203B2D0EB53BFA421CA2 /* TagListView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFA5424075C3CE4101AE0A19699DE7 /* TagListView-dummy.m */; };
-		95E91A0C4CDDAA946D82B0EBB6D280C7 /* Pods-NRLWallet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CF1A3DCC64DF13472BE0FD79B91A6A /* Pods-NRLWallet-dummy.m */; };
-		BCACA6DF1DC4247FF6670BE4329C0D69 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D5EA936631E4340A25086B0B52D1D /* TagListView.swift */; };
-		CE42EBB9B56AB95B7B33E6C7304B0CAC /* Pods-NRLWalletUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 222389C73FFC3FE3566DB773F71354BD /* Pods-NRLWalletUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D961AAEF079A45F2819EBA4DF0AE4565 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9EE24AE13648FA7ACB3AE92F9D2C3 /* CloseButton.swift */; };
-		EB69C46E0E97456642F5B3002B5636BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		023DF7C2CA8FBD5708F15456484DCFEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7524F0BE53ABC149C4387DFEFE2B51 /* Foundation.framework */; };
+		04E7686FB4223A6694047166A0546123 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C57048B9F79436D96578EEE6D582010B /* SWRevealViewController.m */; };
+		0B6E1420FC471A6D71AF5D5355B806E0 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205804A2EC91AD26A3855DB8A9A4683 /* TagListView.swift */; };
+		135498F7125E63B91EF238A5F0D03595 /* SWRevealViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28816DE85EBA6184BE628163AAA73D /* SWRevealViewController-dummy.m */; };
+		1422A5592B5227FF63013C2A8E9D068C /* Pods-NRLWallet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D37F6485AFE07DE7EABF3EB792148AC1 /* Pods-NRLWallet-dummy.m */; };
+		1E80AC825578E9762DEF6E67753F3B1D /* TagListView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E67A6B5D73F5E2A67CCAC8197E8E8B43 /* TagListView-dummy.m */; };
+		42C034B2FCF6ECFB51B2DF6F239B2ACA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7524F0BE53ABC149C4387DFEFE2B51 /* Foundation.framework */; };
+		638F996471735067EF30FDA2A945CC9D /* TagListView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DEF4F4022837870082E7A3D58D763B6 /* TagListView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B46E734409D9A35603D87CF8F26E7D9 /* Pods-NRLWallet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7B61CB68DFBCF2D8277FB24CF7CF04 /* Pods-NRLWallet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A36D48A6928FDE0C83BBF2FF6C114975 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16FD71D5BF04CA1BAE06B1284CE43FA /* TagView.swift */; };
+		AAD41A38A568E04378F99E82A747242E /* SWRevealViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA374000D511AD08002E16897957E7C /* SWRevealViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8AAD15C9D28849150E1AC27D25D8FB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621F66D446C6F4AC0D7F817144EB150 /* CoreGraphics.framework */; };
+		F0B7C36737959D3A9DE19199A6348138 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196C400FD4833BD192D660A4811A464 /* CloseButton.swift */; };
+		F193F2C08E40E0ADEE3FC1A8FB1DDAAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7524F0BE53ABC149C4387DFEFE2B51 /* Foundation.framework */; };
+		F6D169235B245A3499084FAE7DD4FF2E /* SWRevealViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ED6FF997F480F3FAD5AF3DD36117AF6 /* SWRevealViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F560E51B804FE714A99CE8D58690B016 /* PBXContainerItemProxy */ = {
+		79941AB679E46B1C9C1D3F9EFFDD0559 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 206A5BC4B5C8A343EA7FBD86B3249A20;
+			remoteGlobalIDString = 609690010187AF3439D5BD93CE4F3A5E;
 			remoteInfo = TagListView;
+		};
+		FE92D6849C91ECE2B6A75D7F68C3869A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2267E08E4D113F02C46E3FA23CE3B2E;
+			remoteInfo = SWRevealViewController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08DE209613AF05AD3E88EB6B66A9E25C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09A348AF8B856B1FF813D2719DC2180E /* TagView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagView.swift; path = TagListView/TagView.swift; sourceTree = "<group>"; };
-		0FE9619CD77D0DC31B2AA49568CDBFE2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14D37DFED67E35C4A1CEC3C4ADFF9C9B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189E03009E9A0B2207632437BA827DA6 /* Pods-NRLWallet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWallet-frameworks.sh"; sourceTree = "<group>"; };
-		222389C73FFC3FE3566DB773F71354BD /* Pods-NRLWalletUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NRLWalletUITests-umbrella.h"; sourceTree = "<group>"; };
-		2249640915A302916CA03EFCB0E7FF2B /* TagListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TagListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25968DC7D5D74943C25B3B0484086ABD /* Pods_NRLWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CF9EE24AE13648FA7ACB3AE92F9D2C3 /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloseButton.swift; path = TagListView/CloseButton.swift; sourceTree = "<group>"; };
-		36AFA5424075C3CE4101AE0A19699DE7 /* TagListView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TagListView-dummy.m"; sourceTree = "<group>"; };
-		3CADEE6E1121054F4DBD1EAF84062474 /* TagListView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TagListView.xcconfig; sourceTree = "<group>"; };
-		3FB3CA5365772E4A72B6A6FA76D92F21 /* Pods-NRLWalletUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NRLWalletUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4417AC6742CC0146C7D179DF106D87F1 /* Pods-NRLWalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		46844F8AC37E750F6A15CFF9025915DE /* Pods-NRLWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWallet.release.xcconfig"; sourceTree = "<group>"; };
-		4C5D5EA936631E4340A25086B0B52D1D /* TagListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagListView.swift; path = TagListView/TagListView.swift; sourceTree = "<group>"; };
-		5C2DE73CB8E1D7EE99CDA78320ABF687 /* Pods-NRLWallet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NRLWallet.modulemap"; sourceTree = "<group>"; };
-		5CFF7377896AF411250ACCFDEE3DD9DC /* Pods-NRLWallet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NRLWallet-umbrella.h"; sourceTree = "<group>"; };
-		60E0C2A8E790235933FA27A78141654C /* Pods-NRLWalletTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NRLWalletTests-dummy.m"; sourceTree = "<group>"; };
-		65EDA922BD7562EB26659BC8BEABFC11 /* Pods-NRLWalletUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWalletUITests-resources.sh"; sourceTree = "<group>"; };
-		7076F92255FDAA8C5144F72A52514C42 /* Pods-NRLWallet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NRLWallet-acknowledgements.markdown"; sourceTree = "<group>"; };
-		84BEA05E9C9DFFDCD51C6B47230EF66D /* TagListView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-umbrella.h"; sourceTree = "<group>"; };
-		90D6B4E2AD9424A0E5CDFAA3FB6D1BFF /* Pods-NRLWalletTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWalletTests-frameworks.sh"; sourceTree = "<group>"; };
-		92D8B5BEEBF631C198BA57CFCA58F296 /* Pods-NRLWalletUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NRLWalletUITests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A7D4B65B44EC5721A16647B499F8C35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B00D220D8A47658B24E95BFC5EE70CB /* TagListView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TagListView.modulemap; sourceTree = "<group>"; };
-		A8E1B821DE6CC3D12C5AB89F424324B3 /* TagListView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-prefix.pch"; sourceTree = "<group>"; };
-		AB1ACF2C27BD1E3BCC78F02882E3AD19 /* Pods-NRLWalletTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NRLWalletTests-umbrella.h"; sourceTree = "<group>"; };
-		ABB859AAA72E209BB3CC21B7456FB37F /* Pods_NRLWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B53EDD61C4D71093A37090C1ADA8B777 /* Pods-NRLWalletTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NRLWalletTests.modulemap"; sourceTree = "<group>"; };
-		C212E7636178CDA73B518EC2BD0901F8 /* Pods-NRLWalletTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NRLWalletTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C5AF9498FE1FDE085DF199F612FB01A3 /* Pods-NRLWallet-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWallet-resources.sh"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D40C6A9CD89D47154C26DE8B36293F91 /* Pods-NRLWalletTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWalletTests-resources.sh"; sourceTree = "<group>"; };
-		D6CFE5A688BEF3B224F1B5ECFD2EAB84 /* Pods-NRLWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWalletTests.release.xcconfig"; sourceTree = "<group>"; };
-		DDFB734D4AA0930234F6B4D270405F36 /* Pods-NRLWalletUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWalletUITests-frameworks.sh"; sourceTree = "<group>"; };
-		DFCD7DC211EFD083D418ACDD65AA35CC /* Pods-NRLWallet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NRLWallet-acknowledgements.plist"; sourceTree = "<group>"; };
-		E2516620C56920177BCD79B4574252D0 /* Pods-NRLWalletTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NRLWalletTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E2CF1A3DCC64DF13472BE0FD79B91A6A /* Pods-NRLWallet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NRLWallet-dummy.m"; sourceTree = "<group>"; };
-		E470B56BBF387A00B8F70652B0BFD4E6 /* Pods-NRLWalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWalletUITests.release.xcconfig"; sourceTree = "<group>"; };
-		EE69E61D6F5A5C643A3214A49C1F91F4 /* Pods-NRLWalletUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NRLWalletUITests-dummy.m"; sourceTree = "<group>"; };
-		F35702A87FE8B8BBAA62FAF7E5FCBD12 /* Pods-NRLWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F753CCFCDF376062F1A486C020F87278 /* Pods-NRLWalletUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NRLWalletUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F8618247799252DF9041B107F4666F05 /* Pods-NRLWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		F8F560D353AF601CD81144DDC7705450 /* Pods_NRLWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B7B61CB68DFBCF2D8277FB24CF7CF04 /* Pods-NRLWallet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NRLWallet-umbrella.h"; sourceTree = "<group>"; };
+		1A9282456A73EFBF88BA17A884955DE5 /* Pods-NRLWallet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NRLWallet.modulemap"; sourceTree = "<group>"; };
+		1DEF4F4022837870082E7A3D58D763B6 /* TagListView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-umbrella.h"; sourceTree = "<group>"; };
+		2ACFBADAA83307126AB783BC471FAFF3 /* Pods-NRLWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		2ED6FF997F480F3FAD5AF3DD36117AF6 /* SWRevealViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-umbrella.h"; sourceTree = "<group>"; };
+		397CA18549CDA1F26356777A7419338A /* Pods_NRLWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NRLWallet.framework; path = "Pods-NRLWallet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		507ABDE3EA30D32C8ED96D59167457F6 /* TagListView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-prefix.pch"; sourceTree = "<group>"; };
+		508613863990BFA0D6F458C21CF0709F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5205804A2EC91AD26A3855DB8A9A4683 /* TagListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagListView.swift; path = TagListView/TagListView.swift; sourceTree = "<group>"; };
+		5EB920C94075502A73397AD5762CB841 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E9CBBC0D2216F1348231CBCD3C9C032 /* Pods-NRLWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NRLWallet.release.xcconfig"; sourceTree = "<group>"; };
+		8621F66D446C6F4AC0D7F817144EB150 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		8AB5E793DA2C2032F807B6316ABB4B29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E1E8ABA979EB31E6C7FA663FA735969 /* Pods-NRLWallet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NRLWallet-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8FA374000D511AD08002E16897957E7C /* SWRevealViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A721D8B5ED56FE5DDFCA1BCDF2C5352 /* SWRevealViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SWRevealViewController.framework; path = SWRevealViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2042A72DEAE949905F7F10190AE4B1 /* TagListView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TagListView.xcconfig; sourceTree = "<group>"; };
+		9F28816DE85EBA6184BE628163AAA73D /* SWRevealViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SWRevealViewController-dummy.m"; sourceTree = "<group>"; };
+		A196C400FD4833BD192D660A4811A464 /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloseButton.swift; path = TagListView/CloseButton.swift; sourceTree = "<group>"; };
+		AC7524F0BE53ABC149C4387DFEFE2B51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B7B5A04F8D784A5E723F233CD5BF529E /* TagListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TagListView.framework; path = TagListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B6E730974A73EF2C4120316F49129D /* Pods-NRLWallet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NRLWallet-acknowledgements.plist"; sourceTree = "<group>"; };
+		C12412C7A7D00907AF80D31C4BB4165E /* SWRevealViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SWRevealViewController.xcconfig; sourceTree = "<group>"; };
+		C16FD71D5BF04CA1BAE06B1284CE43FA /* TagView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagView.swift; path = TagListView/TagView.swift; sourceTree = "<group>"; };
+		C57048B9F79436D96578EEE6D582010B /* SWRevealViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		C792408D1B4757D0B5D6C24BC01E4E33 /* TagListView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TagListView.modulemap; sourceTree = "<group>"; };
+		C9D6FEF304E2E97E0C596AF4B9D60F79 /* SWRevealViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SWRevealViewController-prefix.pch"; sourceTree = "<group>"; };
+		CE887138509A4EC35A845A0366079F79 /* SWRevealViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SWRevealViewController.modulemap; sourceTree = "<group>"; };
+		D37F6485AFE07DE7EABF3EB792148AC1 /* Pods-NRLWallet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NRLWallet-dummy.m"; sourceTree = "<group>"; };
+		E67A6B5D73F5E2A67CCAC8197E8E8B43 /* TagListView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TagListView-dummy.m"; sourceTree = "<group>"; };
+		F8193D4839FC7EA8AF5E27AD92268B23 /* Pods-NRLWallet-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWallet-resources.sh"; sourceTree = "<group>"; };
+		F926B312B32D0BB336D4090CCDCD7D20 /* Pods-NRLWallet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NRLWallet-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		65E5D97AE36592209CB31CAA8653411A /* Frameworks */ = {
+		6168141940477301756BEFB32A512E37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5178EDC5026A5248AF1887032162FB73 /* Foundation.framework in Frameworks */,
+				F193F2C08E40E0ADEE3FC1A8FB1DDAAE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7F58A745922981B7B3FEA490F5B6D1E /* Frameworks */ = {
+		956FE570A894A888A38413EE2E3CD2FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423891427741BC8CFE9E4B01C655DC48 /* Foundation.framework in Frameworks */,
+				D8AAD15C9D28849150E1AC27D25D8FB5 /* CoreGraphics.framework in Frameworks */,
+				42C034B2FCF6ECFB51B2DF6F239B2ACA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACDE47151FAD5B5B890FC42DA6FD267E /* Frameworks */ = {
+		9DEDA0F8B2F50362533ECF0F2D145844 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13C09CF3A7C2FD2F842F5DA752FC1191 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E01B683786974D3FDE9FA8AA85141E79 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB69C46E0E97456642F5B3002B5636BD /* Foundation.framework in Frameworks */,
+				023DF7C2CA8FBD5708F15456484DCFEA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E440F2A8831AAA604A73112ED203F24 /* Pods-NRLWallet */ = {
+		11A52B179D8604F44F7643059429F0FA /* Pods-NRLWallet */ = {
 			isa = PBXGroup;
 			children = (
-				14D37DFED67E35C4A1CEC3C4ADFF9C9B /* Info.plist */,
-				5C2DE73CB8E1D7EE99CDA78320ABF687 /* Pods-NRLWallet.modulemap */,
-				7076F92255FDAA8C5144F72A52514C42 /* Pods-NRLWallet-acknowledgements.markdown */,
-				DFCD7DC211EFD083D418ACDD65AA35CC /* Pods-NRLWallet-acknowledgements.plist */,
-				E2CF1A3DCC64DF13472BE0FD79B91A6A /* Pods-NRLWallet-dummy.m */,
-				189E03009E9A0B2207632437BA827DA6 /* Pods-NRLWallet-frameworks.sh */,
-				C5AF9498FE1FDE085DF199F612FB01A3 /* Pods-NRLWallet-resources.sh */,
-				5CFF7377896AF411250ACCFDEE3DD9DC /* Pods-NRLWallet-umbrella.h */,
-				F8618247799252DF9041B107F4666F05 /* Pods-NRLWallet.debug.xcconfig */,
-				46844F8AC37E750F6A15CFF9025915DE /* Pods-NRLWallet.release.xcconfig */,
+				508613863990BFA0D6F458C21CF0709F /* Info.plist */,
+				1A9282456A73EFBF88BA17A884955DE5 /* Pods-NRLWallet.modulemap */,
+				8E1E8ABA979EB31E6C7FA663FA735969 /* Pods-NRLWallet-acknowledgements.markdown */,
+				B7B6E730974A73EF2C4120316F49129D /* Pods-NRLWallet-acknowledgements.plist */,
+				D37F6485AFE07DE7EABF3EB792148AC1 /* Pods-NRLWallet-dummy.m */,
+				F926B312B32D0BB336D4090CCDCD7D20 /* Pods-NRLWallet-frameworks.sh */,
+				F8193D4839FC7EA8AF5E27AD92268B23 /* Pods-NRLWallet-resources.sh */,
+				0B7B61CB68DFBCF2D8277FB24CF7CF04 /* Pods-NRLWallet-umbrella.h */,
+				2ACFBADAA83307126AB783BC471FAFF3 /* Pods-NRLWallet.debug.xcconfig */,
+				6E9CBBC0D2216F1348231CBCD3C9C032 /* Pods-NRLWallet.release.xcconfig */,
 			);
 			name = "Pods-NRLWallet";
 			path = "Target Support Files/Pods-NRLWallet";
 			sourceTree = "<group>";
 		};
-		2EF3966D1DD8C40A1728A10F9C260A9A /* Support Files */ = {
+		273D80F3734F3A7415687D9B296A658A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				08DE209613AF05AD3E88EB6B66A9E25C /* Info.plist */,
-				9B00D220D8A47658B24E95BFC5EE70CB /* TagListView.modulemap */,
-				3CADEE6E1121054F4DBD1EAF84062474 /* TagListView.xcconfig */,
-				36AFA5424075C3CE4101AE0A19699DE7 /* TagListView-dummy.m */,
-				A8E1B821DE6CC3D12C5AB89F424324B3 /* TagListView-prefix.pch */,
-				84BEA05E9C9DFFDCD51C6B47230EF66D /* TagListView-umbrella.h */,
+				11A52B179D8604F44F7643059429F0FA /* Pods-NRLWallet */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2911621213EB2F54AB326652E7B7DF4C /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8FA374000D511AD08002E16897957E7C /* SWRevealViewController.h */,
+				C57048B9F79436D96578EEE6D582010B /* SWRevealViewController.m */,
+				DD172247B756352F8054E062AA2F141F /* Support Files */,
+			);
+			name = SWRevealViewController;
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		338B752F9AF9AB0704E02796B046F86C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EB920C94075502A73397AD5762CB841 /* Info.plist */,
+				C792408D1B4757D0B5D6C24BC01E4E33 /* TagListView.modulemap */,
+				9B2042A72DEAE949905F7F10190AE4B1 /* TagListView.xcconfig */,
+				E67A6B5D73F5E2A67CCAC8197E8E8B43 /* TagListView-dummy.m */,
+				507ABDE3EA30D32C8ED96D59167457F6 /* TagListView-prefix.pch */,
+				1DEF4F4022837870082E7A3D58D763B6 /* TagListView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TagListView";
 			sourceTree = "<group>";
 		};
-		382176BCDF61574A70C90FCC6F111B58 /* TagListView */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CF9EE24AE13648FA7ACB3AE92F9D2C3 /* CloseButton.swift */,
-				4C5D5EA936631E4340A25086B0B52D1D /* TagListView.swift */,
-				09A348AF8B856B1FF813D2719DC2180E /* TagView.swift */,
-				2EF3966D1DD8C40A1728A10F9C260A9A /* Support Files */,
+				C93AA53D048424A67CC426E3C9422A44 /* iOS */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51CF87CF0217A5B357520DDC38635E94 /* TagListView */ = {
+			isa = PBXGroup;
+			children = (
+				A196C400FD4833BD192D660A4811A464 /* CloseButton.swift */,
+				5205804A2EC91AD26A3855DB8A9A4683 /* TagListView.swift */,
+				C16FD71D5BF04CA1BAE06B1284CE43FA /* TagView.swift */,
+				338B752F9AF9AB0704E02796B046F86C /* Support Files */,
+			);
+			name = TagListView;
 			path = TagListView;
 			sourceTree = "<group>";
 		};
-		4A6EE5E16C988FC0F76A0711ADD95B6A /* Products */ = {
+		5760F1C7299AB3D588FD54A681954451 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25968DC7D5D74943C25B3B0484086ABD /* Pods_NRLWallet.framework */,
-				F8F560D353AF601CD81144DDC7705450 /* Pods_NRLWalletTests.framework */,
-				ABB859AAA72E209BB3CC21B7456FB37F /* Pods_NRLWalletUITests.framework */,
-				2249640915A302916CA03EFCB0E7FF2B /* TagListView.framework */,
+				397CA18549CDA1F26356777A7419338A /* Pods_NRLWallet.framework */,
+				9A721D8B5ED56FE5DDFCA1BCDF2C5352 /* SWRevealViewController.framework */,
+				B7B5A04F8D784A5E723F233CD5BF529E /* TagListView.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5AC8E1EB3BBD2AFE73041F6CF0AA1481 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2E440F2A8831AAA604A73112ED203F24 /* Pods-NRLWallet */,
-				A74C1B3E0B1EB236294E617D0B512FF7 /* Pods-NRLWalletTests */,
-				AF94F11734DA282F6D868BF5EC24EBDD /* Pods-NRLWalletUITests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		5CF2A61AD3A6D36175F1DAFDCE00C11B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				382176BCDF61574A70C90FCC6F111B58 /* TagListView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5CF2A61AD3A6D36175F1DAFDCE00C11B /* Pods */,
-				4A6EE5E16C988FC0F76A0711ADD95B6A /* Products */,
-				5AC8E1EB3BBD2AFE73041F6CF0AA1481 /* Targets Support Files */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				9B06EE1EF74E5DB9CF0B7CE7B8EF87E6 /* Pods */,
+				5760F1C7299AB3D588FD54A681954451 /* Products */,
+				273D80F3734F3A7415687D9B296A658A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A74C1B3E0B1EB236294E617D0B512FF7 /* Pods-NRLWalletTests */ = {
+		9B06EE1EF74E5DB9CF0B7CE7B8EF87E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0FE9619CD77D0DC31B2AA49568CDBFE2 /* Info.plist */,
-				B53EDD61C4D71093A37090C1ADA8B777 /* Pods-NRLWalletTests.modulemap */,
-				E2516620C56920177BCD79B4574252D0 /* Pods-NRLWalletTests-acknowledgements.markdown */,
-				C212E7636178CDA73B518EC2BD0901F8 /* Pods-NRLWalletTests-acknowledgements.plist */,
-				60E0C2A8E790235933FA27A78141654C /* Pods-NRLWalletTests-dummy.m */,
-				90D6B4E2AD9424A0E5CDFAA3FB6D1BFF /* Pods-NRLWalletTests-frameworks.sh */,
-				D40C6A9CD89D47154C26DE8B36293F91 /* Pods-NRLWalletTests-resources.sh */,
-				AB1ACF2C27BD1E3BCC78F02882E3AD19 /* Pods-NRLWalletTests-umbrella.h */,
-				F35702A87FE8B8BBAA62FAF7E5FCBD12 /* Pods-NRLWalletTests.debug.xcconfig */,
-				D6CFE5A688BEF3B224F1B5ECFD2EAB84 /* Pods-NRLWalletTests.release.xcconfig */,
+				2911621213EB2F54AB326652E7B7DF4C /* SWRevealViewController */,
+				51CF87CF0217A5B357520DDC38635E94 /* TagListView */,
 			);
-			name = "Pods-NRLWalletTests";
-			path = "Target Support Files/Pods-NRLWalletTests";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		AF94F11734DA282F6D868BF5EC24EBDD /* Pods-NRLWalletUITests */ = {
+		C93AA53D048424A67CC426E3C9422A44 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9A7D4B65B44EC5721A16647B499F8C35 /* Info.plist */,
-				92D8B5BEEBF631C198BA57CFCA58F296 /* Pods-NRLWalletUITests.modulemap */,
-				3FB3CA5365772E4A72B6A6FA76D92F21 /* Pods-NRLWalletUITests-acknowledgements.markdown */,
-				F753CCFCDF376062F1A486C020F87278 /* Pods-NRLWalletUITests-acknowledgements.plist */,
-				EE69E61D6F5A5C643A3214A49C1F91F4 /* Pods-NRLWalletUITests-dummy.m */,
-				DDFB734D4AA0930234F6B4D270405F36 /* Pods-NRLWalletUITests-frameworks.sh */,
-				65EDA922BD7562EB26659BC8BEABFC11 /* Pods-NRLWalletUITests-resources.sh */,
-				222389C73FFC3FE3566DB773F71354BD /* Pods-NRLWalletUITests-umbrella.h */,
-				4417AC6742CC0146C7D179DF106D87F1 /* Pods-NRLWalletUITests.debug.xcconfig */,
-				E470B56BBF387A00B8F70652B0BFD4E6 /* Pods-NRLWalletUITests.release.xcconfig */,
+				8621F66D446C6F4AC0D7F817144EB150 /* CoreGraphics.framework */,
+				AC7524F0BE53ABC149C4387DFEFE2B51 /* Foundation.framework */,
 			);
-			name = "Pods-NRLWalletUITests";
-			path = "Target Support Files/Pods-NRLWalletUITests";
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		DD172247B756352F8054E062AA2F141F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				8AB5E793DA2C2032F807B6316ABB4B29 /* Info.plist */,
+				CE887138509A4EC35A845A0366079F79 /* SWRevealViewController.modulemap */,
+				C12412C7A7D00907AF80D31C4BB4165E /* SWRevealViewController.xcconfig */,
+				9F28816DE85EBA6184BE628163AAA73D /* SWRevealViewController-dummy.m */,
+				C9D6FEF304E2E97E0C596AF4B9D60F79 /* SWRevealViewController-prefix.pch */,
+				2ED6FF997F480F3FAD5AF3DD36117AF6 /* SWRevealViewController-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/SWRevealViewController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4BD1FF6D90F400A82FC6991038962242 /* Headers */ = {
+		76DC80B486891ACD089B300AC0C2EE8B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE42EBB9B56AB95B7B33E6C7304B0CAC /* Pods-NRLWalletUITests-umbrella.h in Headers */,
+				8B46E734409D9A35603D87CF8F26E7D9 /* Pods-NRLWallet-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68EF2FD3D3C1BD950665F27BAF672DA8 /* Headers */ = {
+		B78CD6D957A558391FC108B4871A3FE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551C9790B7B3B64265661C586EE98285 /* TagListView-umbrella.h in Headers */,
+				638F996471735067EF30FDA2A945CC9D /* TagListView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8C66D6ED9710CB6E0812E45712CC6A5 /* Headers */ = {
+		DC68D94991CF4DD9EC61454D79D59CAC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				447F38410CF567DA4AACF8D8DEE65C3E /* Pods-NRLWallet-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F27A1492C43566CF9675A3901C14504F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2410F622A488DC8825677E9E70E2ECE1 /* Pods-NRLWalletTests-umbrella.h in Headers */,
+				F6D169235B245A3499084FAE7DD4FF2E /* SWRevealViewController-umbrella.h in Headers */,
+				AAD41A38A568E04378F99E82A747242E /* SWRevealViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		206A5BC4B5C8A343EA7FBD86B3249A20 /* TagListView */ = {
+		609690010187AF3439D5BD93CE4F3A5E /* TagListView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 832079317D9316F43341FA21ED5F9BFE /* Build configuration list for PBXNativeTarget "TagListView" */;
+			buildConfigurationList = EA00B661465D8D135217E9E43F821DD4 /* Build configuration list for PBXNativeTarget "TagListView" */;
 			buildPhases = (
-				244948D24E05E4CD1D98BB442F927577 /* Sources */,
-				ACDE47151FAD5B5B890FC42DA6FD267E /* Frameworks */,
-				68EF2FD3D3C1BD950665F27BAF672DA8 /* Headers */,
+				147D458C7C7DD367B0D0880C8FA7BC4F /* Sources */,
+				6168141940477301756BEFB32A512E37 /* Frameworks */,
+				B78CD6D957A558391FC108B4871A3FE3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -305,59 +275,43 @@
 			);
 			name = TagListView;
 			productName = TagListView;
-			productReference = 2249640915A302916CA03EFCB0E7FF2B /* TagListView.framework */;
+			productReference = B7B5A04F8D784A5E723F233CD5BF529E /* TagListView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A4F3510ABBA0E4F8075E18BA19ECB75C /* Pods-NRLWalletUITests */ = {
+		A6B48D5D9F508B3C68800A980C68B495 /* Pods-NRLWallet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3108F41C2086D6FD6A4174E94A2D3D58 /* Build configuration list for PBXNativeTarget "Pods-NRLWalletUITests" */;
+			buildConfigurationList = 6525377D5E51268048D0C4213B53DB84 /* Build configuration list for PBXNativeTarget "Pods-NRLWallet" */;
 			buildPhases = (
-				7E1224E4E7EEFBAB8A05637C7D37E9CB /* Sources */,
-				A7F58A745922981B7B3FEA490F5B6D1E /* Frameworks */,
-				4BD1FF6D90F400A82FC6991038962242 /* Headers */,
+				FF9E7E4500D38EAFCF0A3AA75FA6FBC6 /* Sources */,
+				9DEDA0F8B2F50362533ECF0F2D145844 /* Frameworks */,
+				76DC80B486891ACD089B300AC0C2EE8B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-NRLWalletUITests";
-			productName = "Pods-NRLWalletUITests";
-			productReference = ABB859AAA72E209BB3CC21B7456FB37F /* Pods_NRLWalletUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B86DACC47EA03F3315725E1F919E6AF5 /* Pods-NRLWallet */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F90F5888870E0E676D10E571CDA138E3 /* Build configuration list for PBXNativeTarget "Pods-NRLWallet" */;
-			buildPhases = (
-				3BDB69B64039B071B349FEACF5FCAD6A /* Sources */,
-				65E5D97AE36592209CB31CAA8653411A /* Frameworks */,
-				D8C66D6ED9710CB6E0812E45712CC6A5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				38457E6B34B1009691D28EC74B6AC171 /* PBXTargetDependency */,
+				69C31EBBBEFC47F76066F1149E366948 /* PBXTargetDependency */,
+				485E6CC38B79295E682849AC1CA099A3 /* PBXTargetDependency */,
 			);
 			name = "Pods-NRLWallet";
 			productName = "Pods-NRLWallet";
-			productReference = 25968DC7D5D74943C25B3B0484086ABD /* Pods_NRLWallet.framework */;
+			productReference = 397CA18549CDA1F26356777A7419338A /* Pods_NRLWallet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ECEDCE5E283D1E1C5C458387C56F4A45 /* Pods-NRLWalletTests */ = {
+		F2267E08E4D113F02C46E3FA23CE3B2E /* SWRevealViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93102B49BD2190AAE034A5FC896226B3 /* Build configuration list for PBXNativeTarget "Pods-NRLWalletTests" */;
+			buildConfigurationList = 1C29E6DFD4230E8C940C464200E165E7 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */;
 			buildPhases = (
-				90449D71EC8406652545AB67807534BD /* Sources */,
-				E01B683786974D3FDE9FA8AA85141E79 /* Frameworks */,
-				F27A1492C43566CF9675A3901C14504F /* Headers */,
+				DF12E64AFE2B2C18BE4047A13659758C /* Sources */,
+				956FE570A894A888A38413EE2E3CD2FD /* Frameworks */,
+				DC68D94991CF4DD9EC61454D79D59CAC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-NRLWalletTests";
-			productName = "Pods-NRLWalletTests";
-			productReference = F8F560D353AF601CD81144DDC7705450 /* Pods_NRLWalletTests.framework */;
+			name = SWRevealViewController;
+			productName = SWRevealViewController;
+			productReference = 9A721D8B5ED56FE5DDFCA1BCDF2C5352 /* SWRevealViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -366,8 +320,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -377,99 +331,159 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4A6EE5E16C988FC0F76A0711ADD95B6A /* Products */;
+			productRefGroup = 5760F1C7299AB3D588FD54A681954451 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B86DACC47EA03F3315725E1F919E6AF5 /* Pods-NRLWallet */,
-				ECEDCE5E283D1E1C5C458387C56F4A45 /* Pods-NRLWalletTests */,
-				A4F3510ABBA0E4F8075E18BA19ECB75C /* Pods-NRLWalletUITests */,
-				206A5BC4B5C8A343EA7FBD86B3249A20 /* TagListView */,
+				A6B48D5D9F508B3C68800A980C68B495 /* Pods-NRLWallet */,
+				F2267E08E4D113F02C46E3FA23CE3B2E /* SWRevealViewController */,
+				609690010187AF3439D5BD93CE4F3A5E /* TagListView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		244948D24E05E4CD1D98BB442F927577 /* Sources */ = {
+		147D458C7C7DD367B0D0880C8FA7BC4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D961AAEF079A45F2819EBA4DF0AE4565 /* CloseButton.swift in Sources */,
-				811DAEEDA0F4203B2D0EB53BFA421CA2 /* TagListView-dummy.m in Sources */,
-				BCACA6DF1DC4247FF6670BE4329C0D69 /* TagListView.swift in Sources */,
-				4DAE3E9DEDD499D28AE56954C1AC74FD /* TagView.swift in Sources */,
+				F0B7C36737959D3A9DE19199A6348138 /* CloseButton.swift in Sources */,
+				1E80AC825578E9762DEF6E67753F3B1D /* TagListView-dummy.m in Sources */,
+				0B6E1420FC471A6D71AF5D5355B806E0 /* TagListView.swift in Sources */,
+				A36D48A6928FDE0C83BBF2FF6C114975 /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3BDB69B64039B071B349FEACF5FCAD6A /* Sources */ = {
+		DF12E64AFE2B2C18BE4047A13659758C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E91A0C4CDDAA946D82B0EBB6D280C7 /* Pods-NRLWallet-dummy.m in Sources */,
+				135498F7125E63B91EF238A5F0D03595 /* SWRevealViewController-dummy.m in Sources */,
+				04E7686FB4223A6694047166A0546123 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E1224E4E7EEFBAB8A05637C7D37E9CB /* Sources */ = {
+		FF9E7E4500D38EAFCF0A3AA75FA6FBC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2845CE1A792381B6AEE410CD39377284 /* Pods-NRLWalletUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		90449D71EC8406652545AB67807534BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				347EF2DD6C847A0A31C2B3B96FC8B46E /* Pods-NRLWalletTests-dummy.m in Sources */,
+				1422A5592B5227FF63013C2A8E9D068C /* Pods-NRLWallet-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		38457E6B34B1009691D28EC74B6AC171 /* PBXTargetDependency */ = {
+		485E6CC38B79295E682849AC1CA099A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TagListView;
-			target = 206A5BC4B5C8A343EA7FBD86B3249A20 /* TagListView */;
-			targetProxy = F560E51B804FE714A99CE8D58690B016 /* PBXContainerItemProxy */;
+			target = 609690010187AF3439D5BD93CE4F3A5E /* TagListView */;
+			targetProxy = 79941AB679E46B1C9C1D3F9EFFDD0559 /* PBXContainerItemProxy */;
+		};
+		69C31EBBBEFC47F76066F1149E366948 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SWRevealViewController;
+			target = F2267E08E4D113F02C46E3FA23CE3B2E /* SWRevealViewController */;
+			targetProxy = FE92D6849C91ECE2B6A75D7F68C3869A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+		4F7DEF2ECA76B116EC66996E08DCD7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12412C7A7D00907AF80D31C4BB4165E /* SWRevealViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWRevealViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWRevealViewController/SWRevealViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SWRevealViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6257821511D8F6539FA81C89D95E3B86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12412C7A7D00907AF80D31C4BB4165E /* SWRevealViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SWRevealViewController/SWRevealViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SWRevealViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SWRevealViewController/SWRevealViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SWRevealViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97803B46811A9BDB5E70FA1303AFBFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -483,194 +497,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		40E98DCECC9B95060FA103658F650B5F /* Debug */ = {
+		B50DDBA5E8E1C4300D6686934303A148 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8618247799252DF9041B107F4666F05 /* Pods-NRLWallet.debug.xcconfig */;
+			baseConfigurationReference = 9B2042A72DEAE949905F7F10190AE4B1 /* TagListView.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWallet/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWallet/Pods-NRLWallet.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWallet;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5089E560D7483F9308BD8F52F1D3A92A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4417AC6742CC0146C7D179DF106D87F1 /* Pods-NRLWalletUITests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWalletUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWalletUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		56A5EEEE995D3E274F4EF487711F3D25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F35702A87FE8B8BBAA62FAF7E5FCBD12 /* Pods-NRLWalletTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWalletTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWalletTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		662B58A09016EA434B9827DD4F9CCB3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6CFE5A688BEF3B224F1B5ECFD2EAB84 /* Pods-NRLWalletTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWalletTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWalletTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9DC5758A1421913D07DBA234397C09A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46844F8AC37E750F6A15CFF9025915DE /* Pods-NRLWallet.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWallet/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWallet/Pods-NRLWallet.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWallet;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A84CA11D94E4290C19803D8E2013E8A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CADEE6E1121054F4DBD1EAF84062474 /* TagListView.xcconfig */;
-			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -692,6 +532,8 @@
 				PRODUCT_NAME = TagListView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -699,106 +541,32 @@
 			};
 			name = Release;
 		};
-		CA96D44E7AB16F198540BBAD98BA04A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E470B56BBF387A00B8F70652B0BFD4E6 /* Pods-NRLWalletUITests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NRLWalletUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NRLWalletUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E5E22990631D17C91FEE1D8A3A7F1000 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CADEE6E1121054F4DBD1EAF84062474 /* TagListView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TagListView/TagListView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TagListView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TagListView/TagListView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TagListView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -809,59 +577,161 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+		DADAB84DA9B7117CD523B6CC7F1AAE30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACFBADAA83307126AB783BC471FAFF3 /* Pods-NRLWallet.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NRLWallet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NRLWallet/Pods-NRLWallet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NRLWallet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EA12C37CE46F8FB310E316C81C2C38A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9CBBC0D2216F1348231CBCD3C9C032 /* Pods-NRLWallet.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NRLWallet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NRLWallet/Pods-NRLWallet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NRLWallet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0174B79EB4DD86AB1E580C23F14852E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B2042A72DEAE949905F7F10190AE4B1 /* TagListView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TagListView/TagListView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TagListView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TagListView/TagListView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TagListView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C29E6DFD4230E8C940C464200E165E7 /* Build configuration list for PBXNativeTarget "SWRevealViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6257821511D8F6539FA81C89D95E3B86 /* Debug */,
+				4F7DEF2ECA76B116EC66996E08DCD7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
-				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+				97803B46811A9BDB5E70FA1303AFBFFE /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3108F41C2086D6FD6A4174E94A2D3D58 /* Build configuration list for PBXNativeTarget "Pods-NRLWalletUITests" */ = {
+		6525377D5E51268048D0C4213B53DB84 /* Build configuration list for PBXNativeTarget "Pods-NRLWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5089E560D7483F9308BD8F52F1D3A92A /* Debug */,
-				CA96D44E7AB16F198540BBAD98BA04A7 /* Release */,
+				DADAB84DA9B7117CD523B6CC7F1AAE30 /* Debug */,
+				EA12C37CE46F8FB310E316C81C2C38A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		832079317D9316F43341FA21ED5F9BFE /* Build configuration list for PBXNativeTarget "TagListView" */ = {
+		EA00B661465D8D135217E9E43F821DD4 /* Build configuration list for PBXNativeTarget "TagListView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5E22990631D17C91FEE1D8A3A7F1000 /* Debug */,
-				A84CA11D94E4290C19803D8E2013E8A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93102B49BD2190AAE034A5FC896226B3 /* Build configuration list for PBXNativeTarget "Pods-NRLWalletTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56A5EEEE995D3E274F4EF487711F3D25 /* Debug */,
-				662B58A09016EA434B9827DD4F9CCB3A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F90F5888870E0E676D10E571CDA138E3 /* Build configuration list for PBXNativeTarget "Pods-NRLWallet" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				40E98DCECC9B95060FA103658F650B5F /* Debug */,
-				9DC5758A1421913D07DBA234397C09A5 /* Release */,
+				F0174B79EB4DD86AB1E580C23F14852E /* Debug */,
+				B50DDBA5E8E1C4300D6686934303A148 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

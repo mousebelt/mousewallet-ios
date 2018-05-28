@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09601138F6A34F2A308E4636 /* Pods_NRLWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E553FFFB0EA36A89EA4BAA8 /* Pods_NRLWalletUITests.framework */; };
+		841930D520B6C91800C59320 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841930D420B6C91800C59320 /* TutorialViewController.swift */; };
+		84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8720B9AC5700F36973 /* SideMenuViewController.swift */; };
+		84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8A20B9B08100F36973 /* BaseViewController.swift */; };
+		84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */; };
+		84CA5C7820B7302E0064D1BC /* Mnemonic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CA5C7520B7302E0064D1BC /* Mnemonic.storyboard */; };
+		84CA5C7920B7302E0064D1BC /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CA5C7620B7302E0064D1BC /* Tutorial.storyboard */; };
+		84CA5C7B20B730750064D1BC /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C7A20B730750064D1BC /* PinViewController.swift */; };
+		84CA5C7D20B73DB60064D1BC /* Pin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CA5C7C20B73DB50064D1BC /* Pin.storyboard */; };
+		84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C7F20B7DB9A0064D1BC /* HomeViewController.swift */; };
+		84CA5C8320B85C060064D1BC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C8220B85C060064D1BC /* UserData.swift */; };
+		84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C8420B85C5C0064D1BC /* Constants.swift */; };
+		84CA5CB820B88D000064D1BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA5CB720B88D000064D1BC /* Assets.xcassets */; };
 		A48ADB8CA58B9500A4DB4A83 /* Pods_NRLWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EB94B4E53E3B4128C0F340 /* Pods_NRLWallet.framework */; };
-		C692C47C459D2A185A886A5A /* Pods_NRLWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2407B1E8268C55E22B7B5C /* Pods_NRLWalletTests.framework */; };
-		D792922B20B01E8B00DC558C /* Mnemonic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D792922A20B01E8B00DC558C /* Mnemonic.storyboard */; };
 		D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922C20B02BEC00DC558C /* MnemonicViewController.swift */; };
 		D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */; };
 		D792923120B090F900DC558C /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D792922E20B04D6D00DC558C /* SourceSansPro-SemiBold.ttf */; };
@@ -18,11 +27,9 @@
 		D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92B20AEB0570075596E /* AppDelegate.swift */; };
 		D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */; };
 		D7A6E93120AEB0570075596E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E92F20AEB0570075596E /* Main.storyboard */; };
-		D7A6E93320AEB0570075596E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93220AEB0570075596E /* Assets.xcassets */; };
 		D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */; };
 		D7A6E94120AEB0570075596E /* NRLWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94020AEB0570075596E /* NRLWalletTests.swift */; };
 		D7A6E94C20AEB0570075596E /* NRLWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */; };
-		D7A6E96720AEC2E60075596E /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E96620AEC2E60075596E /* Tutorial.storyboard */; };
 		D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */; };
 		D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +54,20 @@
 /* Begin PBXFileReference section */
 		1D9795419F5DF3CF0C8D0F77 /* Pods-NRLWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet.release.xcconfig"; sourceTree = "<group>"; };
 		4E224D578FEC82D98F0CCF4E /* Pods-NRLWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		9914664C4FD70CF84A346207 /* Pods-NRLWalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		841930D420B6C91800C59320 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		84779D8720B9AC5700F36973 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		84779D8A20B9B08100F36973 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
+		84CA5C7520B7302E0064D1BC /* Mnemonic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Mnemonic.storyboard; path = Storyboard/Mnemonic.storyboard; sourceTree = "<group>"; };
+		84CA5C7620B7302E0064D1BC /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
+		84CA5C7A20B730750064D1BC /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
+		84CA5C7C20B73DB50064D1BC /* Pin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Pin.storyboard; path = Storyboard/Pin.storyboard; sourceTree = "<group>"; };
+		84CA5C7F20B7DB9A0064D1BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84CA5C8220B85C060064D1BC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		84CA5C8420B85C5C0064D1BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84CA5CB720B88D000064D1BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E553FFFB0EA36A89EA4BAA8 /* Pods_NRLWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FC838300AEC8FD66F45FB1C /* Pods-NRLWalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests.release.xcconfig"; sourceTree = "<group>"; };
-		AF9DD1CBC94320D65B83EAD8 /* Pods-NRLWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests.release.xcconfig"; sourceTree = "<group>"; };
-		C03A277B5350D1A05B33D8FB /* Pods-NRLWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9EB94B4E53E3B4128C0F340 /* Pods_NRLWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D792922A20B01E8B00DC558C /* Mnemonic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mnemonic.storyboard; sourceTree = "<group>"; };
 		D792922C20B02BEC00DC558C /* MnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicViewController.swift; sourceTree = "<group>"; };
 		D792922E20B04D6D00DC558C /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyMnemonicViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +75,6 @@
 		D7A6E92B20AEB0570075596E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1ViewController.swift; sourceTree = "<group>"; };
 		D7A6E93020AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D7A6E93220AEB0570075596E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A6E93520AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7A6E93C20AEB0570075596E /* NRLWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRLWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E94020AEB0570075596E /* NRLWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletTests.swift; sourceTree = "<group>"; };
@@ -70,7 +83,6 @@
 		D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletUITests.swift; sourceTree = "<group>"; };
 		D7A6E94D20AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A6E96320AEC1C60075596E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7A6E96620AEC2E60075596E /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		D7A6E97120AECDF90075596E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
 		D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C692C47C459D2A185A886A5A /* Pods_NRLWalletTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09601138F6A34F2A308E4636 /* Pods_NRLWalletUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,15 +125,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84779D8620B9AC2900F36973 /* Sidemenu */ = {
+			isa = PBXGroup;
+			children = (
+				84779D8720B9AC5700F36973 /* SideMenuViewController.swift */,
+			);
+			path = Sidemenu;
+			sourceTree = "<group>";
+		};
+		84779D8920B9B06700F36973 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84779D8A20B9B08100F36973 /* BaseViewController.swift */,
+				84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		84CA5C7120B72FBB0064D1BC /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				84CA5C7A20B730750064D1BC /* PinViewController.swift */,
+			);
+			path = Pin;
+			sourceTree = "<group>";
+		};
+		84CA5C7E20B7DB690064D1BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84CA5C7F20B7DB9A0064D1BC /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84CA5C8120B85BEE0064D1BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84CA5C8220B85C060064D1BC /* UserData.swift */,
+				84CA5C8420B85C5C0064D1BC /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		BAA59D1B2682781A7C8CDB8C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				4E224D578FEC82D98F0CCF4E /* Pods-NRLWallet.debug.xcconfig */,
 				1D9795419F5DF3CF0C8D0F77 /* Pods-NRLWallet.release.xcconfig */,
-				C03A277B5350D1A05B33D8FB /* Pods-NRLWalletTests.debug.xcconfig */,
-				AF9DD1CBC94320D65B83EAD8 /* Pods-NRLWalletTests.release.xcconfig */,
-				9914664C4FD70CF84A346207 /* Pods-NRLWalletUITests.debug.xcconfig */,
-				9FC838300AEC8FD66F45FB1C /* Pods-NRLWalletUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -156,7 +204,7 @@
 				D7A6E96520AEC21C0075596E /* Storyboards */,
 				D7A6E96220AEC1A80075596E /* Support */,
 				D7A6E96020AEC01F0075596E /* Resources */,
-				D7A6E95F20AEBFFC0075596E /* Utils */,
+				84CA5C8120B85BEE0064D1BC /* Utils */,
 				D7A6E95D20AEBFCE0075596E /* Models */,
 				D7A6E95C20AEBFC80075596E /* Views */,
 				D7A6E95920AEB8DF0075596E /* ViewControllers */,
@@ -186,6 +234,10 @@
 		D7A6E95920AEB8DF0075596E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84779D8920B9B06700F36973 /* Base */,
+				84779D8620B9AC2900F36973 /* Sidemenu */,
+				84CA5C7E20B7DB690064D1BC /* Home */,
+				84CA5C7120B72FBB0064D1BC /* Pin */,
 				D7A6E95B20AEBC970075596E /* Mnemonic */,
 				D7A6E95A20AEBC900075596E /* Tutorial */,
 			);
@@ -198,6 +250,7 @@
 				D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */,
 				D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */,
 				D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */,
+				841930D420B6C91800C59320 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -225,18 +278,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D7A6E95F20AEBFFC0075596E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		D7A6E96020AEC01F0075596E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84CA5CB720B88D000064D1BC /* Assets.xcassets */,
 				D7A6E97020AECDA80075596E /* Fonts */,
-				D7A6E93220AEB0570075596E /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -252,10 +298,11 @@
 		D7A6E96520AEC21C0075596E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				84CA5C7C20B73DB50064D1BC /* Pin.storyboard */,
+				84CA5C7520B7302E0064D1BC /* Mnemonic.storyboard */,
+				84CA5C7620B7302E0064D1BC /* Tutorial.storyboard */,
 				D7A6E92F20AEB0570075596E /* Main.storyboard */,
 				D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */,
-				D7A6E96620AEC2E60075596E /* Tutorial.storyboard */,
-				D792922A20B01E8B00DC558C /* Mnemonic.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -296,12 +343,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7A6E95320AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletTests" */;
 			buildPhases = (
-				A75192AD975061F8BA0E425E /* [CP] Check Pods Manifest.lock */,
 				D7A6E93820AEB0570075596E /* Sources */,
 				D7A6E93920AEB0570075596E /* Frameworks */,
 				D7A6E93A20AEB0570075596E /* Resources */,
-				BA4B54FF05061364E8A97986 /* [CP] Embed Pods Frameworks */,
-				05E90AEEBC50F5067002C6D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,12 +361,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7A6E95620AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletUITests" */;
 			buildPhases = (
-				A7767FFD106534C0F8EAA692 /* [CP] Check Pods Manifest.lock */,
 				D7A6E94320AEB0570075596E /* Sources */,
 				D7A6E94420AEB0570075596E /* Frameworks */,
 				D7A6E94520AEB0570075596E /* Resources */,
-				BC8B80BF3913C5784973E15F /* [CP] Embed Pods Frameworks */,
-				BBA3DF8CD7C1AAEC91A9C460 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -385,12 +426,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D792922B20B01E8B00DC558C /* Mnemonic.storyboard in Resources */,
-				D7A6E96720AEC2E60075596E /* Tutorial.storyboard in Resources */,
 				D792923220B090FD00DC558C /* SourceSansPro-Regular.ttf in Resources */,
+				84CA5C7820B7302E0064D1BC /* Mnemonic.storyboard in Resources */,
 				D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */,
-				D7A6E93320AEB0570075596E /* Assets.xcassets in Resources */,
+				84CA5C7D20B73DB60064D1BC /* Pin.storyboard in Resources */,
 				D7A6E93120AEB0570075596E /* Main.storyboard in Resources */,
+				84CA5C7920B7302E0064D1BC /* Tutorial.storyboard in Resources */,
+				84CA5CB820B88D000064D1BC /* Assets.xcassets in Resources */,
 				D792923120B090F900DC558C /* SourceSansPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,64 +454,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05E90AEEBC50F5067002C6D1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		868E7EB259A9B47915AF6297 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NRLWallet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A75192AD975061F8BA0E425E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A7767FFD106534C0F8EAA692 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2542794CFF2BAD3C765DA4F /* [CP] Embed Pods Frameworks */ = {
@@ -478,58 +478,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA4B54FF05061364E8A97986 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWalletTests/Pods-NRLWalletTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBA3DF8CD7C1AAEC91A9C460 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC8B80BF3913C5784973E15F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWalletUITests/Pods-NRLWalletUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DBD5174EEF999A6DEB871252 /* [CP] Copy Pods Resources */ = {
@@ -554,11 +514,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */,
+				84CA5C7B20B730750064D1BC /* PinViewController.swift in Sources */,
+				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
+				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
+				841930D520B6C91800C59320 /* TutorialViewController.swift in Sources */,
+				84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */,
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */,
+				84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */,
 				D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */,
 				D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */,
+				84CA5C8320B85C060064D1BC /* UserData.swift in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,7 +725,6 @@
 		};
 		D7A6E95420AEB0570075596E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C03A277B5350D1A05B33D8FB /* Pods-NRLWalletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -774,7 +741,6 @@
 		};
 		D7A6E95520AEB0570075596E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF9DD1CBC94320D65B83EAD8 /* Pods-NRLWalletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -791,7 +757,6 @@
 		};
 		D7A6E95720AEB0570075596E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9914664C4FD70CF84A346207 /* Pods-NRLWalletUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -807,7 +772,6 @@
 		};
 		D7A6E95820AEB0570075596E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FC838300AEC8FD66F45FB1C /* Pods-NRLWalletUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

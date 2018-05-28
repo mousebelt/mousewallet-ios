@@ -12,6 +12,7 @@ class Tutorial3ViewController: UIViewController {
     
     @IBOutlet weak var btnCreateAccount: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var cardView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class Tutorial3ViewController: UIViewController {
     func setupViews() {
         self.btnCreateAccount.layer.cornerRadius = 4
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
+        self.cardView.layer.borderWidth = 2
+        self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
     }
     
     @IBAction func onCreateAccount(_ sender: Any) {
@@ -36,9 +39,9 @@ class Tutorial3ViewController: UIViewController {
         let window = UIApplication.shared.keyWindow
         
         if let window = window {
-            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIView.transition(with: window, duration: 0.05, options: .transitionCrossDissolve, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
-                UIView.setAnimationsEnabled(true)
+                UIView.setAnimationsEnabled(false)
                 window.rootViewController = mnemonicViewController
                 UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
