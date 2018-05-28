@@ -56,7 +56,7 @@ class PinViewController: UIViewController {
             let tmpBtt = self.keyboardArray[i] as UIButton!
             tmpBtt?.layer.cornerRadius = (tmpBtt?.frame.size.height)!/2
             tmpBtt?.layer.borderWidth = 1
-            tmpBtt?.layer.borderColor = UIColor(red: 214.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1.0).cgColor
+            tmpBtt?.layer.borderColor = Constants.Colors.BorderColor.cgColor
             tmpBtt?.addTarget(self, action: #selector(KeyboardClick(_ :)), for: .touchUpInside)
         }
         cancel.addTarget(self, action: #selector(self.keyboardCancel(_ :)), for: .touchUpInside)
@@ -68,24 +68,27 @@ class PinViewController: UIViewController {
     @objc func KeyboardClick(_ sender: UIButton) {
         let strPin = sender.titleLabel?.text
         if(PIN_STATE == 0) {
-            if(pincodeArray.count < PIN_MAX){
+            if(pincodeArray.count <= PIN_MAX) {
                 pincodeArray.append(strPin!)
                 self.changePinView()
             }
         }else if(PIN_STATE == 1) {
-            if(pincodeConfirmArray.count < PIN_MAX){
+            if(pincodeConfirmArray.count <= PIN_MAX) {
                 pincodeConfirmArray.append(strPin!)
                 self.changePinView()
             }
-            if(pincodeConfirmArray.count == PIN_MAX){   //check confirm
+            if(pincodeConfirmArray.count == PIN_MAX) {   //check confirm
                 if(self.checkConfirmPin()) {
                     //success
-                    txtTitle.text = "VERIFY YOUR PIN"
-                    PIN_STATE = 2
-                }else{
+                    self.gotoMainview()
+                } else{
                     txtTitle.text = "ERROR"
-                    txtTitle.textColor = UIColor(red: 237.0/255.0, green: 112.0/255.0, blue: 91.0/255.0, alpha: 1.0)
+                    txtTitle.textColor = Constants.Colors.ErrorColor
                 }
+            } else {
+                txtTitle.text = "VERIFY YOUR PIN"
+                txtTitle.textColor = Constants.Colors.BlackColor
+                
             }
         }
     }
@@ -105,27 +108,37 @@ class PinViewController: UIViewController {
         
     }
     @objc func keyboardEnter(_ sender: UIButton) {
-        self.gotoMainview()
-//        if(pincodeArray.count == PIN_MAX){
-//            if(PIN_STATE == 0) {
-//                PIN_STATE = 1
-//                txtTitle.text = "VERIFY YOUR PIN"
-//                pincodeConfirmArray.removeAll()
-//                self.formatPinView()
-//            }else if(PIN_STATE == 1) {
-//                
-//            }
-//        }
+        if(pincodeArray.count == PIN_MAX){
+            if(PIN_STATE == 0) {
+                PIN_STATE = 1
+                txtTitle.text = "VERIFY YOUR PIN"
+                pincodeConfirmArray.removeAll()
+                self.formatPinView()
+            }else if(PIN_STATE == 1) {
+
+            }
+        }
         
     }
     
     func changePinView() {
-        for i in 0 ... PIN_MAX - 1 {
-            let tmpPin = pinArray[i] as UIImageView!
-            if(i < pincodeArray.count) {
-                tmpPin?.image = UIImage.init(named: "pass")
-            }else {
-                tmpPin?.image = UIImage.init(named: "unpass")
+        if(PIN_STATE == 0) {
+            for i in 0 ... PIN_MAX - 1 {
+                let tmpPin = pinArray[i] as UIImageView!
+                if(i < pincodeArray.count) {
+                    tmpPin?.image = UIImage.init(named: "pass")
+                }else {
+                    tmpPin?.image = UIImage.init(named: "unpass")
+                }
+            }
+        }else if(PIN_STATE == 1) {
+            for i in 0 ... PIN_MAX - 1 {
+                let tmpPin = pinArray[i] as UIImageView!
+                if(i < pincodeConfirmArray.count) {
+                    tmpPin?.image = UIImage.init(named: "pass")
+                }else {
+                    tmpPin?.image = UIImage.init(named: "unpass")
+                }
             }
         }
     }
@@ -149,9 +162,10 @@ class PinViewController: UIViewController {
     func gotoMainview() {        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
+        
         let window = UIApplication.shared.keyWindow
         if let window = window {
-            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIView.transition(with: window, duration: 0.0, options: .transitionFlipFromBottom, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(true)
                 window.rootViewController = homeViewController

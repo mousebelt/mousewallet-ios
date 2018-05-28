@@ -217,8 +217,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoB-tE-rRE" customClass="TagListView" customModule="TagListView">
-                                <rect key="frame" x="36" y="539" width="303" height="20"/>
+                                <rect key="frame" x="36" y="431" width="303" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="AtA-Fa-4py"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="2"/>

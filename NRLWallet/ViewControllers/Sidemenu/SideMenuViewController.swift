@@ -46,43 +46,54 @@ class SideMenuViewController: UIViewController {
         self.imgUserAvatar.clipsToBounds = true
     }
     func setDefaultBackground() {
-        self.vi_Home.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
-        self.vi_Send.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
-        self.vi_Received.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
-        self.vi_Swap.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
-        self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
-        self.vi_Logout.layer.backgroundColor = Constants.Colors.DefaultColor.cgColor
+        self.vi_Home.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Send.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Received.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Swap.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Logout.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         
     }
 //    Actions
     @IBAction func ActionHome(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Home.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
     }
     
     @IBAction func ActionSend(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Send.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
     }
     
     @IBAction func ActionReceived(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Received.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
     }
     
     @IBAction func ActionSwap(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Swap.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
     }
     
     @IBAction func ActionMnemonic(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
     }
     
     @IBAction func ActionLogout(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Logout.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
+        
+        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinNavVC")
+        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDel.window?.rootViewController = PinViewController
     }
     
 
