@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/XLPagerTabStrip/Sources/SegmentedPagerTabStripViewController.swift"
+            timestampString = "549265403.170696"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "XLPagerTabStrip.SegmentedPagerTabStripViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "XLPagerTabStrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/work/ios/git/restless-wallet-ios/Pods/XLPagerTabStrip/Sources/SegmentedPagerTabStripViewController.swift"
+                  timestampString = "549274278.566862"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; __ObjC.UISegmentedControl in XLPagerTabStrip.SegmentedPagerTabStripViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "XLPagerTabStrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/work/ios/git/restless-wallet-ios/Pods/XLPagerTabStrip/Sources/SegmentedPagerTabStripViewController.swift"
+                  timestampString = "549274278.569887"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
