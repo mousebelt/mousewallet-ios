@@ -25,7 +25,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kCK-MZ-6Gb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.92941176469999998" green="0.43921568630000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.89144051074981689" green="0.25488018989562988" blue="0.19878670573234558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7Ye-Cr-99Y"/>
@@ -56,7 +56,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IPI-xP-5oD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.92271083590000003" green="0.34727966789999998" blue="0.25009715560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.89144665002822876" green="0.25863873958587646" blue="0.19457140564918518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="euv-jl-PSP" kind="relationship" relationship="rootViewController" id="06d-Pp-fdU"/>
@@ -73,6 +73,19 @@
                     <view key="view" contentMode="scaleToFill" id="Dhf-qd-lbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fyZ-Ei-ofz">
+                                <rect key="frame" x="66" y="108" width="243" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Receive"/>
+                                    <segment title="Send"/>
+                                    <segment title="Swap"/>
+                                </segments>
+                                <color key="tintColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K0t-lp-weB"/>
                     </view>
@@ -80,14 +93,18 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" style="plain" id="4EK-bt-12a">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="0Nt-4Q-3Vv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bttMenu" destination="4EK-bt-12a" id="0JM-z4-wOw"/>
+                        <outlet property="segments" destination="fyZ-Ei-ofz" id="n1w-IN-j5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZY-4H-0ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="830"/>
+            <point key="canvasLocation" x="453.60000000000002" y="829.83508245877067"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="I37-f4-Vlb">
@@ -421,5 +438,6 @@
         <image name="ic_send" width="44" height="44"/>
         <image name="ic_swap" width="44" height="44"/>
         <image name="menu" width="24" height="24"/>
+        <image name="setting" width="20" height="20"/>
     </resources>
 </document>

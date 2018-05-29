@@ -83,7 +83,7 @@ class PinViewController: UIViewController {
                     self.gotoMainview()
                 } else{
                     txtTitle.text = "ERROR"
-                    txtTitle.textColor = Constants.Colors.ErrorColor
+                    txtTitle.textColor = Constants.Colors.MainColor
                 }
             } else {
                 txtTitle.text = "VERIFY YOUR PIN"

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
         let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
         let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
         self.window?.rootViewController = tutorialViewController
