@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
-//        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
-//        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
-        self.window?.rootViewController = tutorialViewController
-        
+        let isTest = true
+        if isTest {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
+            self.window?.rootViewController = tutorialViewController
+        }else {
+            let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
+            self.window?.rootViewController = tutorialViewController
+        }
+        DropDown.startListeningToKeyboard()
         return true
     }
 

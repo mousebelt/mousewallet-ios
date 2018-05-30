@@ -23,17 +23,15 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         super.init(coder: aDecoder)
     }
     
-    let purpleInspireColor = UIColor(red:0.13, green:0.03, blue:0.25, alpha:1.0)
-    
     override func viewDidLoad() {
         self.addMenuAction()
         self.setLeftMenu()
-        self.setupViews()
+//        self.setupViews()
         // change selected bar color
         settings.style.buttonBarBackgroundColor = .white
         settings.style.buttonBarItemBackgroundColor = .white
-        settings.style.selectedBarBackgroundColor = purpleInspireColor
-        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 14)
+        settings.style.selectedBarBackgroundColor = Constants.Colors.WhiteColor
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 16)
         settings.style.selectedBarHeight = 0
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = .white
@@ -66,8 +64,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     // MARK: - PagerTabStripDataSource
     
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-      
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {      
         let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReceiveViC")
         let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendVC")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SwapVC")
@@ -87,7 +84,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     func setLeftMenu() {
-        self.revealViewController().rearViewRevealWidth = view.frame.size.width * 0.8
+        self.revealViewController().rearViewRevealWidth = view.frame.size.width * 0.8   
         self.revealViewController().panGestureRecognizer()
         self.revealViewController().tapGestureRecognizer()
     }
