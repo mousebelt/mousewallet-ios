@@ -14,6 +14,8 @@ import XLPagerTabStrip
 class HomeViewController: ButtonBarPagerTabStripViewController {
     @IBOutlet weak var bttMenu: UIBarButtonItem!
     
+    var coinModel : CoinModel?
+    
     lazy var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -65,9 +67,10 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {      
-        let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReceiveViC")
+        let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReceiveViC") as! ReceiveViewController
         let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendVC")
         let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SwapVC")
+        child_1.coinModel = self.coinModel
         return [child_1, child_2, child_3]
     }
     

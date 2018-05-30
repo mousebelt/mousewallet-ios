@@ -22,6 +22,9 @@
 		84CA5C8320B85C060064D1BC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C8220B85C060064D1BC /* UserData.swift */; };
 		84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA5C8420B85C5C0064D1BC /* Constants.swift */; };
 		84CA5CB820B88D000064D1BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA5CB720B88D000064D1BC /* Assets.xcassets */; };
+		84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5120BEEF7400D08645 /* CoinListViewController.swift */; };
+		84E79E5420BEF75900D08645 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5320BEF75900D08645 /* CoinTableViewCell.swift */; };
+		84E79E5720BEFAFD00D08645 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5620BEFAFD00D08645 /* CoinModel.swift */; };
 		A48ADB8CA58B9500A4DB4A83 /* Pods_NRLWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EB94B4E53E3B4128C0F340 /* Pods_NRLWallet.framework */; };
 		D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922C20B02BEC00DC558C /* MnemonicViewController.swift */; };
 		D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */; };
@@ -72,6 +75,9 @@
 		84CA5C8220B85C060064D1BC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		84CA5C8420B85C5C0064D1BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84CA5CB720B88D000064D1BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E79E5120BEEF7400D08645 /* CoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewController.swift; sourceTree = "<group>"; };
+		84E79E5320BEF75900D08645 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
+		84E79E5620BEFAFD00D08645 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		9E553FFFB0EA36A89EA4BAA8 /* Pods_NRLWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EB94B4E53E3B4128C0F340 /* Pods_NRLWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D792922C20B02BEC00DC558C /* MnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				84C052A820BD16900013A7FF /* ReceiveViewController.swift */,
 				84C052AA20BD169D0013A7FF /* SendViewController.swift */,
 				84C052AC20BD16A70013A7FF /* SwapViewController.swift */,
+				84E79E5120BEEF7400D08645 /* CoinListViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -174,6 +181,22 @@
 				84CA5C8420B85C5C0064D1BC /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		84E79E5520BEFAE400D08645 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84E79E5620BEFAFD00D08645 /* CoinModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84E79E5820BEFBD900D08645 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84E79E5320BEF75900D08645 /* CoinTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		BAA59D1B2682781A7C8CDB8C /* Pods */ = {
@@ -214,8 +237,8 @@
 				D7A6E96220AEC1A80075596E /* Support */,
 				D7A6E96020AEC01F0075596E /* Resources */,
 				84CA5C8120B85BEE0064D1BC /* Utils */,
-				D7A6E95D20AEBFCE0075596E /* Models */,
-				D7A6E95C20AEBFC80075596E /* Views */,
+				84E79E5520BEFAE400D08645 /* Models */,
+				84E79E5820BEFBD900D08645 /* Cells */,
 				D7A6E95920AEB8DF0075596E /* ViewControllers */,
 				D7A6E92B20AEB0570075596E /* AppDelegate.swift */,
 			);
@@ -271,20 +294,6 @@
 				D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */,
 			);
 			path = Mnemonic;
-			sourceTree = "<group>";
-		};
-		D7A6E95C20AEBFC80075596E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D7A6E95D20AEBFCE0075596E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		D7A6E96020AEC01F0075596E /* Resources */ = {
@@ -527,9 +536,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E79E5720BEFAFD00D08645 /* CoinModel.swift in Sources */,
 				84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */,
 				84CA5C7B20B730750064D1BC /* PinViewController.swift in Sources */,
 				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
+				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
 				841930D520B6C91800C59320 /* TutorialViewController.swift in Sources */,
@@ -544,6 +555,7 @@
 				D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */,
 				84CA5C8320B85C060064D1BC /* UserData.swift in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
+				84E79E5420BEF75900D08645 /* CoinTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

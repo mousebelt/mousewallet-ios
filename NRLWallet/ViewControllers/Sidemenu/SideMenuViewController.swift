@@ -58,6 +58,10 @@ class SideMenuViewController: UIViewController {
     @IBAction func ActionHome(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Home.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "BaseNav") as! UINavigationController
+        self.revealViewController().setFront(homeVC, animated: false)
         self.revealViewController().revealToggle(animated:true)
     }
     

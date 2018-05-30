@@ -15,11 +15,17 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var btt_coin: UIButton!
     @IBOutlet weak var btt_select: UIButton!
     @IBOutlet weak var lb_coinAddress: UILabel!
+    @IBOutlet weak var lb_coinBalance: UILabel!
+    @IBOutlet weak var lb_coinName: UILabel!
     
+    
+    
+    var coinModel : CoinModel?    
     let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initViews()
         self.setupViews()
     }
     
@@ -29,7 +35,13 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         return IndicatorInfo(title:"Receive")
     }
     
+    func initViews() {
+        self.btt_coin.setImage(UIImage.init(named: (coinModel?.image)!), for: .normal)
+        self.lb_coinName.text = String(format:"%@ %@", (self.coinModel?.count)!, (self.coinModel?.name)!)
+    }
+    
     func setupViews() {
+        
         dropDown.anchorView = btt_coin        
         dropDown.dataSource = ["bitcoin", "ethereum", "omg"]
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in

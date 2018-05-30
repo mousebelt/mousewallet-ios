@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "omg.png",
+      "filename" : "star.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "bitcoin.png",
+      "filename" : "star2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "bitcoin-1.png",
+      "filename" : "star3.png",
       "scale" : "3x"
     }
   ],

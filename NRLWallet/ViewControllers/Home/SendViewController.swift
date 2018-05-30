@@ -11,14 +11,19 @@ import XLPagerTabStrip
 
 class SendViewController: UIViewController, IndicatorInfoProvider {
 
+    @IBOutlet weak var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - IndicatorInfoProvider
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title:"Send")
+    }
+    
+    func setupViews() {
+        self.backgroundView.layer.cornerRadius = 5
+        self.backgroundView.layer.borderColor = Constants.Colors.BorderColor.cgColor
+        self.backgroundView.layer.borderWidth = 3
     }
 }
