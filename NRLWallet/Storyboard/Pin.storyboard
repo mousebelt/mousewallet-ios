@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER A PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVJ-fh-C7Y">
-                                <rect key="frame" x="67.5" y="188" width="240" height="24"/>
+                                <rect key="frame" x="67.5" y="173" width="240" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="rlw-vx-HMg"/>
                                     <constraint firstAttribute="width" constant="240" id="w8Z-HV-uj9"/>
@@ -54,14 +54,14 @@
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="qA1-mE-KwP">
-                                <rect key="frame" x="153" y="104" width="68" height="68"/>
+                                <rect key="frame" x="153" y="89" width="68" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="1t0-uP-x3x"/>
                                     <constraint firstAttribute="height" constant="68" id="8K6-oj-JJo"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-fq-iiF">
-                                <rect key="frame" x="68" y="242" width="239" height="24"/>
+                                <rect key="frame" x="68" y="246" width="239" height="24"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unpass" translatesAutoresizingMaskIntoConstraints="NO" id="Oil-HZ-wUP">
                                         <rect key="frame" x="10" y="5" width="14" height="14"/>
@@ -135,16 +135,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vH-G3-gat">
-                                <rect key="frame" x="22" y="367" width="330" height="300"/>
+                                <rect key="frame" x="22" y="407" width="330" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-Ae-gbR">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-Qf-vLn">
-                                                <rect key="frame" x="25" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Ohs-5F-Ci9"/>
-                                                    <constraint firstAttribute="width" constant="60" id="SR8-QT-hcs"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Ohs-5F-Ci9"/>
+                                                    <constraint firstAttribute="width" constant="50" id="SR8-QT-hcs"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="1">
@@ -152,10 +152,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asd-Rb-1gg">
-                                                <rect key="frame" x="25" y="78" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="68" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Q4C-YY-61i"/>
-                                                    <constraint firstAttribute="width" constant="60" id="Wua-1a-iNi"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Q4C-YY-61i"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Wua-1a-iNi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="4">
@@ -163,10 +163,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7c-st-Daz">
-                                                <rect key="frame" x="25" y="146" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="126" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="oNv-5M-3Vu"/>
-                                                    <constraint firstAttribute="height" constant="60" id="r1v-V4-Z8n"/>
+                                                    <constraint firstAttribute="width" constant="50" id="oNv-5M-3Vu"/>
+                                                    <constraint firstAttribute="height" constant="50" id="r1v-V4-Z8n"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="7">
@@ -174,10 +174,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-Yd-IB3">
-                                                <rect key="frame" x="25" y="214" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="184" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="ZW9-FF-eCS"/>
-                                                    <constraint firstAttribute="width" constant="60" id="a6T-XI-cot"/>
+                                                    <constraint firstAttribute="height" constant="50" id="ZW9-FF-eCS"/>
+                                                    <constraint firstAttribute="width" constant="50" id="a6T-XI-cot"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="Cancel">
@@ -198,13 +198,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CD-pD-Z5m">
-                                        <rect key="frame" x="110" y="0.0" width="110" height="300"/>
+                                        <rect key="frame" x="110" y="0.0" width="110" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy8-h4-MFU">
-                                                <rect key="frame" x="25" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="0RD-aY-NtX"/>
-                                                    <constraint firstAttribute="width" constant="60" id="ccs-4p-TAc"/>
+                                                    <constraint firstAttribute="height" constant="50" id="0RD-aY-NtX"/>
+                                                    <constraint firstAttribute="width" constant="50" id="ccs-4p-TAc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="2">
@@ -212,10 +212,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppp-9b-3sn">
-                                                <rect key="frame" x="25" y="78" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="68" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="3nq-RF-T3c"/>
-                                                    <constraint firstAttribute="height" constant="60" id="tr4-gH-Iqu"/>
+                                                    <constraint firstAttribute="width" constant="50" id="3nq-RF-T3c"/>
+                                                    <constraint firstAttribute="height" constant="50" id="tr4-gH-Iqu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="5">
@@ -223,10 +223,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-VN-cDH">
-                                                <rect key="frame" x="25" y="146" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="126" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Qdw-0m-GUB"/>
-                                                    <constraint firstAttribute="width" constant="60" id="xIj-T0-8cI"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Qdw-0m-GUB"/>
+                                                    <constraint firstAttribute="width" constant="50" id="xIj-T0-8cI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="8">
@@ -234,10 +234,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4a-2R-AFp">
-                                                <rect key="frame" x="25" y="214" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="184" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="2ty-eE-vI5"/>
-                                                    <constraint firstAttribute="width" constant="60" id="VOK-sy-6JG"/>
+                                                    <constraint firstAttribute="height" constant="50" id="2ty-eE-vI5"/>
+                                                    <constraint firstAttribute="width" constant="50" id="VOK-sy-6JG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="0">
@@ -258,13 +258,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hem-HO-YsQ">
-                                        <rect key="frame" x="220" y="0.0" width="110" height="300"/>
+                                        <rect key="frame" x="220" y="0.0" width="110" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-tr-ur0">
-                                                <rect key="frame" x="25" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Nxh-OW-xlE"/>
-                                                    <constraint firstAttribute="height" constant="60" id="iOh-Ky-wfq"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Nxh-OW-xlE"/>
+                                                    <constraint firstAttribute="height" constant="50" id="iOh-Ky-wfq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="3">
@@ -272,10 +272,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQr-Gy-5k3">
-                                                <rect key="frame" x="25" y="78" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="68" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="GHk-da-bwa"/>
-                                                    <constraint firstAttribute="height" constant="60" id="xeG-7G-aHZ"/>
+                                                    <constraint firstAttribute="width" constant="50" id="GHk-da-bwa"/>
+                                                    <constraint firstAttribute="height" constant="50" id="xeG-7G-aHZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="6">
@@ -283,10 +283,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnJ-sP-oZq">
-                                                <rect key="frame" x="25" y="146" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="126" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="QNc-y8-qbb"/>
-                                                    <constraint firstAttribute="width" constant="60" id="fHy-bq-Nn6"/>
+                                                    <constraint firstAttribute="height" constant="50" id="QNc-y8-qbb"/>
+                                                    <constraint firstAttribute="width" constant="50" id="fHy-bq-Nn6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                 <state key="normal" title="9">
@@ -294,10 +294,10 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pTr-IQ-h1A">
-                                                <rect key="frame" x="25" y="214" width="60" height="60"/>
+                                                <rect key="frame" x="30" y="184" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Te9-J3-Ru4"/>
-                                                    <constraint firstAttribute="width" constant="60" id="m4X-KA-NgD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Te9-J3-Ru4"/>
+                                                    <constraint firstAttribute="width" constant="50" id="m4X-KA-NgD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" image="enter_dark"/>
@@ -334,21 +334,33 @@
                                     <constraint firstAttribute="trailing" secondItem="hem-HO-YsQ" secondAttribute="trailing" id="mcU-5r-mIe"/>
                                     <constraint firstItem="PJW-Ae-gbR" firstAttribute="top" secondItem="8vH-G3-gat" secondAttribute="top" id="pHb-0s-Xi5"/>
                                     <constraint firstItem="0CD-pD-Z5m" firstAttribute="leading" secondItem="PJW-Ae-gbR" secondAttribute="trailing" id="pZV-1f-dv7"/>
-                                    <constraint firstAttribute="height" constant="300" id="qDm-V5-mG4"/>
+                                    <constraint firstAttribute="height" constant="260" id="qDm-V5-mG4"/>
                                     <constraint firstItem="hem-HO-YsQ" firstAttribute="width" secondItem="PJW-Ae-gbR" secondAttribute="width" id="qEH-B9-P4G"/>
                                     <constraint firstAttribute="bottom" secondItem="hem-HO-YsQ" secondAttribute="bottom" id="rPz-mH-pyw"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid PIN, Please try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PT-uP-cwF">
+                                <rect key="frame" x="20" y="205" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KTB-wn-H59"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XVJ-fh-C7Y" firstAttribute="centerX" secondItem="i7a-JU-63U" secondAttribute="centerX" id="3ac-HQ-03c"/>
                             <constraint firstItem="8vH-G3-gat" firstAttribute="bottom" secondItem="VvG-ty-Rry" secondAttribute="bottom" id="7Hm-DN-yza"/>
                             <constraint firstItem="qA1-mE-KwP" firstAttribute="centerX" secondItem="i7a-JU-63U" secondAttribute="centerX" id="GPN-Tt-31m"/>
-                            <constraint firstItem="qA1-mE-KwP" firstAttribute="top" secondItem="VvG-ty-Rry" secondAttribute="top" constant="40" id="VdL-cY-HhJ"/>
-                            <constraint firstItem="xpa-fq-iiF" firstAttribute="top" secondItem="XVJ-fh-C7Y" secondAttribute="bottom" constant="30" id="c1p-6h-fEi"/>
+                            <constraint firstItem="xpa-fq-iiF" firstAttribute="top" secondItem="0PT-uP-cwF" secondAttribute="bottom" constant="20" id="KVc-Vw-hlJ"/>
+                            <constraint firstItem="qA1-mE-KwP" firstAttribute="top" secondItem="VvG-ty-Rry" secondAttribute="top" constant="25" id="VdL-cY-HhJ"/>
+                            <constraint firstItem="VvG-ty-Rry" firstAttribute="trailing" secondItem="0PT-uP-cwF" secondAttribute="trailing" constant="20" id="X86-AR-uiI"/>
                             <constraint firstItem="8vH-G3-gat" firstAttribute="centerX" secondItem="i7a-JU-63U" secondAttribute="centerX" id="cyf-UJ-BgG"/>
                             <constraint firstItem="XVJ-fh-C7Y" firstAttribute="top" secondItem="qA1-mE-KwP" secondAttribute="bottom" constant="16" id="ebt-3x-Buj"/>
+                            <constraint firstItem="0PT-uP-cwF" firstAttribute="top" secondItem="XVJ-fh-C7Y" secondAttribute="bottom" constant="8" id="jXo-jU-jCF"/>
+                            <constraint firstItem="0PT-uP-cwF" firstAttribute="leading" secondItem="VvG-ty-Rry" secondAttribute="leading" constant="20" id="l8P-MX-1KF"/>
                             <constraint firstItem="xpa-fq-iiF" firstAttribute="centerX" secondItem="i7a-JU-63U" secondAttribute="centerX" id="oRO-KS-san"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VvG-ty-Rry"/>
@@ -373,6 +385,7 @@
                         <outlet property="pin4" destination="lNx-W4-cts" id="uhE-ME-172"/>
                         <outlet property="pin5" destination="dw7-bW-gGZ" id="Fhg-2G-WKR"/>
                         <outlet property="pin6" destination="fvt-My-fhP" id="v2Y-kr-RoA"/>
+                        <outlet property="txtError" destination="0PT-uP-cwF" id="YF9-kL-u1i"/>
                         <outlet property="txtTitle" destination="XVJ-fh-C7Y" id="xi0-Gv-uNb"/>
                     </connections>
                 </viewController>
@@ -384,7 +397,7 @@
     <resources>
         <image name="enter" width="24" height="24"/>
         <image name="enter_dark" width="24" height="24"/>
-        <image name="lock" width="68" height="68"/>
+        <image name="lock" width="46" height="61"/>
         <image name="unpass" width="15" height="14"/>
     </resources>
 </document>

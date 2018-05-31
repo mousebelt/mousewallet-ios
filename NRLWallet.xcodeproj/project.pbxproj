@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841930D520B6C91800C59320 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841930D420B6C91800C59320 /* TutorialViewController.swift */; };
 		84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8720B9AC5700F36973 /* SideMenuViewController.swift */; };
 		84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8A20B9B08100F36973 /* BaseViewController.swift */; };
 		84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		1D9795419F5DF3CF0C8D0F77 /* Pods-NRLWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet.release.xcconfig"; sourceTree = "<group>"; };
 		4E224D578FEC82D98F0CCF4E /* Pods-NRLWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		841930D420B6C91800C59320 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		84779D8720B9AC5700F36973 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84779D8A20B9B08100F36973 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 				D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */,
 				D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */,
 				D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */,
-				841930D420B6C91800C59320 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -543,7 +540,6 @@
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
-				841930D520B6C91800C59320 /* TutorialViewController.swift in Sources */,
 				84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */,
 				84C052A920BD16900013A7FF /* ReceiveViewController.swift in Sources */,
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
@@ -758,6 +754,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NRLWalletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -774,6 +771,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NRLWalletTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -789,6 +787,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NRLWalletUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -804,6 +803,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NRLWalletUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

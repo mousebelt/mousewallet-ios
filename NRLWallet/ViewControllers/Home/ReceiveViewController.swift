@@ -18,6 +18,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lb_coinBalance: UILabel!
     @IBOutlet weak var lb_coinName: UILabel!
     
+    @IBOutlet weak var bottom_view: UIView!
     
     
     var coinModel : CoinModel?    
@@ -41,11 +42,14 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func setupViews() {
+        bottom_view.layer.borderWidth = 1
+        bottom_view.layer.borderColor = Constants.Colors.BorderColor1.cgColor
+        bottom_view.layer.cornerRadius = 4
         
         dropDown.anchorView = btt_coin        
         dropDown.dataSource = ["bitcoin", "ethereum", "omg"]
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            guard let cell = cell as? DropDownCell else { return }
+            guard let cell = cell as DropDownCell? else { return }
             let coinImage = UIImage.init(named: item)
             let coinView = UIImageView.init(image: coinImage)
             coinView.contentMode = .scaleAspectFit

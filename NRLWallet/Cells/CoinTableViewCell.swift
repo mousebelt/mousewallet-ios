@@ -19,9 +19,13 @@ class CoinTableViewCell: UITableViewCell {
     @IBOutlet weak var lb_count: UILabel!
     @IBOutlet weak var lb_balance: UILabel!
     
-
+    @IBOutlet weak var backview: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backview.layer.borderWidth = 1
+        self.backview.layer.borderColor = Constants.Colors.BorderColor1.cgColor
+        self.backview.layer.cornerRadius = 5
         // Initialization code
     }
 

@@ -31,6 +31,8 @@ class PinViewController: UIViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var enter: UIButton!
     
+    @IBOutlet weak var txtError: UILabel!
+    
     var pinArray : Array<UIImageView> = []
     var keyboardArray : Array<UIButton> = []
     var pincodeArray : Array<String> = []
@@ -52,6 +54,8 @@ class PinViewController: UIViewController {
     
     func setupViews() {
         txtTitle.text = "ENTER A PIN"
+        txtError.isHidden = true
+        txtTitle.textColor = Constants.Colors.BlackColor
         for i in 0 ... 9 {
             let tmpBtt = self.keyboardArray[i] as UIButton!
             tmpBtt?.layer.cornerRadius = (tmpBtt?.frame.size.height)!/2
@@ -62,7 +66,15 @@ class PinViewController: UIViewController {
         cancel.addTarget(self, action: #selector(self.keyboardCancel(_ :)), for: .touchUpInside)
         enter.addTarget(self, action: #selector(self.keyboardEnter(_ :)), for: .touchUpInside)
         self.formatPinView()
-        
+    }
+    
+    @objc func updateStateView() {
+        txtTitle.text = "VERIFY YOUR PIN"
+        txtError.isHidden = true
+        txtTitle.textColor = Constants.Colors.BlackColor
+        PIN_STATE = 1
+        pincodeConfirmArray.removeAll()
+        self.changePinView()
     }
     
     @objc func KeyboardClick(_ sender: UIButton) {
@@ -72,53 +84,58 @@ class PinViewController: UIViewController {
                 pincodeArray.append(strPin!)
                 self.changePinView()
             }
+            if(pincodeArray.count == PIN_MAX) {
+                Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.updateStateView), userInfo: nil, repeats: false)
+            }
         }else if(PIN_STATE == 1) {
-            if(pincodeConfirmArray.count <= PIN_MAX) {
+            if(pincodeConfirmArray.count < PIN_MAX) {
                 pincodeConfirmArray.append(strPin!)
                 self.changePinView()
             }
             if(pincodeConfirmArray.count == PIN_MAX) {   //check confirm
                 if(self.checkConfirmPin()) {
                     //success
-                    self.gotoMainview()
+                    Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.gotoMainview), userInfo: nil, repeats: false)
                 } else{
                     txtTitle.text = "ERROR"
+                    txtError.isHidden = false
                     txtTitle.textColor = Constants.Colors.MainColor
                 }
             } else {
                 txtTitle.text = "VERIFY YOUR PIN"
+                txtError.isHidden = true
                 txtTitle.textColor = Constants.Colors.BlackColor
-                
             }
         }
     }
     @objc func keyboardCancel(_ sender: UIButton) {
+        txtTitle.text = "ENTER A PIN"
+        txtError.isHidden = true
+        txtTitle.textColor = Constants.Colors.BlackColor
+        PIN_STATE = 0
+        pincodeArray.removeAll()
+        pincodeConfirmArray.removeAll()
+        self.changePinView()
+    }
+    
+    /// Backspace function
+    ///
+    /// - Parameter sender: UIButton
+    @objc func keyboardEnter(_ sender: UIButton) {
         if(PIN_STATE == 0) {
             if(pincodeArray.count > 0) {
                 pincodeArray.removeLast()
                 self.changePinView()
             }
         }else if(PIN_STATE == 1) {
+            txtTitle.text = "VERIFY YOUR PIN"
+            txtError.isHidden = true
+            txtTitle.textColor = Constants.Colors.BlackColor
             if(pincodeConfirmArray.count > 0) {
                 pincodeConfirmArray.removeLast()
                 self.changePinView()
             }
-            
         }
-        
-    }
-    @objc func keyboardEnter(_ sender: UIButton) {
-        if(pincodeArray.count == PIN_MAX){
-            if(PIN_STATE == 0) {
-                PIN_STATE = 1
-                txtTitle.text = "VERIFY YOUR PIN"
-                pincodeConfirmArray.removeAll()
-                self.formatPinView()
-            }else if(PIN_STATE == 1) {
-
-            }
-        }
-        
     }
     
     func changePinView() {
@@ -159,7 +176,7 @@ class PinViewController: UIViewController {
         return true
     }
     
-    func gotoMainview() {        
+    @objc func gotoMainview() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
         
@@ -167,7 +184,7 @@ class PinViewController: UIViewController {
         if let window = window {
             UIView.transition(with: window, duration: 0.0, options: .transitionFlipFromBottom, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
-                UIView.setAnimationsEnabled(true)
+                UIView.setAnimationsEnabled(false)
                 window.rootViewController = homeViewController
                 UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
