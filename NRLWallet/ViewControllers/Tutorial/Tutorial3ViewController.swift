@@ -27,9 +27,9 @@ class Tutorial3ViewController: UIViewController {
     }
     
     func setupViews() {
-        self.btnCreateAccount.layer.cornerRadius = 4
+        self.btnCreateAccount.layer.cornerRadius = Constants.Consts.CornerRadius!
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
-        self.cardView.layer.borderWidth = 2
+        self.cardView.layer.borderWidth = Constants.Consts.BorderWidth!
         self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
     }
     
@@ -39,7 +39,7 @@ class Tutorial3ViewController: UIViewController {
         let window = UIApplication.shared.keyWindow
         
         if let window = window {
-            UIView.transition(with: window, duration: 0.05, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: window, duration: 0.0, options: .autoreverse, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 window.rootViewController = mnemonicViewController

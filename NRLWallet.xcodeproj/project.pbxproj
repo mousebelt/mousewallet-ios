@@ -10,6 +10,7 @@
 		84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8720B9AC5700F36973 /* SideMenuViewController.swift */; };
 		84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8A20B9B08100F36973 /* BaseViewController.swift */; };
 		84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */; };
+		849ADB5320C138590060ED23 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ADB5220C138590060ED23 /* AppController.swift */; };
 		84C052A920BD16900013A7FF /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C052A820BD16900013A7FF /* ReceiveViewController.swift */; };
 		84C052AB20BD169D0013A7FF /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C052AA20BD169D0013A7FF /* SendViewController.swift */; };
 		84C052AD20BD16A70013A7FF /* SwapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C052AC20BD16A70013A7FF /* SwapViewController.swift */; };
@@ -62,6 +63,7 @@
 		84779D8720B9AC5700F36973 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84779D8A20B9B08100F36973 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
+		849ADB5220C138590060ED23 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		84C052A820BD16900013A7FF /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		84C052AA20BD169D0013A7FF /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		84C052AC20BD16A70013A7FF /* SwapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				84CA5C8220B85C060064D1BC /* UserData.swift */,
 				84CA5C8420B85C5C0064D1BC /* Constants.swift */,
+				849ADB5220C138590060ED23 /* AppController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -495,15 +498,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +546,7 @@
 				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
+				849ADB5320C138590060ED23 /* AppController.swift in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
 				84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */,
 				84C052A920BD16900013A7FF /* ReceiveViewController.swift in Sources */,

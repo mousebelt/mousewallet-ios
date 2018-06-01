@@ -27,9 +27,9 @@ class Tutorial2ViewController: UIViewController {
     }
     
     func setupViews() {
-        self.btnGotIt.layer.cornerRadius = 4
+        self.btnGotIt.layer.cornerRadius = Constants.Consts.CornerRadius!
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
-        self.cardView.layer.borderWidth = 2
+        self.cardView.layer.borderWidth = Constants.Consts.BorderWidth!
         self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
     }
     

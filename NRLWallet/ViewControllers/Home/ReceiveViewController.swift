@@ -9,6 +9,8 @@
 import UIKit
 import XLPagerTabStrip
 import DropDown
+import Toast_Swift
+import QRCode
 
 class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     
@@ -17,6 +19,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lb_coinAddress: UILabel!
     @IBOutlet weak var lb_coinBalance: UILabel!
     @IBOutlet weak var lb_coinName: UILabel!
+    @IBOutlet weak var img_qrCode: UIImageView!
     
     @IBOutlet weak var bottom_view: UIView!
     
@@ -42,9 +45,9 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func setupViews() {
-        bottom_view.layer.borderWidth = 1
+        bottom_view.layer.borderWidth = Constants.Consts.BorderWidth!
         bottom_view.layer.borderColor = Constants.Colors.BorderColor1.cgColor
-        bottom_view.layer.cornerRadius = 4
+        bottom_view.layer.cornerRadius = Constants.Consts.CornerRadius!
         
         dropDown.anchorView = btt_coin        
         dropDown.dataSource = ["bitcoin", "ethereum", "omg"]
@@ -60,7 +63,15 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         dropDown.selectionAction = { [weak self] (index, item) in
             self?.btt_coin.setImage(UIImage.init(named: item), for: .normal)
             self?.lb_coinAddress.text = item + " wallet address"
+            self?.makeQRCode()
         }
+        
+        self.btt_coin.imageView?.contentMode = .scaleAspectFit
+    }
+    
+    func makeQRCode() {
+        let qrCode = QRCode(self.lb_coinAddress.text!)!
+        self.img_qrCode.image = qrCode.image
     }
 
     @IBAction func selectDown(_ sender: Any) {
@@ -70,5 +81,9 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         dropDown.show()
     }
     @IBAction func copyClick(_ sender: Any) {
+        var style = ToastStyle()
+        style.backgroundColor = .gray
+        UIPasteboard.general.string = self.lb_coinAddress.text
+        self.view.makeToast("Address copied!", duration: 3.0, position: .bottom, style: style)
     }
 }

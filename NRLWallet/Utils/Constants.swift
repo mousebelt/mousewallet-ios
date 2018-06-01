@@ -27,4 +27,9 @@ struct Constants {
         public static let FontColor = UIColor(red: 135.0/255.0, green: 135.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         public static let ClearColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.0)
     }
+    
+    struct Consts {
+        public static let BorderWidth = 1.0 as CGFloat!
+        public static let CornerRadius = 5.0 as CGFloat!
+    }
 }

@@ -47,6 +47,9 @@ class CoinListViewController: UIViewController {
         coinmodel2.balance = "$10"
         coinmodel2.count = "3.215"
         self.coinArray.append(coinmodel2)
+        AppController.shared.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel2)
     }
     func setLeftMenu() {
         self.revealViewController().rearViewRevealWidth = view.frame.size.width * 0.8

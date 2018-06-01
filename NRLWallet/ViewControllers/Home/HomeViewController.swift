@@ -46,7 +46,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         buttonBarView.layer.cornerRadius = buttonBarView.layer.frame.size.height / 2
         buttonBarView.clipsToBounds = true
         buttonBarView.layer.borderColor = Constants.Colors.BorderColor.cgColor
-        buttonBarView.layer.borderWidth = 1
+        buttonBarView.layer.borderWidth = Constants.Consts.BorderWidth!
         let theight = buttonBarView.frame.size.height - 10
         
         changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in

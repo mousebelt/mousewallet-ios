@@ -23,9 +23,9 @@ class CoinTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backview.layer.borderWidth = 1
+        self.backview.layer.borderWidth = Constants.Consts.BorderWidth!
         self.backview.layer.borderColor = Constants.Colors.BorderColor1.cgColor
-        self.backview.layer.cornerRadius = 5
+        self.backview.layer.cornerRadius = Constants.Consts.CornerRadius!
         // Initialization code
     }
 

@@ -59,7 +59,7 @@ class PinViewController: UIViewController {
         for i in 0 ... 9 {
             let tmpBtt = self.keyboardArray[i] as UIButton!
             tmpBtt?.layer.cornerRadius = (tmpBtt?.frame.size.height)!/2
-            tmpBtt?.layer.borderWidth = 1
+            tmpBtt?.layer.borderWidth = Constants.Consts.BorderWidth!
             tmpBtt?.layer.borderColor = Constants.Colors.BorderColor.cgColor
             tmpBtt?.addTarget(self, action: #selector(KeyboardClick(_ :)), for: .touchUpInside)
         }
@@ -95,6 +95,7 @@ class PinViewController: UIViewController {
             if(pincodeConfirmArray.count == PIN_MAX) {   //check confirm
                 if(self.checkConfirmPin()) {
                     //success
+                    PIN_STATE = 2
                     Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.gotoMainview), userInfo: nil, repeats: false)
                 } else{
                     txtTitle.text = "ERROR"
@@ -182,7 +183,7 @@ class PinViewController: UIViewController {
         
         let window = UIApplication.shared.keyWindow
         if let window = window {
-            UIView.transition(with: window, duration: 0.0, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 window.rootViewController = homeViewController

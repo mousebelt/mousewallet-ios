@@ -8,5 +8,7 @@ target 'NRLWallet' do
   pod 'SWRevealViewController', '~> 2.3'
   pod 'XLPagerTabStrip', '~> 8.0'
   pod 'DropDown'
+  pod 'Toast-Swift', '~> 3.0.1'
+  pod 'QRCode'
   
 end

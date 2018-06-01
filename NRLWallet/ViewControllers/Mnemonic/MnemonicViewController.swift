@@ -30,19 +30,25 @@ class MnemonicViewController: UIViewController {
     }
     
     func setupViews() {
-        self.btnContinue.layer.cornerRadius = 4
+        self.btnContinue.layer.cornerRadius = Constants.Consts.CornerRadius!
         
         mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
         mnemonicList.addTags(self.mnemonic)
         
+        
         let viewBorder = CAShapeLayer()
         viewBorder.strokeColor = UIColor(red: 214/255, green: 210/255, blue: 214/255, alpha: 1).cgColor
-        viewBorder.lineDashPattern = [4, 4]
+        viewBorder.lineDashPattern = [8, 8]
         viewBorder.frame = mnemonicListContainer.bounds
         viewBorder.fillColor = nil
-        viewBorder.cornerRadius = 4
-        viewBorder.path = UIBezierPath(rect: mnemonicListContainer.bounds).cgPath
+        viewBorder.cornerRadius = Constants.Consts.CornerRadius!
+        var rect = CGRect(x:0, y: 0, width:self.view.bounds.size.width - 36 * 2, height: mnemonicListContainer.bounds.size.height)
+        viewBorder.path = UIBezierPath(rect: rect).cgPath
+        viewBorder.masksToBounds = false
         mnemonicListContainer.layer.addSublayer(viewBorder)
+//        viewBorder.setNeedsLayout()
+//        mnemonicListContainer.setNeedsLayout()
+//        mnemonicListContainer.setNeedsUpdateConstraints()
     }
     
     @IBAction func onContinue(_ sender: Any) {
