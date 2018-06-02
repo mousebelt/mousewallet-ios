@@ -107,15 +107,14 @@
                         <viewLayoutGuide key="safeArea" id="K0t-lp-weB"/>
                     </view>
                     <navigationItem key="navigationItem" id="S4E-jg-CC3">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" style="plain" id="4EK-bt-12a">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="backBarButtonItem" title="BACK" id="lzi-OC-SoD">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="setting" id="0Nt-4Q-3Vv">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bttMenu" destination="4EK-bt-12a" id="0JM-z4-wOw"/>
                         <outlet property="buttonBarView" destination="Z0Y-oA-qcM" id="ssw-Hz-xeR"/>
                         <outlet property="containerView" destination="nxh-7c-A32" id="zEu-qP-liy"/>
                     </connections>
@@ -845,7 +844,7 @@
                                 <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coin_cell" rowHeight="100" id="GqB-jC-fBM" customClass="CoinTableViewCell" customModule="NRLWallet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="coin_cell" rowHeight="100" id="GqB-jC-fBM" customClass="CoinTableViewCell" customModule="NRLWallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GqB-jC-fBM" id="ijl-dP-QrA">
@@ -1691,4 +1690,5 @@
         <image name="star" width="20" height="20"/>
         <image name="user" width="16" height="16"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

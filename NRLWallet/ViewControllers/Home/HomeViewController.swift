@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-import SWRevealViewController
+//import SWRevealViewController
 import XLPagerTabStrip
 
 class HomeViewController: ButtonBarPagerTabStripViewController {
@@ -26,8 +26,10 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidLoad() {
-        self.addMenuAction()
-        self.setLeftMenu()
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+//        self.addMenuAction()
+        self.revealViewController().panGestureRecognizer().isEnabled=false;
+//        self.setLeftMenu()
 //        self.setupViews()
         // change selected bar color
         settings.style.buttonBarBackgroundColor = .white
@@ -116,12 +118,17 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     func addMenuAction() {
-        if self.revealViewController() != nil {
-            self.bttMenu.target = self.revealViewController()
-            self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-        }
+//        self.bttMenu.target = self
+//        self.bttMenu.action = #selector(self.gotoBack)
+//        if self.revealViewController() != nil {
+//            self.bttMenu.target = self.revealViewController()
+//            self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+//        }
     }
     
+    @objc func gotoBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 extension UISearchBar {
     func changeSearchBarColor(color : UIColor) {
