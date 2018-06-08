@@ -35,11 +35,20 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupDelegate()
         self.setupViews()
+        self.addDoneCancelToolbar()
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title:"Send")
+    }
+    
+    func setupDelegate() {
+        self.txt_receiveAddress.delegate = self
+        self.txt_memo.delegate = self
+        self.txt_fromCoin.delegate = self
+        self.txt_toCoin.delegate = self
     }
     
     func setupViews() {
@@ -83,7 +92,36 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     @IBAction func clickSend(_ sender: Any) {
     }
     
-    
-    
-    
+    // Default actions:
+    @objc func doneButtonTapped() {
+        self.txt_fromCoin.resignFirstResponder()
+        self.txt_toCoin.resignFirstResponder()
+    }
+    @objc func cancelButtonTapped() {
+        self.txt_fromCoin.resignFirstResponder()
+        self.txt_toCoin.resignFirstResponder()
+    }
+    func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
+        let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
+        let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
+        
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: onCancel.target, action: onCancel.action),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
+        ]
+        toolbar.sizeToFit()
+        self.txt_fromCoin.inputAccessoryView = toolbar
+        self.txt_toCoin.inputAccessoryView = toolbar
+    }
+}
+// MARK: - TextFieldDelegate
+//
+extension SendViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()        
+        return true
+    }
 }

@@ -48,6 +48,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+        self.addDoneCancelToolbar()
     }
     
     // MARK: - IndicatorInfoProvider
@@ -95,6 +96,8 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self?.lb_toCoinSymbol.text = coindata.name
             self?.img_toCoin.image = UIImage(named: coindata.image)
         }
+        self.txt_fromCoin.delegate = self
+        self.txt_toCoin.delegate = self
     }
 
     @IBAction func clickFromCoin(_ sender: Any) {
@@ -120,4 +123,38 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     @IBAction func clickSend(_ sender: Any) {
     }
     
+    // Default actions:
+    @objc func doneButtonTapped() {
+        self.txt_fromCoin.resignFirstResponder()
+        self.txt_toCoin.resignFirstResponder()
+    }
+    @objc func cancelButtonTapped() {
+        self.txt_fromCoin.resignFirstResponder()
+        self.txt_toCoin.resignFirstResponder()
+    }
+    func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
+        let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
+        let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
+        
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: onCancel.target, action: onCancel.action),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
+        ]
+        toolbar.sizeToFit()
+        self.txt_fromCoin.inputAccessoryView = toolbar
+        self.txt_toCoin.inputAccessoryView = toolbar
+    }
+}
+
+// MARK: - TextFieldDelegate
+//
+extension SwapViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }

@@ -19,6 +19,12 @@ class CoinListViewController: UIViewController {
         self.addMenuAction()
         self.setLeftMenu()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.revealViewController().panGestureRecognizer().isEnabled=true;
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

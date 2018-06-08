@@ -26,7 +26,6 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidLoad() {
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
 //        self.addMenuAction()
         self.revealViewController().panGestureRecognizer().isEnabled=false;
 //        self.setLeftMenu()
@@ -76,7 +75,6 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         return [child_1, child_2, child_3]
     }
     
-    
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
         if indexWasChanged && toIndex > -1 && toIndex < viewControllers.count {
@@ -114,20 +112,13 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         clearButton.setImage(UIImage(named: "ic_cancel"), for: .normal)
         clearButton.setImage(clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
         clearButton.tintColor = UIColor.white
-        
     }
     
     func addMenuAction() {
-//        self.bttMenu.target = self
-//        self.bttMenu.action = #selector(self.gotoBack)
 //        if self.revealViewController() != nil {
 //            self.bttMenu.target = self.revealViewController()
 //            self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
 //        }
-    }
-    
-    @objc func gotoBack() {
-        self.navigationController?.popViewController(animated: true)
     }
 }
 extension UISearchBar {

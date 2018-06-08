@@ -21,7 +21,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.generateMnemonic()
         self.setupViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,6 +29,10 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func generateMnemonic() {
+        
     }
     
     func setupViews() {
