@@ -81,7 +81,8 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         }
         if(isMatch){
             let storyboard = UIStoryboard(name: "Pin", bundle: nil)
-            let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC")
+            let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC") as! PinViewController
+            PinViewController.mnemonicInitial = self.mnemonicInitial
             self.navigationController?.pushViewController(PinViewController, animated: true)
         }else {
             var style = ToastStyle()

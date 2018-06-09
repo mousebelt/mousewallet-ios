@@ -15,6 +15,8 @@ struct Constants {
     struct DefaultsKeys {
         public static let kKeyUserToken = "SavedUserToken"
         public static let kKeyFilterPreference = "KEYFILTERPREFERENCE"
+        public static let kKeyEncryptedMessage = "EncryptedMessage"
+        public static let kKeyEncryptedKey = "EncryptedKey"
     }
     struct Colors {
         public static let ActiveLayerBackgroundColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 237.0/255.0, alpha: 1.0)
@@ -29,7 +31,7 @@ struct Constants {
     }
     
     struct Consts {
-        public static let BorderWidth = 1.0 as CGFloat!
-        public static let CornerRadius = 5.0 as CGFloat!
+        public static let BorderWidth = 1.0 as CGFloat?
+        public static let CornerRadius = 5.0 as CGFloat?
     }
 }

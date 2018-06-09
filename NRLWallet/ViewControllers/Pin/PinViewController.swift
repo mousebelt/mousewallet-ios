@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RNCryptor
 
 class PinViewController: UIViewController {
     
@@ -32,6 +33,10 @@ class PinViewController: UIViewController {
     @IBOutlet weak var enter: UIButton!
     
     @IBOutlet weak var txtError: UILabel!
+    
+    var mnemonicInitial : [String]!
+    var encryptedMessage : String!
+    var encryptedKey : String!
     
     var pinArray : Array<UIImageView> = []
     var keyboardArray : Array<UIButton> = []
@@ -177,7 +182,36 @@ class PinViewController: UIViewController {
         return true
     }
     
+    func prepairEncrypt() -> String {
+        var encryptionKey = String()
+        for i in 0 ... self.pincodeArray.count - 1
+        {
+            encryptionKey.append(self.pincodeArray[i])
+        }
+        self.encryptedKey = encryptionKey
+        var message = String()
+        for i in 0 ... self.mnemonicInitial.count - 1
+        {
+            message.append(self.mnemonicInitial[i])
+            message.append(" ")
+        }
+        do {
+            let encryptedMessage = try AppController.shared.encryptMessage(message: message, encryptionKey: encryptionKey)
+            return encryptedMessage
+        }
+        catch {
+            print(error)
+            return ""
+        }
+        
+    }
+    
     @objc func gotoMainview() {
+        self.encryptedMessage = self.prepairEncrypt()
+        //save encrypted Message and Key to app storage
+        UserData.saveEncryptedData(Constants.DefaultsKeys.kKeyEncryptedMessage, value: self.encryptedMessage)
+        UserData.saveEncryptedData(Constants.DefaultsKeys.kKeyEncryptedKey, value: self.encryptedKey)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
         

@@ -94,10 +94,10 @@ class SideMenuViewController: UIViewController {
         self.vi_Logout.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
         self.revealViewController().revealToggle(animated:true)
         
-        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
-        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinNavVC")
-        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDel.window?.rootViewController = PinViewController
+//        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+//        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinNavVC")
+//        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDel.window?.rootViewController = PinViewController
     }
     
 

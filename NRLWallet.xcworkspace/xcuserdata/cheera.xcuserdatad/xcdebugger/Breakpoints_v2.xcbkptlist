@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NRLWallet/ViewControllers/Mnemonic/VerifyMnemonicViewController.swift"
-            timestampString = "550202860.220374"
+            filePath = "NRLWallet/ViewControllers/Pin/PinViewController.swift"
+            timestampString = "550227341.7966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "onContinue(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NRLWallet/ViewControllers/Mnemonic/VerifyMnemonicViewController.swift"
-            timestampString = "550202860.22078"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "onContinue(_:)"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "gotoMainview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

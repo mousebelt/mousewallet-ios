@@ -12,5 +12,6 @@ target 'NRLWallet' do
   pod 'QRCode'
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'Alamofire'
+  pod 'RNCryptor', '~> 5.0'
   
 end
