@@ -34,28 +34,66 @@
 		D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */; };
 		D7A6E93120AEB0570075596E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E92F20AEB0570075596E /* Main.storyboard */; };
 		D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */; };
-		D7A6E94120AEB0570075596E /* NRLWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94020AEB0570075596E /* NRLWalletTests.swift */; };
-		D7A6E94C20AEB0570075596E /* NRLWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */; };
 		D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */; };
 		D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */; };
+		E1496CC920CB3A8800E3AD45 /* BigInt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CC620CB3A7800E3AD45 /* BigInt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CD820CB3C3400E3AD45 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CCE20CB3C2B00E3AD45 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CDA20CB3C3400E3AD45 /* NRLWalletSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CCD20CB3C2B00E3AD45 /* NRLWalletSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CDC20CB3C3400E3AD45 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CCB20CB3C2A00E3AD45 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CDE20CB3C3400E3AD45 /* secp256k1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CCF20CB3C2B00E3AD45 /* secp256k1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CE020CB3C3400E3AD45 /* SipHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CCC20CB3C2B00E3AD45 /* SipHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CE220CB3C3400E3AD45 /* Web3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1496CD020CB3C2B00E3AD45 /* Web3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1496CF920CB3E2700E3AD45 /* add_scalar.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CE620CB3E2700E3AD45 /* add_scalar.c */; };
+		E1496CFA20CB3E2700E3AD45 /* fe.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CE820CB3E2700E3AD45 /* fe.c */; };
+		E1496CFB20CB3E2700E3AD45 /* ge.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CEB20CB3E2700E3AD45 /* ge.c */; };
+		E1496CFC20CB3E2700E3AD45 /* key_exchange.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CED20CB3E2700E3AD45 /* key_exchange.c */; };
+		E1496CFD20CB3E2700E3AD45 /* keypair.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CEE20CB3E2700E3AD45 /* keypair.c */; };
+		E1496CFE20CB3E2700E3AD45 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1496CEF20CB3E2700E3AD45 /* license.txt */; };
+		E1496CFF20CB3E2700E3AD45 /* sc.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CF220CB3E2700E3AD45 /* sc.c */; };
+		E1496D0020CB3E2700E3AD45 /* seed.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CF420CB3E2700E3AD45 /* seed.c */; };
+		E1496D0120CB3E2700E3AD45 /* sha512.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CF520CB3E2700E3AD45 /* sha512.c */; };
+		E1496D0220CB3E2700E3AD45 /* sign.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CF720CB3E2700E3AD45 /* sign.c */; };
+		E1496D0320CB3E2700E3AD45 /* verify.c in Sources */ = {isa = PBXBuildFile; fileRef = E1496CF820CB3E2700E3AD45 /* verify.c */; };
+		E1496D0520CB3E8F00E3AD45 /* add_scalar.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CE620CB3E2700E3AD45 /* add_scalar.c */; };
+		E1496D0620CB3E8F00E3AD45 /* ed25519.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CE720CB3E2700E3AD45 /* ed25519.h */; };
+		E1496D0720CB3E8F00E3AD45 /* fe.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CE820CB3E2700E3AD45 /* fe.c */; };
+		E1496D0820CB3E8F00E3AD45 /* fe.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CE920CB3E2700E3AD45 /* fe.h */; };
+		E1496D0920CB3E8F00E3AD45 /* fixedint.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CEA20CB3E2700E3AD45 /* fixedint.h */; };
+		E1496D0A20CB3E8F00E3AD45 /* ge.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CEB20CB3E2700E3AD45 /* ge.c */; };
+		E1496D0B20CB3E8F00E3AD45 /* ge.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CEC20CB3E2700E3AD45 /* ge.h */; };
+		E1496D0C20CB3E8F00E3AD45 /* key_exchange.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CED20CB3E2700E3AD45 /* key_exchange.c */; };
+		E1496D0D20CB3E8F00E3AD45 /* keypair.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CEE20CB3E2700E3AD45 /* keypair.c */; };
+		E1496D0E20CB3E8F00E3AD45 /* license.txt in Headers */ = {isa = PBXBuildFile; fileRef = E1496CEF20CB3E2700E3AD45 /* license.txt */; };
+		E1496D0F20CB3E8F00E3AD45 /* module.modulemap in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF020CB3E2700E3AD45 /* module.modulemap */; };
+		E1496D1020CB3E8F00E3AD45 /* precomp_data.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF120CB3E2700E3AD45 /* precomp_data.h */; };
+		E1496D1120CB3E8F00E3AD45 /* sc.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF220CB3E2700E3AD45 /* sc.c */; };
+		E1496D1220CB3E8F00E3AD45 /* sc.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF320CB3E2700E3AD45 /* sc.h */; };
+		E1496D1320CB3E8F00E3AD45 /* seed.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF420CB3E2700E3AD45 /* seed.c */; };
+		E1496D1420CB3E8F00E3AD45 /* sha512.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF520CB3E2700E3AD45 /* sha512.c */; };
+		E1496D1520CB3E8F00E3AD45 /* sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF620CB3E2700E3AD45 /* sha512.h */; };
+		E1496D1620CB3E8F00E3AD45 /* sign.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF720CB3E2700E3AD45 /* sign.c */; };
+		E1496D1720CB3E8F00E3AD45 /* verify.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF820CB3E2700E3AD45 /* verify.c */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D7A6E93D20AEB0570075596E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7A6E92020AEB0560075596E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7A6E92720AEB0570075596E;
-			remoteInfo = NRLWallet;
+/* Begin PBXCopyFilesBuildPhase section */
+		E1496CCA20CB3A8800E3AD45 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1496CC920CB3A8800E3AD45 /* BigInt.framework in Embed Frameworks */,
+				E1496CDE20CB3C3400E3AD45 /* secp256k1.framework in Embed Frameworks */,
+				E1496CDA20CB3C3400E3AD45 /* NRLWalletSDK.framework in Embed Frameworks */,
+				E1496CE220CB3C3400E3AD45 /* Web3.framework in Embed Frameworks */,
+				E1496CD820CB3C3400E3AD45 /* CryptoSwift.framework in Embed Frameworks */,
+				E1496CDC20CB3C3400E3AD45 /* PromiseKit.framework in Embed Frameworks */,
+				E1496CE020CB3C3400E3AD45 /* SipHash.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7A6E94820AEB0570075596E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7A6E92020AEB0560075596E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D7A6E92720AEB0570075596E;
-			remoteInfo = NRLWallet;
-		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D9795419F5DF3CF0C8D0F77 /* Pods-NRLWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,10 +126,8 @@
 		D7A6E92D20AEB0570075596E /* Tutorial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial1ViewController.swift; sourceTree = "<group>"; };
 		D7A6E93020AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7A6E93520AEB0570075596E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D7A6E93C20AEB0570075596E /* NRLWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRLWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E94020AEB0570075596E /* NRLWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletTests.swift; sourceTree = "<group>"; };
 		D7A6E94220AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7A6E94720AEB0570075596E /* NRLWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRLWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A6E94B20AEB0570075596E /* NRLWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletUITests.swift; sourceTree = "<group>"; };
 		D7A6E94D20AEB0570075596E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A6E96320AEC1C60075596E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +135,32 @@
 		D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
 		D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
 		DE2407B1E8268C55E22B7B5C /* Pods_NRLWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1496CC620CB3A7800E3AD45 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BigInt.framework; sourceTree = "<group>"; };
+		E1496CCB20CB3C2A00E3AD45 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		E1496CCC20CB3C2B00E3AD45 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SipHash.framework; sourceTree = "<group>"; };
+		E1496CCD20CB3C2B00E3AD45 /* NRLWalletSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NRLWalletSDK.framework; sourceTree = "<group>"; };
+		E1496CCE20CB3C2B00E3AD45 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		E1496CCF20CB3C2B00E3AD45 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = secp256k1.framework; sourceTree = "<group>"; };
+		E1496CD020CB3C2B00E3AD45 /* Web3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Web3.framework; sourceTree = "<group>"; };
+		E1496CE620CB3E2700E3AD45 /* add_scalar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = add_scalar.c; sourceTree = "<group>"; };
+		E1496CE720CB3E2700E3AD45 /* ed25519.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ed25519.h; sourceTree = "<group>"; };
+		E1496CE820CB3E2700E3AD45 /* fe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fe.c; sourceTree = "<group>"; };
+		E1496CE920CB3E2700E3AD45 /* fe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fe.h; sourceTree = "<group>"; };
+		E1496CEA20CB3E2700E3AD45 /* fixedint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixedint.h; sourceTree = "<group>"; };
+		E1496CEB20CB3E2700E3AD45 /* ge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ge.c; sourceTree = "<group>"; };
+		E1496CEC20CB3E2700E3AD45 /* ge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ge.h; sourceTree = "<group>"; };
+		E1496CED20CB3E2700E3AD45 /* key_exchange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = key_exchange.c; sourceTree = "<group>"; };
+		E1496CEE20CB3E2700E3AD45 /* keypair.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keypair.c; sourceTree = "<group>"; };
+		E1496CEF20CB3E2700E3AD45 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		E1496CF020CB3E2700E3AD45 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E1496CF120CB3E2700E3AD45 /* precomp_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = precomp_data.h; sourceTree = "<group>"; };
+		E1496CF220CB3E2700E3AD45 /* sc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc.c; sourceTree = "<group>"; };
+		E1496CF320CB3E2700E3AD45 /* sc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sc.h; sourceTree = "<group>"; };
+		E1496CF420CB3E2700E3AD45 /* seed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = seed.c; sourceTree = "<group>"; };
+		E1496CF520CB3E2700E3AD45 /* sha512.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha512.c; sourceTree = "<group>"; };
+		E1496CF620CB3E2700E3AD45 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
+		E1496CF720CB3E2700E3AD45 /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
+		E1496CF820CB3E2700E3AD45 /* verify.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = verify.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,20 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A48ADB8CA58B9500A4DB4A83 /* Pods_NRLWallet.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E93920AEB0570075596E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E94420AEB0570075596E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +260,7 @@
 		D7A6E91F20AEB0560075596E = {
 			isa = PBXGroup;
 			children = (
+				E1496C9420CB2FF600E3AD45 /* library */,
 				D7A6E92A20AEB0570075596E /* NRLWallet */,
 				D7A6E93F20AEB0570075596E /* NRLWalletTests */,
 				D7A6E94A20AEB0570075596E /* NRLWalletUITests */,
@@ -225,8 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				D7A6E92820AEB0570075596E /* NRLWallet.app */,
-				D7A6E93C20AEB0570075596E /* NRLWalletTests.xctest */,
-				D7A6E94720AEB0570075596E /* NRLWalletUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,7 +381,77 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E1496C9420CB2FF600E3AD45 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				E1496CE520CB3E2700E3AD45 /* ed25519-C */,
+				E1496CCE20CB3C2B00E3AD45 /* CryptoSwift.framework */,
+				E1496CCD20CB3C2B00E3AD45 /* NRLWalletSDK.framework */,
+				E1496CCB20CB3C2A00E3AD45 /* PromiseKit.framework */,
+				E1496CCF20CB3C2B00E3AD45 /* secp256k1.framework */,
+				E1496CCC20CB3C2B00E3AD45 /* SipHash.framework */,
+				E1496CD020CB3C2B00E3AD45 /* Web3.framework */,
+				E1496CC620CB3A7800E3AD45 /* BigInt.framework */,
+			);
+			path = library;
+			sourceTree = "<group>";
+		};
+		E1496CE520CB3E2700E3AD45 /* ed25519-C */ = {
+			isa = PBXGroup;
+			children = (
+				E1496CE620CB3E2700E3AD45 /* add_scalar.c */,
+				E1496CE720CB3E2700E3AD45 /* ed25519.h */,
+				E1496CE820CB3E2700E3AD45 /* fe.c */,
+				E1496CE920CB3E2700E3AD45 /* fe.h */,
+				E1496CEA20CB3E2700E3AD45 /* fixedint.h */,
+				E1496CEB20CB3E2700E3AD45 /* ge.c */,
+				E1496CEC20CB3E2700E3AD45 /* ge.h */,
+				E1496CED20CB3E2700E3AD45 /* key_exchange.c */,
+				E1496CEE20CB3E2700E3AD45 /* keypair.c */,
+				E1496CEF20CB3E2700E3AD45 /* license.txt */,
+				E1496CF020CB3E2700E3AD45 /* module.modulemap */,
+				E1496CF120CB3E2700E3AD45 /* precomp_data.h */,
+				E1496CF220CB3E2700E3AD45 /* sc.c */,
+				E1496CF320CB3E2700E3AD45 /* sc.h */,
+				E1496CF420CB3E2700E3AD45 /* seed.c */,
+				E1496CF520CB3E2700E3AD45 /* sha512.c */,
+				E1496CF620CB3E2700E3AD45 /* sha512.h */,
+				E1496CF720CB3E2700E3AD45 /* sign.c */,
+				E1496CF820CB3E2700E3AD45 /* verify.c */,
+			);
+			path = "ed25519-C";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1496D0420CB3E8100E3AD45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1496D0520CB3E8F00E3AD45 /* add_scalar.c in Headers */,
+				E1496D0620CB3E8F00E3AD45 /* ed25519.h in Headers */,
+				E1496D0720CB3E8F00E3AD45 /* fe.c in Headers */,
+				E1496D0820CB3E8F00E3AD45 /* fe.h in Headers */,
+				E1496D0920CB3E8F00E3AD45 /* fixedint.h in Headers */,
+				E1496D0A20CB3E8F00E3AD45 /* ge.c in Headers */,
+				E1496D0B20CB3E8F00E3AD45 /* ge.h in Headers */,
+				E1496D0C20CB3E8F00E3AD45 /* key_exchange.c in Headers */,
+				E1496D0D20CB3E8F00E3AD45 /* keypair.c in Headers */,
+				E1496D0E20CB3E8F00E3AD45 /* license.txt in Headers */,
+				E1496D0F20CB3E8F00E3AD45 /* module.modulemap in Headers */,
+				E1496D1020CB3E8F00E3AD45 /* precomp_data.h in Headers */,
+				E1496D1120CB3E8F00E3AD45 /* sc.c in Headers */,
+				E1496D1220CB3E8F00E3AD45 /* sc.h in Headers */,
+				E1496D1320CB3E8F00E3AD45 /* seed.c in Headers */,
+				E1496D1420CB3E8F00E3AD45 /* sha512.c in Headers */,
+				E1496D1520CB3E8F00E3AD45 /* sha512.h in Headers */,
+				E1496D1620CB3E8F00E3AD45 /* sign.c in Headers */,
+				E1496D1720CB3E8F00E3AD45 /* verify.c in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		D7A6E92720AEB0570075596E /* NRLWallet */ = {
@@ -346,7 +463,8 @@
 				D7A6E92520AEB0570075596E /* Frameworks */,
 				D7A6E92620AEB0570075596E /* Resources */,
 				B2542794CFF2BAD3C765DA4F /* [CP] Embed Pods Frameworks */,
-				DBD5174EEF999A6DEB871252 /* [CP] Copy Pods Resources */,
+				E1496CCA20CB3A8800E3AD45 /* Embed Frameworks */,
+				E1496D0420CB3E8100E3AD45 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -356,42 +474,6 @@
 			productName = NRLWallet;
 			productReference = D7A6E92820AEB0570075596E /* NRLWallet.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D7A6E93B20AEB0570075596E /* NRLWalletTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D7A6E95320AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletTests" */;
-			buildPhases = (
-				D7A6E93820AEB0570075596E /* Sources */,
-				D7A6E93920AEB0570075596E /* Frameworks */,
-				D7A6E93A20AEB0570075596E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D7A6E93E20AEB0570075596E /* PBXTargetDependency */,
-			);
-			name = NRLWalletTests;
-			productName = NRLWalletTests;
-			productReference = D7A6E93C20AEB0570075596E /* NRLWalletTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D7A6E94620AEB0570075596E /* NRLWalletUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D7A6E95620AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletUITests" */;
-			buildPhases = (
-				D7A6E94320AEB0570075596E /* Sources */,
-				D7A6E94420AEB0570075596E /* Frameworks */,
-				D7A6E94520AEB0570075596E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D7A6E94920AEB0570075596E /* PBXTargetDependency */,
-			);
-			name = NRLWalletUITests;
-			productName = NRLWalletUITests;
-			productReference = D7A6E94720AEB0570075596E /* NRLWalletUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -406,16 +488,6 @@
 					D7A6E92720AEB0570075596E = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-					};
-					D7A6E93B20AEB0570075596E = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = D7A6E92720AEB0570075596E;
-					};
-					D7A6E94620AEB0570075596E = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = D7A6E92720AEB0570075596E;
 					};
 				};
 			};
@@ -433,8 +505,6 @@
 			projectRoot = "";
 			targets = (
 				D7A6E92720AEB0570075596E /* NRLWallet */,
-				D7A6E93B20AEB0570075596E /* NRLWalletTests */,
-				D7A6E94620AEB0570075596E /* NRLWalletUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -447,25 +517,12 @@
 				D792923220B090FD00DC558C /* SourceSansPro-Regular.ttf in Resources */,
 				84CA5C7820B7302E0064D1BC /* Mnemonic.storyboard in Resources */,
 				D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */,
+				E1496CFE20CB3E2700E3AD45 /* license.txt in Resources */,
 				84CA5C7D20B73DB60064D1BC /* Pin.storyboard in Resources */,
 				D7A6E93120AEB0570075596E /* Main.storyboard in Resources */,
 				84CA5C7920B7302E0064D1BC /* Tutorial.storyboard in Resources */,
 				84CA5CB820B88D000064D1BC /* Assets.xcassets in Resources */,
 				D792923120B090F900DC558C /* SourceSansPro-SemiBold.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E93A20AEB0570075596E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E94520AEB0570075596E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +554,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
@@ -507,6 +565,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
@@ -520,21 +579,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DBD5174EEF999A6DEB871252 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWallet/Pods-NRLWallet-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -543,58 +587,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E79E5720BEFAFD00D08645 /* CoinModel.swift in Sources */,
+				E1496D0020CB3E2700E3AD45 /* seed.c in Sources */,
 				84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */,
+				E1496CFC20CB3E2700E3AD45 /* key_exchange.c in Sources */,
 				84CA5C7B20B730750064D1BC /* PinViewController.swift in Sources */,
 				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
+				E1496CFF20CB3E2700E3AD45 /* sc.c in Sources */,
+				E1496CFA20CB3E2700E3AD45 /* fe.c in Sources */,
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
+				E1496D0320CB3E2700E3AD45 /* verify.c in Sources */,
 				849ADB5320C138590060ED23 /* AppController.swift in Sources */,
+				E1496CFB20CB3E2700E3AD45 /* ge.c in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
 				84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */,
 				84C052A920BD16900013A7FF /* ReceiveViewController.swift in Sources */,
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */,
+				E1496CFD20CB3E2700E3AD45 /* keypair.c in Sources */,
 				84C052AD20BD16A70013A7FF /* SwapViewController.swift in Sources */,
 				84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */,
 				D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */,
 				84C052AB20BD169D0013A7FF /* SendViewController.swift in Sources */,
+				E1496CF920CB3E2700E3AD45 /* add_scalar.c in Sources */,
 				D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */,
 				84CA5C8320B85C060064D1BC /* UserData.swift in Sources */,
+				E1496D0120CB3E2700E3AD45 /* sha512.c in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
 				84E79E5420BEF75900D08645 /* CoinTableViewCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E93820AEB0570075596E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D7A6E94120AEB0570075596E /* NRLWalletTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7A6E94320AEB0570075596E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D7A6E94C20AEB0570075596E /* NRLWalletUITests.swift in Sources */,
+				E1496D0220CB3E2700E3AD45 /* sign.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D7A6E93E20AEB0570075596E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D7A6E92720AEB0570075596E /* NRLWallet */;
-			targetProxy = D7A6E93D20AEB0570075596E /* PBXContainerItemProxy */;
-		};
-		D7A6E94920AEB0570075596E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D7A6E92720AEB0570075596E /* NRLWallet */;
-			targetProxy = D7A6E94820AEB0570075596E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D7A6E92F20AEB0570075596E /* Main.storyboard */ = {
@@ -733,10 +758,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework",
+					"$(PROJECT_DIR)/library",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/library";
 				INFOPLIST_FILE = NRLWallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/library",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -754,80 +785,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/framework",
+					"$(PROJECT_DIR)/library",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/library";
 				INFOPLIST_FILE = NRLWallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/library",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		D7A6E95420AEB0570075596E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NRLWalletTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NRLWallet.app/NRLWallet";
-			};
-			name = Debug;
-		};
-		D7A6E95520AEB0570075596E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NRLWalletTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NRLWallet.app/NRLWallet";
-			};
-			name = Release;
-		};
-		D7A6E95720AEB0570075596E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NRLWalletUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NRLWallet;
-			};
-			name = Debug;
-		};
-		D7A6E95820AEB0570075596E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NRLWalletUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NRLWallet;
 			};
 			name = Release;
 		};
@@ -848,24 +819,6 @@
 			buildConfigurations = (
 				D7A6E95120AEB0570075596E /* Debug */,
 				D7A6E95220AEB0570075596E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D7A6E95320AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D7A6E95420AEB0570075596E /* Debug */,
-				D7A6E95520AEB0570075596E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D7A6E95620AEB0570075596E /* Build configuration list for PBXNativeTarget "NRLWalletUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D7A6E95720AEB0570075596E /* Debug */,
-				D7A6E95820AEB0570075596E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

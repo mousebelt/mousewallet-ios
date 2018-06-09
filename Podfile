@@ -11,5 +11,6 @@ target 'NRLWallet' do
   pod 'Toast-Swift', '~> 3.0.1'
   pod 'QRCode'
   pod 'TPKeyboardAvoiding', '~> 1.3'
+  pod 'Alamofire'
   
 end

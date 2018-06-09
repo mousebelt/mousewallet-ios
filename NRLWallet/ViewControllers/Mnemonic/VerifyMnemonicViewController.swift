@@ -8,10 +8,12 @@
 
 import UIKit
 import TagListView
+import Toast_Swift
 
 class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     
-    let mnemonicWords = ["accident", "impose", "goat", "inhale", "vintage", "idle", "crazy", "reveal", "reopen", "chest", "picnic", "uphold"]
+    var mnemonicWords = [String]()
+    var mnemonicInitial : [String]!
     
     @IBOutlet weak var btnContinue: UIButton!
     
@@ -21,7 +23,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.generateMnemonic()
+        self.generateMnemonicRandom()
         self.setupViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,8 +33,17 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func generateMnemonic() {
-        
+    func generateMnemonicRandom() {
+        var tmpMnemonic = self.mnemonicInitial as! [String]
+        for i in 0...(tmpMnemonic.count) - 1
+        {
+            let rand = Int(arc4random_uniform(UInt32(tmpMnemonic.count)))
+            
+            self.mnemonicWords.append(tmpMnemonic[rand])
+            
+            tmpMnemonic.remove(at: rand)
+        }
+
     }
     
     func setupViews() {
@@ -58,9 +69,26 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     }
     
     @IBAction func onContinue(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
-        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC")
-        self.navigationController?.pushViewController(PinViewController, animated: true)
+        //check mnemonic index
+        var isMatch = true
+        for i in 0...(self.mnemonicInitial.count) - 1
+        {
+            if(self.mnemonicInitial[i] != self.mnemonicList.tagViews[i].titleLabel?.text)
+            {
+                isMatch = false
+                break
+            }
+        }
+        if(isMatch){
+            let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+            let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC")
+            self.navigationController?.pushViewController(PinViewController, animated: true)
+        }else {
+            var style = ToastStyle()
+            style.backgroundColor = .gray
+            self.view.makeToast("Mnemonic is not matching!", duration: 3.0, position: .bottom, style: style)
+            
+        }
     }
     
     @IBAction func onBack(_ sender: Any) {

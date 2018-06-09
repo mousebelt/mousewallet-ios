@@ -8,10 +8,11 @@
 
 import UIKit
 import TagListView
+import NRLWalletSDK
 
 class MnemonicViewController: UIViewController {
     
-    let mnemonic = ["accident", "impose", "goat", "inhale", "vintage", "idle", "crazy", "reveal", "reopen", "chest", "picnic", "uphold"]
+    var mnemonic: [String]?
     
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var mnemonicList: TagListView!
@@ -19,7 +20,7 @@ class MnemonicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.generateMnemonic()
         self.setupViews()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,11 +30,19 @@ class MnemonicViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func generateMnemonic() {
+        do {
+            self.mnemonic = try NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
+        } catch {
+            print(error)
+        }
+    }
+    
     func setupViews() {
         self.btnContinue.layer.cornerRadius = Constants.Consts.CornerRadius!
         
         mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
-        mnemonicList.addTags(self.mnemonic)
+        mnemonicList.addTags(self.mnemonic!)
         
         
         let viewBorder = CAShapeLayer()
@@ -53,17 +62,8 @@ class MnemonicViewController: UIViewController {
     
     @IBAction func onContinue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
-        let verifyMnemonicViewController = storyboard.instantiateViewController(withIdentifier: "VerifyMnemonicVC")
-//        let window = UIApplication.shared.keyWindow
-//
-//        if let window = window {
-//            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-//                let oldState: Bool = UIView.areAnimationsEnabled
-//                UIView.setAnimationsEnabled(true)
-//                window.rootViewController = verifyMnemonicViewController
-//                UIView.setAnimationsEnabled(oldState)
-//            }, completion: nil)
-//        }
+        let verifyMnemonicViewController = storyboard.instantiateViewController(withIdentifier: "VerifyMnemonicVC") as! VerifyMnemonicViewController
+        verifyMnemonicViewController.mnemonicInitial = self.mnemonic
         self.navigationController?.pushViewController(verifyMnemonicViewController, animated: true)
     }
     
