@@ -34,8 +34,8 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     }
     
     func generateMnemonicRandom() {
-        var tmpMnemonic = self.mnemonicInitial as! [String]
-        for i in 0...(tmpMnemonic.count) - 1
+        var tmpMnemonic = self.mnemonicInitial as [String]
+        for _ in 0...(tmpMnemonic.count) - 1
         {
             let rand = Int(arc4random_uniform(UInt32(tmpMnemonic.count)))
             
@@ -65,11 +65,16 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         mnemonicWordsList.delegate = self
         mnemonicWordsList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
         mnemonicWordsList.addTags(self.mnemonicWords)
-        
     }
     
     @IBAction func onContinue(_ sender: Any) {
         //check mnemonic index
+        if(self.mnemonicInitial.count != self.mnemonicList.tagViews.count) {
+            var style = ToastStyle()
+            style.backgroundColor = .gray
+            self.view.makeToast("Please sort all the Mnemonic!", duration: 3.0, position: .bottom, style: style)
+            return
+        }
         var isMatch = true
         for i in 0...(self.mnemonicInitial.count) - 1
         {
@@ -79,6 +84,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
                 break
             }
         }
+//        isMatch = true
         if(isMatch){
             let storyboard = UIStoryboard(name: "Pin", bundle: nil)
             let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinVC") as! PinViewController

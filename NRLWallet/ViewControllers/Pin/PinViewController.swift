@@ -8,6 +8,7 @@
 
 import UIKit
 import RNCryptor
+import NRLWalletSDK
 
 class PinViewController: UIViewController {
     
@@ -34,10 +35,12 @@ class PinViewController: UIViewController {
     
     @IBOutlet weak var txtError: UILabel!
     
+    //for wallet
     var mnemonicInitial : [String]!
     var encryptedMessage : String!
     var encryptedKey : String!
     
+    //for pin view
     var pinArray : Array<UIImageView> = []
     var keyboardArray : Array<UIButton> = []
     var pincodeArray : Array<String> = []
@@ -62,7 +65,7 @@ class PinViewController: UIViewController {
         txtError.isHidden = true
         txtTitle.textColor = Constants.Colors.BlackColor
         for i in 0 ... 9 {
-            let tmpBtt = self.keyboardArray[i] as UIButton!
+            let tmpBtt = self.keyboardArray[i] as UIButton?
             tmpBtt?.layer.cornerRadius = (tmpBtt?.frame.size.height)!/2
             tmpBtt?.layer.borderWidth = Constants.Consts.BorderWidth!
             tmpBtt?.layer.borderColor = Constants.Colors.BorderColor.cgColor
@@ -147,7 +150,7 @@ class PinViewController: UIViewController {
     func changePinView() {
         if(PIN_STATE == 0) {
             for i in 0 ... PIN_MAX - 1 {
-                let tmpPin = pinArray[i] as UIImageView!
+                let tmpPin = pinArray[i] as UIImageView?
                 if(i < pincodeArray.count) {
                     tmpPin?.image = UIImage.init(named: "pass")
                 }else {
@@ -156,7 +159,7 @@ class PinViewController: UIViewController {
             }
         }else if(PIN_STATE == 1) {
             for i in 0 ... PIN_MAX - 1 {
-                let tmpPin = pinArray[i] as UIImageView!
+                let tmpPin = pinArray[i] as UIImageView?
                 if(i < pincodeConfirmArray.count) {
                     tmpPin?.image = UIImage.init(named: "pass")
                 }else {
@@ -168,7 +171,7 @@ class PinViewController: UIViewController {
     
     func formatPinView() {
         for i in 0 ... PIN_MAX - 1 {
-            let tmpPin = pinArray[i] as UIImageView!
+            let tmpPin = pinArray[i] as UIImageView?
             tmpPin?.image = UIImage.init(named: "unpass")
         }
     }
@@ -203,14 +206,13 @@ class PinViewController: UIViewController {
             print(error)
             return ""
         }
-        
     }
     
     @objc func gotoMainview() {
         self.encryptedMessage = self.prepairEncrypt()
         //save encrypted Message and Key to app storage
-        UserData.saveEncryptedData(Constants.DefaultsKeys.kKeyEncryptedMessage, value: self.encryptedMessage)
-        UserData.saveEncryptedData(Constants.DefaultsKeys.kKeyEncryptedKey, value: self.encryptedKey)
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedMessage, value: self.encryptedMessage)
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedKey, value: self.encryptedKey)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")

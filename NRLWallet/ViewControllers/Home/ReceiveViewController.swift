@@ -42,6 +42,8 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     func initViews() {
         self.btt_coin.setImage(UIImage.init(named: (coinModel?.image)!), for: .normal)
         self.lb_coinName.text = String(format:"%@ %@", (self.coinModel?.count)!, (self.coinModel?.name)!)
+        self.lb_coinAddress.text = self.coinModel?.address
+        self.makeQRCode()
     }
     
     func setupViews() {
@@ -62,7 +64,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         }
         dropDown.selectionAction = { [weak self] (index, item) in
             self?.btt_coin.setImage(UIImage.init(named: item), for: .normal)
-            self?.lb_coinAddress.text = item + " wallet address"
+//            self?.lb_coinAddress.text = self?.coinModel?.address
             self?.makeQRCode()
         }
         

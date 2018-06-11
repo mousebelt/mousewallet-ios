@@ -12,11 +12,15 @@ struct Constants {
     public static let AppName = "NRLWallet"
     public static let UserProfile = "USERPROFILE"
     
+    public static let YES = "yes"
+    public static let NO = "no"
+    
     struct DefaultsKeys {
         public static let kKeyUserToken = "SavedUserToken"
         public static let kKeyFilterPreference = "KEYFILTERPREFERENCE"
         public static let kKeyEncryptedMessage = "EncryptedMessage"
         public static let kKeyEncryptedKey = "EncryptedKey"
+        public static let kKeyTutorialPass = "TutorialPass"
     }
     struct Colors {
         public static let ActiveLayerBackgroundColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 237.0/255.0, alpha: 1.0)

@@ -34,6 +34,9 @@ class Tutorial3ViewController: UIViewController {
     }
     
     @IBAction func onCreateAccount(_ sender: Any) {
+        //Save tutorial passed
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.YES)
+        
         let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
         let mnemonicViewController = storyboard.instantiateViewController(withIdentifier: "MnemonicNavVC")
         let window = UIApplication.shared.keyWindow

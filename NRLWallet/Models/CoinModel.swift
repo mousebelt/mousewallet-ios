@@ -14,4 +14,5 @@ class CoinModel: NSObject {
     var image:String!
     var count:String!
     var balance:String!
+    var address:String!
 }

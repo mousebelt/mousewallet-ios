@@ -22,15 +22,19 @@ struct UserData {
         UserDefaults.standard.removeObject(forKey: Constants.UserProfile)
     }
     
-    static func saveEncryptedData(_ key: String, value: String) {
-        removeEncryptedData(key)
+    static func loadKeyData(_ key: String) -> String? {
+        return UserDefaults.standard.string(forKey: key)
+    }
+    
+    static func saveKeyData(_ key: String, value: String) {
+        removeKeyData(key)
         
         let userDefault = UserDefaults.standard
         userDefault.setValue(value, forKey: key)
         userDefault.synchronize()
     }
     
-    static func removeEncryptedData(_ key: String) {
+    static func removeKeyData(_ key: String) {
         let userDefault = UserDefaults.standard
         if let _ = userDefault.object(forKey: key) {
             userDefault.removeObject(forKey: key)
