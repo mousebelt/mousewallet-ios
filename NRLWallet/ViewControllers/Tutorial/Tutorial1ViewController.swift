@@ -18,27 +18,43 @@ class Tutorial1ViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupViews()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setupViews() {
         self.btnGetStarted.layer.cornerRadius = Constants.Consts.CornerRadius!
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
         self.cardView.layer.borderWidth = Constants.Consts.BorderWidth!
-        self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
+        self.cardView.layer.borderColor = Constants.Colors.BorderColor.cgColor
     }
+    
+    // Restore from backup
+    @IBAction func onRestoreFromBackup(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+        let pinNavigation = storyboard.instantiateViewController(withIdentifier: "PinEnterNavVC")
+        let window = UIApplication.shared.keyWindow
+        
+        if let window = window {
+            UIView.transition(with: window, duration: 0.0, options: .autoreverse, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = pinNavigation
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: nil)
+        }
+        
+    }
+    
     
     @IBAction func onGetStarted(_ sender: Any) {
         self.performSegue(withIdentifier: "GetStartedSegue", sender: nil)
     }
     func dropShadow(opacity: Float = 0.5, radius: CGFloat = 1, scale: Bool = true) {
         self.cardView.clipsToBounds = false
-        self.cardView.layer.shadowColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.5).cgColor
+        self.cardView.layer.shadowColor = Constants.Colors.BorderColor.cgColor
         self.cardView.layer.shadowOpacity = opacity
         self.cardView.layer.shadowOffset = CGSize(width: -1, height: 1)
         self.cardView.layer.shadowRadius = radius

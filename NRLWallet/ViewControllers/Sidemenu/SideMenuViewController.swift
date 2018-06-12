@@ -91,13 +91,14 @@ class SideMenuViewController: UIViewController {
     
     @IBAction func ActionLogout(_ sender: Any) {
         self.setDefaultBackground()
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.NO)
         self.vi_Logout.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
         self.revealViewController().revealToggle(animated:true)
         
-//        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
-//        let PinViewController = storyboard.instantiateViewController(withIdentifier: "PinNavVC")
-//        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDel.window?.rootViewController = PinViewController
+        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
+        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDel.window?.rootViewController = tutorialViewController
     }
     
 

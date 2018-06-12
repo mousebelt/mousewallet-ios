@@ -9,6 +9,7 @@
 import UIKit
 import RNCryptor
 import NRLWalletSDK
+import AudioToolbox
 
 class PinViewController: UIViewController {
     
@@ -109,6 +110,7 @@ class PinViewController: UIViewController {
                     txtTitle.text = "ERROR"
                     txtError.isHidden = false
                     txtTitle.textColor = Constants.Colors.MainColor
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 }
             } else {
                 txtTitle.text = "VERIFY YOUR PIN"
@@ -211,6 +213,7 @@ class PinViewController: UIViewController {
     @objc func gotoMainview() {
         self.encryptedMessage = self.prepairEncrypt()
         //save encrypted Message and Key to app storage
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.YES)
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedMessage, value: self.encryptedMessage)
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedKey, value: self.encryptedKey)
         

@@ -22,12 +22,10 @@ class MnemonicViewController: UIViewController {
         super.viewDidLoad()
         self.generateMnemonic()
         self.setupViews()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func generateMnemonic() {
@@ -46,12 +44,12 @@ class MnemonicViewController: UIViewController {
         
         
         let viewBorder = CAShapeLayer()
-        viewBorder.strokeColor = UIColor(red: 214/255, green: 210/255, blue: 214/255, alpha: 1).cgColor
+        viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor
         viewBorder.lineDashPattern = [8, 8]
         viewBorder.frame = mnemonicListContainer.bounds
         viewBorder.fillColor = nil
         viewBorder.cornerRadius = Constants.Consts.CornerRadius!
-        var rect = CGRect(x:0, y: 0, width:self.view.bounds.size.width - 36 * 2, height: mnemonicListContainer.bounds.size.height)
+        let rect = CGRect(x:0, y: 0, width:self.view.bounds.size.width - 36 * 2, height: mnemonicListContainer.bounds.size.height)
         viewBorder.path = UIBezierPath(rect: rect).cgPath
         viewBorder.masksToBounds = false
         mnemonicListContainer.layer.addSublayer(viewBorder)

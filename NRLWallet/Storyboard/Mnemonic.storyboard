@@ -186,7 +186,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mau-dF-Rx7">
                                 <rect key="frame" x="36" y="143" width="303" height="128"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y6v-KS-Wrt" customClass="TagListView" customModule="TagListView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6v-KS-Wrt" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="8" y="8" width="287" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

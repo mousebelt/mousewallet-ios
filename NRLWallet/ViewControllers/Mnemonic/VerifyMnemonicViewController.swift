@@ -25,12 +25,10 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         super.viewDidLoad()
         self.generateMnemonicRandom()
         self.setupViews()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func generateMnemonicRandom() {
@@ -53,7 +51,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
         
         let viewBorder = CAShapeLayer()
-        viewBorder.strokeColor = UIColor(red: 214/255, green: 210/255, blue: 214/255, alpha: 1).cgColor
+        viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor
         viewBorder.lineDashPattern = [8, 8]
         viewBorder.frame = mnemonicListContainer.bounds
         viewBorder.fillColor = nil

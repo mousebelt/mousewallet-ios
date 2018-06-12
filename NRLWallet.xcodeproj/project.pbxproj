@@ -73,6 +73,7 @@
 		E1496D1520CB3E8F00E3AD45 /* sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF620CB3E2700E3AD45 /* sha512.h */; };
 		E1496D1620CB3E8F00E3AD45 /* sign.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF720CB3E2700E3AD45 /* sign.c */; };
 		E1496D1720CB3E8F00E3AD45 /* verify.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF820CB3E2700E3AD45 /* verify.c */; };
+		E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +162,7 @@
 		E1496CF620CB3E2700E3AD45 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
 		E1496CF720CB3E2700E3AD45 /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
 		E1496CF820CB3E2700E3AD45 /* verify.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = verify.c; sourceTree = "<group>"; };
+		E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEnterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				84CA5C7A20B730750064D1BC /* PinViewController.swift */,
+				E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */,
 			);
 			path = Pin;
 			sourceTree = "<group>";
@@ -482,7 +485,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = NoRestLabs;
 				TargetAttributes = {
 					D7A6E92720AEB0570075596E = {
@@ -598,6 +601,7 @@
 				E1496CFA20CB3E2700E3AD45 /* fe.c in Sources */,
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
+				E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */,
 				E1496D0320CB3E2700E3AD45 /* verify.c in Sources */,
 				849ADB5320C138590060ED23 /* AppController.swift in Sources */,
 				E1496CFB20CB3E2700E3AD45 /* ge.c in Sources */,
@@ -657,6 +661,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -664,6 +669,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -714,6 +720,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -721,6 +728,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

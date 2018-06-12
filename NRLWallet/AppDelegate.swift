@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        let isTest = false
         let tutorialPass = UserData.loadKeyData(Constants.DefaultsKeys.kKeyTutorialPass)
-        if tutorialPass == "aa" { //Constants.YES {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
-            self.window?.rootViewController = tutorialViewController
+        if tutorialPass == Constants.YES {
+            let storyboard = UIStoryboard(name: "Pin", bundle: nil)
+            let pinNavigation = storyboard.instantiateViewController(withIdentifier: "PinEnterNavVC")
+            self.window?.rootViewController = pinNavigation
         }else {
             let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
             let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")

@@ -18,19 +18,31 @@ class Tutorial2ViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupViews()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setupViews() {
         self.btnGotIt.layer.cornerRadius = Constants.Consts.CornerRadius!
         self.pageControl.transform = CGAffineTransform(scaleX: 2, y:2)
         self.cardView.layer.borderWidth = Constants.Consts.BorderWidth!
-        self.cardView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.4).cgColor
+        self.cardView.layer.borderColor = Constants.Colors.BorderColor.cgColor
+    }
+    @IBAction func onSkip(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
+        let mnemonicViewController = storyboard.instantiateViewController(withIdentifier: "MnemonicNavVC")
+        let window = UIApplication.shared.keyWindow
+        
+        if let window = window {
+            UIView.transition(with: window, duration: 0.0, options: .autoreverse, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = mnemonicViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: nil)
+        }
     }
     
     @IBAction func onGotIt(_ sender: Any) {
