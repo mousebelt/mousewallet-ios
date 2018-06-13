@@ -74,6 +74,9 @@
 		E1496D1620CB3E8F00E3AD45 /* sign.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF720CB3E2700E3AD45 /* sign.c */; };
 		E1496D1720CB3E8F00E3AD45 /* verify.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF820CB3E2700E3AD45 /* verify.c */; };
 		E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */; };
+		E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */; };
+		E1E2ACF920D14B47008ED04D /* InsertMNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */; };
+		E1E2ACFB20D15299008ED04D /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -163,6 +166,9 @@
 		E1496CF720CB3E2700E3AD45 /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
 		E1496CF820CB3E2700E3AD45 /* verify.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = verify.c; sourceTree = "<group>"; };
 		E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEnterViewController.swift; sourceTree = "<group>"; };
+		E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMnemonicViewController.swift; sourceTree = "<group>"; };
+		E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMNViewController.swift; sourceTree = "<group>"; };
+		E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +227,7 @@
 				84C052AA20BD169D0013A7FF /* SendViewController.swift */,
 				84C052AC20BD16A70013A7FF /* SwapViewController.swift */,
 				84E79E5120BEEF7400D08645 /* CoinListViewController.swift */,
+				E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 				84CA5C8220B85C060064D1BC /* UserData.swift */,
 				84CA5C8420B85C5C0064D1BC /* Constants.swift */,
 				849ADB5220C138590060ED23 /* AppController.swift */,
+				E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -340,6 +348,7 @@
 		D7A6E95B20AEBC970075596E /* Mnemonic */ = {
 			isa = PBXGroup;
 			children = (
+				E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */,
 				D792922C20B02BEC00DC558C /* MnemonicViewController.swift */,
 				D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */,
 			);
@@ -611,6 +620,7 @@
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */,
 				E1496CFD20CB3E2700E3AD45 /* keypair.c in Sources */,
+				E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */,
 				84C052AD20BD16A70013A7FF /* SwapViewController.swift in Sources */,
 				84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */,
 				D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */,
@@ -620,7 +630,9 @@
 				84CA5C8320B85C060064D1BC /* UserData.swift in Sources */,
 				E1496D0120CB3E2700E3AD45 /* sha512.c in Sources */,
 				D7A6E92C20AEB0570075596E /* AppDelegate.swift in Sources */,
+				E1E2ACF920D14B47008ED04D /* InsertMNViewController.swift in Sources */,
 				84E79E5420BEF75900D08645 /* CoinTableViewCell.swift in Sources */,
+				E1E2ACFB20D15299008ED04D /* KeyboardButton.swift in Sources */,
 				E1496D0220CB3E2700E3AD45 /* sign.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

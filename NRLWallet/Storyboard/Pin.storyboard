@@ -743,7 +743,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="frh-FF-eA8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Verification" id="pks-Qe-Eoc"/>
+                    <navigationItem key="navigationItem" title="Verification" id="pks-Qe-Eoc">
+                        <barButtonItem key="leftBarButtonItem" title="Tutorial" id="EKX-zI-4dI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="gotoBack:" destination="C7P-h1-3so" id="FLi-56-5f2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cancel" destination="to4-tr-ISU" id="exT-bd-lWg"/>
                         <outlet property="enter" destination="t6Y-Ha-B1v" id="JjT-yz-QoU"/>

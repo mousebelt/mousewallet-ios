@@ -154,4 +154,18 @@ class PinEnterViewController: UIViewController {
             }, completion: nil)
         }
     }
+    
+    @IBAction func gotoBack(_ sender: Any) {        
+        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
+        let window = UIApplication.shared.keyWindow
+        if let window = window {
+            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = tutorialViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: nil)
+        }
+    }
 }

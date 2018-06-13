@@ -53,9 +53,6 @@ class MnemonicViewController: UIViewController {
         viewBorder.path = UIBezierPath(rect: rect).cgPath
         viewBorder.masksToBounds = false
         mnemonicListContainer.layer.addSublayer(viewBorder)
-//        viewBorder.setNeedsLayout()
-//        mnemonicListContainer.setNeedsLayout()
-//        mnemonicListContainer.setNeedsUpdateConstraints()
     }
     
     @IBAction func onContinue(_ sender: Any) {
