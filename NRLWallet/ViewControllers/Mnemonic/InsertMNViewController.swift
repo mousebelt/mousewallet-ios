@@ -38,7 +38,7 @@ class InsertMNViewController: UIViewController {
     }
     
     func getMnemonicList() {
-        NRLMnemonic.mnemonicString(from: "", language: .english)
+//        NRLMnemonic.mnemonicString(from: "", language: .english)
     }
     
     func setupViews() {
@@ -48,6 +48,16 @@ class InsertMNViewController: UIViewController {
         self.bttBack.clipsToBounds = true
         self.bttNext.layer.cornerRadius = Constants.Consts.CornerRadius3!
         self.bttNext.clipsToBounds = true
+        
+        let viewBorder = CAShapeLayer()
+        viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor
+        viewBorder.lineDashPattern = [8, 8]
+        viewBorder.frame = mnemonicContainer.bounds
+        viewBorder.fillColor = nil
+        viewBorder.cornerRadius = Constants.Consts.CornerRadius!
+        let rect = CGRect(x:0, y: 0, width:self.view.bounds.size.width - 36 * 2, height: mnemonicContainer.bounds.size.height)
+        viewBorder.path = UIBezierPath(rect: rect).cgPath
+        mnemonicContainer.layer.addSublayer(viewBorder)
     }
     func setupKeyboard() {
         let mykeys1 = self.UIViewKey1.subviews as! [UIButton]
@@ -115,5 +125,5 @@ class InsertMNViewController: UIViewController {
         let str = sender.titleLabel?.text
         inputString.append(str!)
         self.inputLabel.text = inputString
-    }    
+    }
 }
