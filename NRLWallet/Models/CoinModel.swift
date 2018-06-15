@@ -2,7 +2,7 @@
 //  CoinModel.swift
 //  NRLWallet
 //
-//  Created by admin on 31/05/2018.
+//  Created by Daniel on 31/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

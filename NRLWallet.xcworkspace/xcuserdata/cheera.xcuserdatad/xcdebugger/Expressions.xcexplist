@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "InsertMNViewController.recommendClick(_:):InsertMNViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.state">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InsertMNViewController.clickNext(_:):InsertMNViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "InsertMNViewController.initWords():InsertMNViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bttRecommend1.titlelabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

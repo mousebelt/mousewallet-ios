@@ -2,7 +2,7 @@
 //  Tutorial3ViewController.swift
 //  NRLWallet
 //
-//  Created by dev on 18/05/2018.
+//  Created by Daniel on 18/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
@@ -31,15 +31,15 @@ class Tutorial3ViewController: UIViewController {
         self.cardView.layer.borderColor = Constants.Colors.BorderColor.cgColor
     }
     @IBAction func onRestoreFromBackup(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Pin", bundle: nil)
-        let pinNavigation = storyboard.instantiateViewController(withIdentifier: "PinEnterNavVC")
+        let storyboard = UIStoryboard(name: "Mnemonic", bundle: nil)
+        let mnemonicNavigation = storyboard.instantiateViewController(withIdentifier: "InsertMnemonicNavVC")
         let window = UIApplication.shared.keyWindow
         
         if let window = window {
             UIView.transition(with: window, duration: 0.0, options: .autoreverse, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
-                window.rootViewController = pinNavigation
+                window.rootViewController = mnemonicNavigation
                 UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
         }

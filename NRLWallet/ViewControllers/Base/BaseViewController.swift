@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  NRLWallet
 //
-//  Created by admin on 27/05/2018.
+//  Created by Daniel on 27/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

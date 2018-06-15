@@ -2,7 +2,7 @@
 //  MnemonicViewController.swift
 //  NRLWallet
 //
-//  Created by dev on 19/05/2018.
+//  Created by Daniel on 19/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
@@ -39,9 +39,8 @@ class MnemonicViewController: UIViewController {
     func setupViews() {
         self.btnContinue.layer.cornerRadius = Constants.Consts.CornerRadius!
         
-        mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
+        mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 18.0)!
         mnemonicList.addTags(self.mnemonic!)
-        
         
         let viewBorder = CAShapeLayer()
         viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor

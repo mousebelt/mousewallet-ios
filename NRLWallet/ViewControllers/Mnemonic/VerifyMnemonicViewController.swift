@@ -2,7 +2,7 @@
 //  VerifyMnemonicViewController.swift
 //  NRLWallet
 //
-//  Created by dev on 19/05/2018.
+//  Created by Daniel on 19/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
@@ -48,7 +48,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         self.btnContinue.layer.cornerRadius = Constants.Consts.CornerRadius!
         
         mnemonicList.delegate = self
-        mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
+        mnemonicList.textFont = UIFont(name: "SourceSansPro-Regular", size: 18.0)!
         
         let viewBorder = CAShapeLayer()
         viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor
@@ -61,7 +61,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
         mnemonicListContainer.layer.addSublayer(viewBorder)
         
         mnemonicWordsList.delegate = self
-        mnemonicWordsList.textFont = UIFont(name: "SourceSansPro-Regular", size: 14.0)!
+        mnemonicWordsList.textFont = UIFont(name: "SourceSansPro-Regular", size: 18.0)!
         mnemonicWordsList.addTags(self.mnemonicWords)
     }
     

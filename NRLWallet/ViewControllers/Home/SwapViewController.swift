@@ -2,7 +2,7 @@
 //  SwapViewController.swift
 //  NRLWallet
 //
-//  Created by admin on 29/05/2018.
+//  Created by Daniel on 29/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

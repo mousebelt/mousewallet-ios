@@ -2,7 +2,7 @@
 //  UserData.swift
 //  NRLWallet
 //
-//  Created by admin on 26/05/2018.
+//  Created by Daniel on 26/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

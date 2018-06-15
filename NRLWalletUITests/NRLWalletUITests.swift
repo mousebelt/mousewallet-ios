@@ -2,7 +2,7 @@
 //  NRLWalletUITests.swift
 //  NRLWalletUITests
 //
-//  Created by dev on 18/05/2018.
+//  Created by Daniel on 18/05/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

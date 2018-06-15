@@ -73,6 +73,7 @@
 		E1496D1520CB3E8F00E3AD45 /* sha512.h in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF620CB3E2700E3AD45 /* sha512.h */; };
 		E1496D1620CB3E8F00E3AD45 /* sign.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF720CB3E2700E3AD45 /* sign.c */; };
 		E1496D1720CB3E8F00E3AD45 /* verify.c in Headers */ = {isa = PBXBuildFile; fileRef = E1496CF820CB3E2700E3AD45 /* verify.c */; };
+		E161700220D234AB0003DD44 /* English.swift in Sources */ = {isa = PBXBuildFile; fileRef = E161700120D234AB0003DD44 /* English.swift */; };
 		E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */; };
 		E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */; };
 		E1E2ACF920D14B47008ED04D /* InsertMNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */; };
@@ -165,6 +166,7 @@
 		E1496CF620CB3E2700E3AD45 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
 		E1496CF720CB3E2700E3AD45 /* sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sign.c; sourceTree = "<group>"; };
 		E1496CF820CB3E2700E3AD45 /* verify.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = verify.c; sourceTree = "<group>"; };
+		E161700120D234AB0003DD44 /* English.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English.swift; sourceTree = "<group>"; };
 		E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEnterViewController.swift; sourceTree = "<group>"; };
 		E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMnemonicViewController.swift; sourceTree = "<group>"; };
 		E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMNViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				84CA5C8420B85C5C0064D1BC /* Constants.swift */,
 				849ADB5220C138590060ED23 /* AppController.swift */,
 				E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */,
+				E161700120D234AB0003DD44 /* English.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
 				E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */,
 				E1496D0320CB3E2700E3AD45 /* verify.c in Sources */,
+				E161700220D234AB0003DD44 /* English.swift in Sources */,
 				849ADB5320C138590060ED23 /* AppController.swift in Sources */,
 				E1496CFB20CB3E2700E3AD45 /* ge.c in Sources */,
 				D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */,
