@@ -23,7 +23,8 @@ class CoinListViewController: UIViewController {
         super.viewDidLoad()
         self.decryptedMessage()
         self.generateEthereumWallet()
-        self.initTempData()
+        self.generateBitcoinWallet()
+//        self.initTempData()
         self.addMenuAction()
         self.setLeftMenu()
     }
@@ -68,6 +69,34 @@ class CoinListViewController: UIViewController {
         // Ethereum : 60ß
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
         coinWallet?.generateExternalKeyPair(at: 0)
+        
+        let coinmodel1 = CoinModel()
+        coinmodel1.name = "ETH"
+        coinmodel1.fullname = "Ethereum"
+        coinmodel1.image = "ethereum"
+        coinmodel1.balance = "$100"
+        coinmodel1.count = "0.555"
+        coinmodel1.address = coinWallet?.getAddress()
+        self.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel1)
+    }
+    
+    func generateBitcoinWallet() {
+        print("\n------------------------- Bitcoin ----------------------------\n")
+        // Ethereum : 60ß
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.bitcoin))
+        coinWallet?.generateExternalKeyPair(at: 0)
+        
+        let coinmodel1 = CoinModel()
+        coinmodel1.name = "BTC"
+        coinmodel1.fullname = "Ethereum"
+        coinmodel1.image = "bitcoin"
+        coinmodel1.balance = "$6450"
+        coinmodel1.count = "3.333"
+        coinmodel1.address = coinWallet?.getAddress()
+        self.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel1)
+        
     }
     
     func initTempData() {
@@ -81,14 +110,6 @@ class CoinListViewController: UIViewController {
         coinmodel.count = "0.123"
         coinmodel.address = "Bitcoin address"
         self.coinArray.append(coinmodel)
-        let coinmodel1 = CoinModel()
-        coinmodel1.name = "ETH"
-        coinmodel1.fullname = "Ethereum"
-        coinmodel1.image = "ethereum"
-        coinmodel1.balance = "$100"
-        coinmodel1.count = "0.555"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
         let coinmodel2 = CoinModel()
         coinmodel2.name = "OMG"
         coinmodel2.fullname = "OmiseGo"
@@ -98,7 +119,6 @@ class CoinListViewController: UIViewController {
         coinmodel2.address = "OmiseGo address"
         self.coinArray.append(coinmodel2)
         AppController.shared.coinArray.append(coinmodel)
-        AppController.shared.coinArray.append(coinmodel1)
         AppController.shared.coinArray.append(coinmodel2)
     }
     func setLeftMenu() {

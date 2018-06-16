@@ -44,7 +44,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    //UI setting
     func setupViews() {
         self.bttRecommend1.sizeToFit()
         self.bttRecommend2.sizeToFit()
@@ -61,7 +61,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         
         mnemonicTagList.delegate = self
         mnemonicTagList.textFont = UIFont(name: "SourceSansPro-Regular", size: 18.0)!
-        
+        //Mnemonic Tag list dotted border
         let viewBorder = CAShapeLayer()
         viewBorder.strokeColor = Constants.Colors.BorderColor.cgColor
         viewBorder.lineDashPattern = [8, 8]
@@ -72,6 +72,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         viewBorder.path = UIBezierPath(rect: rect).cgPath
         mnemonicContainer.layer.addSublayer(viewBorder)
     }
+    //keyboard UI/Action setting
     func setupKeyboard() {
         let mykeys1 = self.UIViewKey1.subviews as! [UIButton]
         let mykeys2 = self.UIViewKey2.subviews as! [UIButton]
@@ -130,7 +131,21 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
             self.bttRecommend3.isHidden = true
         }
     }
-    
+    //auto add mnemonic
+    func autoAddMnemonic(search: String) {
+        filterdArray = mnemonicWords.filter { item in
+            return item.lowercased().contains(search.lowercased())
+        }
+        let str = filterdArray[0]
+        if(filterdArray.count > 0 && mnemonicArray.count < 12) {
+            if(!mnemonicArray.contains(str)) {
+                mnemonicArray.append(str)
+                mnemonicTagList.addTag(str)
+                self.initWords()
+            }
+        }
+    }
+    //Initialize recommend buttons
     func initWords() {
         inputString.removeAll()
         self.inputLabel.text = ""
@@ -142,7 +157,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         self.bttRecommend3.isHidden = true
     }
     
-    //Actions
+    //Actions: Recommend button (3 buttons) action
     @IBAction func recommendClick(_ sender: UIButton) {
         if(mnemonicArray.count >= 12) {
             var style = ToastStyle()
@@ -162,6 +177,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
             }
         }
     }
+    //Actions: Back event. go to Tutorial Navigation
     @IBAction func goBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
         let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
@@ -176,6 +192,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         }
     }
     
+    //Actions: Back event. go to Tutorial Navigation
     @IBAction func clickBack(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
         let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
@@ -190,6 +207,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         }
     }
     
+    //Actions: Verify input mnemonic list, go to PIN Navigation
     @IBAction func clickNext(_ sender: Any) {
         if( mnemonicArray.count != 12 ) {
             var style = ToastStyle()
@@ -225,11 +243,13 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         }
     }
     
+    //Actions: Space button event, initializing the Recommend buttons
     @IBAction func clickSpace(_ sender: Any) {
         self.initWords()
     }
     
-    @IBAction func clickAZ(_ sender: Any) {
+    //Actions: Backspace event
+    @IBAction func clickBackspace(_ sender: Any) {
         if(inputString.count > 0){
             inputString.removeLast()
             self.inputLabel.text = inputString
@@ -237,14 +257,20 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         }
     }
     
+    //Actions: keypad click event
     @objc func KeyboardClick(_ sender: UIButton) {
         let str = sender.titleLabel?.text
         inputString.append(str!)
         self.inputLabel.text = inputString
-        if(inputString.count > 0){
-            self.searchWords(search: inputString)
+        if(inputString.count > 0) {
+            if(inputString.count == 4) {
+                self.autoAddMnemonic(search: inputString)
+            } else {
+                self.searchWords(search: inputString)
+            }
         }
     }
+    //Action: mnemonic taglist click event
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         mnemonicTagList.removeTag(title)
         mnemonicArray = mnemonicArray.filter{$0 != title}

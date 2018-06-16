@@ -821,19 +821,18 @@
                                                     <action selector="clickSpace:" destination="bVA-aa-9gS" eventType="touchUpInside" id="pzu-Tl-dMf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M2-gx-0r3">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M2-gx-0r3">
                                                 <rect key="frame" x="295" y="5" width="80" height="40"/>
                                                 <color key="backgroundColor" red="0.6588235294117647" green="0.69411764705882351" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PW6-x0-29F"/>
                                                     <constraint firstAttribute="width" constant="80" id="iCZ-ka-J6T"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
-                                                <state key="normal" title="a to z">
+                                                <state key="normal" image="backspace">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="clickAZ:" destination="bVA-aa-9gS" eventType="touchUpInside" id="0jG-Kt-bia"/>
+                                                    <action selector="clickBackspace:" destination="bVA-aa-9gS" eventType="touchUpInside" id="N5U-s5-oMe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1018,4 +1017,7 @@
             <point key="canvasLocation" x="-146.40000000000001" y="1468.5157421289357"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backspace" width="16" height="16"/>
+    </resources>
 </document>
