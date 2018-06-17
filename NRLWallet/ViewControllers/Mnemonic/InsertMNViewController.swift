@@ -107,7 +107,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //search mnemonic
     func searchWords(search: String) {
         filterdArray = mnemonicWords.filter { item in
-            return item.lowercased().contains(search.lowercased())
+            return item.lowercased().hasPrefix(search.lowercased())
         }
         if(filterdArray.count > 0) {
             self.bttRecommend1.setTitle(filterdArray[0], for: .normal)
@@ -134,7 +134,10 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //auto add mnemonic
     func autoAddMnemonic(search: String) {
         filterdArray = mnemonicWords.filter { item in
-            return item.lowercased().contains(search.lowercased())
+            return item.lowercased().hasPrefix(search.lowercased())
+        }
+        if (filterdArray.count == 0) {
+            return
         }
         let str = filterdArray[0]
         if(filterdArray.count > 0 && mnemonicArray.count < 12) {
