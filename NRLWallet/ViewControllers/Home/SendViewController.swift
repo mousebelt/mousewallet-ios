@@ -32,6 +32,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var btt_send: UIButton!
     
     let dropDownCoin = DropDown()
+    var baseCoinModel : CoinModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
         
         dropDownCoin.selectionAction = { [weak self] (index, item) in
             let coindata = AppController.shared.coinArray[index]
-            self?.btt_coinname.titleLabel?.text = String(format:"%@(%@)", (coindata.name)!, (coindata.fullname)!)
+            self?.btt_coinname.titleLabel?.text = String(format:"%@(%@)", (coindata.symbol)!, (coindata.fullname)!)
             self?.img_coin.image = UIImage(named: coindata.image)
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class CoinModel: NSObject {
-    var name:String!
+    var symbol:String!
     var fullname:String!
     var image:String!
     var count:String!

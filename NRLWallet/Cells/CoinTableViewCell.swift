@@ -36,7 +36,7 @@ class CoinTableViewCell: UITableViewCell {
     }
 
     func configureTableCell(_ coinModel: CoinModel){
-        self.lb_coin.text = coinModel.name
+        self.lb_coin.text = coinModel.symbol
         self.lb_coinname.text = coinModel.fullname
         self.lb_count.text = coinModel.count
         self.lb_balance.text = coinModel.balance

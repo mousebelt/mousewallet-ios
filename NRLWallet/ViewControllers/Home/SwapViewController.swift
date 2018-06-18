@@ -9,6 +9,8 @@
 import UIKit
 import XLPagerTabStrip
 import DropDown
+import Alamofire
+import SVProgressHUD
 
 class SwapViewController: UIViewController, IndicatorInfoProvider {
     
@@ -44,9 +46,15 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     let dropDownFromCoin = DropDown()
     let dropDownToCoin = DropDown()
+    var baseCoinModel : CoinModel?
+    var isAvailable : Bool = false
+    var toCoinArray:  [CoinModel] = [CoinModel]()
+    var selectedToCoinIndex = 0
+    var marketModel : MarketModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initCoinSetting()
         self.setupViews()
         self.addDoneCancelToolbar()
     }
@@ -57,7 +65,16 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         return IndicatorInfo(title:"Swap")
     }
     
+    func initCoinSetting() {
+        for coin in AppController.shared.coinArray {
+            if(coin.fullname != baseCoinModel?.fullname) {
+                toCoinArray.append(coin)
+            }
+        }
+    }
+    
     func setupViews() {
+        isAvailable = false
         self.background_view.layer.cornerRadius = Constants.Consts.CornerRadius!
         self.background_view.layer.borderColor = Constants.Colors.BorderColor1.cgColor
         self.background_view.layer.borderWidth = Constants.Consts.BorderWidth!
@@ -68,40 +85,90 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         self.slider_speed.setThumbImage(UIImage(named: "oval"), for: .selected)
         self.slider_speed.setThumbImage(UIImage(named: "oval"), for: .highlighted)
         
+        self.EnableView()
+        self.setupFromView()
+        self.setupToView()
+    }
+    
+    func EnableView() {
+        if(isAvailable) {
+            self.slider_speed.isHidden = false
+            self.btt_send.backgroundColor = Constants.Colors.MainColor
+        } else {
+            self.slider_speed.isHidden = true
+            self.btt_send.backgroundColor = Constants.Colors.FontColor
+        }
+    }
+    
+    func setupFromView() {
+        
         self.img_fromCoin.contentMode = .scaleAspectFit
-        self.img_toCoin.contentMode = .scaleAspectFit
+        self.img_fromCoin.image = UIImage(named: (baseCoinModel?.image)!)
+        self.btt_fromCoinName.setTitle(baseCoinModel?.fullname, for: [])
+        self.lb_fromCoinSymbol.text = baseCoinModel?.symbol
+        self.lb_fromCoinBalance.text = baseCoinModel?.balance
         
         dropDownFromCoin.anchorView = btt_fromCoinName
-        dropDownFromCoin.dataSource = ["Bitcoin", "Ethereum", "OmiseGo"]
-        dropDownToCoin.anchorView = btt_toCoinName
-        dropDownToCoin.dataSource = ["Bitcoin", "Ethereum", "OmiseGo"]
-        
-        
-        dropDownFromCoin.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            guard let cell = cell as DropDownCell? else { return }
-            cell.optionLabel.text = item
-        }        
+        dropDownFromCoin.dataSource = [self.baseCoinModel?.fullname] as! [String]
         
         dropDownFromCoin.selectionAction = { [weak self] (index, item) in
             let coindata = AppController.shared.coinArray[index]
             self?.btt_fromCoinName.titleLabel?.text = coindata.fullname
             self?.lb_fromCoinBalance.text = coindata.balance
-            self?.lb_fromCoinSymbol.text = coindata.name
+            self?.lb_fromCoinSymbol.text = coindata.symbol
             self?.img_fromCoin.image = UIImage(named: coindata.image)
         }
-        dropDownToCoin.selectionAction = { [weak self] (index, item) in
-            let coindata = AppController.shared.coinArray[index]
-            self?.btt_toCoinName.titleLabel?.text = coindata.fullname
-            self?.lb_toCoinBalance.text = coindata.balance
-            self?.lb_toCoinSymbol.text = coindata.name
-            self?.img_toCoin.image = UIImage(named: coindata.image)
-        }
         self.txt_fromCoin.delegate = self
+    }
+    
+    func setupToView() {
+        dropDownToCoin.anchorView = btt_toCoinName
+        dropDownToCoin.dataSource = AppController.shared.appCoinModels.filter{$0 != baseCoinModel?.fullname}
+        
+        dropDownFromCoin.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as DropDownCell? else { return }
+            cell.optionLabel.text = item
+        }
+        
+        let tocoin = self.toCoinArray[0]
+        
+        self.img_toCoin.contentMode = .scaleAspectFit
+        self.img_toCoin.image = UIImage(named: (tocoin.image)!)
+        self.btt_toCoinName.setTitle(tocoin.fullname, for: [])
+        self.lb_toCoinSymbol.text = tocoin.symbol
+        self.lb_toCoinBalance.text = tocoin.balance
+        
+        self.getMarketInfo()
+        
+        dropDownToCoin.selectionAction = { [weak self] (index, item) in
+            let coindata = self?.toCoinArray[index]
+            self?.selectedToCoinIndex = index
+            self?.btt_toCoinName.sizeToFit()
+            self?.btt_toCoinName.setTitle(coindata?.fullname, for: [])
+            self?.lb_toCoinBalance.text = coindata?.balance
+            self?.lb_toCoinSymbol.text = coindata?.symbol
+            self?.img_toCoin.image = UIImage(named: (coindata?.image)!)
+            
+            self?.getMarketInfo()
+        }
+        
         self.txt_toCoin.delegate = self
+    }
+    
+    func updateUIValues(update : Bool) {
+        if(update) {
+            self.lb_CoinBalance.text = String(format: "1 %@ = %f", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!)
+            self.lb_CoinPowered.text = String(format: "%@ powered by shapeshife", self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
+            self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
+            self.lb_transactionFee.text = String(format: "%.4f %@ = %f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, 0.12, "USD")
+        } else {
+            
+        }
+        
     }
 
     @IBAction func clickFromCoin(_ sender: Any) {
-        dropDownFromCoin.show()
+//        dropDownFromCoin.show()
     }
     @IBAction func clickToCoin(_ sender: Any) {
         dropDownToCoin.show()
@@ -121,7 +188,13 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     }
     
     @IBAction func clickSend(_ sender: Any) {
+        if(isAvailable) {
+            
+        } else {
+            
+        }
     }
+    
     
     // Default actions:
     @objc func doneButtonTapped() {
@@ -147,7 +220,36 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         self.txt_fromCoin.inputAccessoryView = toolbar
         self.txt_toCoin.inputAccessoryView = toolbar
     }
+    
+    // MARK: - Network Delegate
+    func getMarketInfo() {
+        let url =  String(format:"%@%@_%@", Constants.URL_SHAPESHIFT, (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
+        print("url: \(url)")
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { (response) in
+            
+            switch response.result {
+            case .success:
+                if let json = response.result.value as? [String: AnyObject] {
+                    self.marketModel = MarketModel()
+                    self.marketModel?.limit = json["limit"] as! Double
+                    self.marketModel?.minimum = json["minimum"] as! Double
+                    self.marketModel?.minerFee = json["minerFee"] as! Double
+                    self.marketModel?.maxLimit = json["maxLimit"] as! Double
+                    self.marketModel?.rate = json["rate"] as! Double
+                    self.updateUIValues(update: true)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure:
+                self.updateUIValues(update: false)
+                SVProgressHUD.dismiss()
+                break
+            }
+        }
+    }
 }
+
 
 // MARK: - TextFieldDelegate
 //

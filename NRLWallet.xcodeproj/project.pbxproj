@@ -79,6 +79,7 @@
 		E1E2ACF920D14B47008ED04D /* InsertMNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */; };
 		E1E2ACFB20D15299008ED04D /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */; };
 		E1EF17E320D7749400FF4540 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF17E220D7749400FF4540 /* AboutViewController.swift */; };
+		E1EF17E520D7DC3100FF4540 /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF17E420D7DC3100FF4540 /* MarketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,6 +174,7 @@
 		E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMNViewController.swift; sourceTree = "<group>"; };
 		E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
 		E1EF17E220D7749400FF4540 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E1EF17E420D7DC3100FF4540 /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				84E79E5620BEFAFD00D08645 /* CoinModel.swift */,
+				E1EF17E420D7DC3100FF4540 /* MarketModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
@@ -588,6 +592,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
@@ -630,6 +635,7 @@
 				E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */,
 				84C052AD20BD16A70013A7FF /* SwapViewController.swift in Sources */,
 				84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */,
+				E1EF17E520D7DC3100FF4540 /* MarketModel.swift in Sources */,
 				D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */,
 				84C052AB20BD169D0013A7FF /* SendViewController.swift in Sources */,
 				E1496CF920CB3E2700E3AD45 /* add_scalar.c in Sources */,

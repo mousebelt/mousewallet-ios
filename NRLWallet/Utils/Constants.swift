@@ -11,6 +11,7 @@ import UIKit
 struct Constants {
     public static let AppName = "NRLWallet"
     public static let UserProfile = "USERPROFILE"
+    public static let URL_SHAPESHIFT = "https://shapeshift.io/marketinfo/"
     
     public static let YES = "yes"
     public static let NO = "no"

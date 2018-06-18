@@ -24,7 +24,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var bottom_view: UIView!
     
     
-    var coinModel : CoinModel?    
+    var baseCoinModel : CoinModel?
     let dropDown = DropDown()
     
     override func viewDidLoad() {
@@ -40,9 +40,9 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func initViews() {
-        self.btt_coin.setImage(UIImage.init(named: (coinModel?.image)!), for: .normal)
-        self.lb_coinName.text = String(format:"%@ %@", (self.coinModel?.count)!, (self.coinModel?.name)!)
-        self.lb_coinAddress.text = self.coinModel?.address
+        self.btt_coin.setImage(UIImage.init(named: (baseCoinModel?.image)!), for: .normal)
+        self.lb_coinName.text = String(format:"%@ %@", (self.baseCoinModel?.count)!, (self.baseCoinModel?.symbol)!)
+        self.lb_coinAddress.text = self.baseCoinModel?.address
         self.makeQRCode()
     }
     
@@ -51,7 +51,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         bottom_view.layer.borderColor = Constants.Colors.BorderColor1.cgColor
         bottom_view.layer.cornerRadius = Constants.Consts.CornerRadius!
         
-        dropDown.anchorView = btt_coin        
+        dropDown.anchorView = btt_coin
         dropDown.dataSource = ["bitcoin", "ethereum", "omg"]
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             guard let cell = cell as DropDownCell? else { return }

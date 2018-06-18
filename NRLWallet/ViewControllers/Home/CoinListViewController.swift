@@ -22,9 +22,10 @@ class CoinListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.decryptedMessage()
-        self.generateEthereumWallet()
         self.generateBitcoinWallet()
-//        self.initTempData()
+        self.generateEthereumWallet()
+        self.generateLitecoinWallet()
+        //        self.initTempData()
         self.addMenuAction()
         self.setLeftMenu()
     }
@@ -70,7 +71,7 @@ class CoinListViewController: UIViewController {
         coinWallet?.generateExternalKeyPair(at: 0)
         
         let coinmodel1 = CoinModel()
-        coinmodel1.name = "ETH"
+        coinmodel1.symbol = "ETH"
         coinmodel1.fullname = "Ethereum"
         coinmodel1.image = "ethereum"
         coinmodel1.balance = "$100"
@@ -81,12 +82,11 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        // Ethereum : 60ß
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.bitcoin))
         coinWallet?.generateExternalKeyPair(at: 0)
         
         let coinmodel1 = CoinModel()
-        coinmodel1.name = "BTC"
+        coinmodel1.symbol = "BTC"
         coinmodel1.fullname = "Bitcoin"
         coinmodel1.image = "bitcoin"
         coinmodel1.balance = "$6450"
@@ -97,11 +97,27 @@ class CoinListViewController: UIViewController {
         
     }
     
+    func generateLitecoinWallet() {
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
+        coinWallet?.generateExternalKeyPair(at: 0)
+        
+        let coinmodel1 = CoinModel()
+        coinmodel1.symbol = "LTC"
+        coinmodel1.fullname = "Litecoin"
+        coinmodel1.image = "litecoin"
+        coinmodel1.balance = "$94.05"
+        coinmodel1.count = "2.222"
+        coinmodel1.address = coinWallet?.getAddress()
+        self.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel1)
+        
+    }
+    
     func initTempData() {
         
         
         let coinmodel = CoinModel()
-        coinmodel.name = "BTC"
+        coinmodel.symbol = "BTC"
         coinmodel.fullname = "Bitcoin"
         coinmodel.image = "bitcoin"
         coinmodel.balance = "$450"
@@ -109,7 +125,7 @@ class CoinListViewController: UIViewController {
         coinmodel.address = "Bitcoin address"
         self.coinArray.append(coinmodel)
         let coinmodel2 = CoinModel()
-        coinmodel2.name = "OMG"
+        coinmodel2.symbol = "OMG"
         coinmodel2.fullname = "OmiseGo"
         coinmodel2.image = "omg"
         coinmodel2.balance = "$10"
@@ -156,7 +172,7 @@ extension CoinListViewController: UITableViewDelegate{
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        homeVC.coinModel = self.coinArray[indexPath.row]
+        homeVC.baseCoinModel = self.coinArray[indexPath.row]
         if let navVC = self.navigationController {
             navVC.pushViewController(homeVC, animated: true)
         }

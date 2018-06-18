@@ -375,7 +375,7 @@
                                                                     <constraint firstAttribute="height" constant="18" id="E2A-a9-TB6"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
-                                                                <state key="normal" title="Bitcoin      ">
+                                                                <state key="normal" title="Bitcoin          ">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
@@ -462,7 +462,7 @@
                                                                     <constraint firstAttribute="height" constant="18" id="KX5-3T-VvP"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="16"/>
-                                                                <state key="normal" title="OmiseGo        ">
+                                                                <state key="normal" title="Litecoin ">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
@@ -1889,7 +1889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nP-Dd-SeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="-880"/>
+            <point key="canvasLocation" x="454" y="-548"/>
         </scene>
         <!--Mnemonic-->
         <scene sceneID="b7h-J3-UrB">

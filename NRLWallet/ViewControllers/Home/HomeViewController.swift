@@ -8,13 +8,12 @@
 
 import UIKit
 import Foundation
-//import SWRevealViewController
 import XLPagerTabStrip
 
 class HomeViewController: ButtonBarPagerTabStripViewController {
     @IBOutlet weak var bttMenu: UIBarButtonItem!
     
-    var coinModel : CoinModel?
+    var baseCoinModel : CoinModel?
     
     lazy var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -69,9 +68,11 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {      
         let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReceiveViC") as! ReceiveViewController
-        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendVC")
-        let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SwapVC")
-        child_1.coinModel = self.coinModel
+        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendVC") as! SendViewController
+        let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SwapVC") as! SwapViewController
+        child_1.baseCoinModel = self.baseCoinModel
+        child_2.baseCoinModel = self.baseCoinModel
+        child_3.baseCoinModel = self.baseCoinModel
         return [child_1, child_2, child_3]
     }
     

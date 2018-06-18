@@ -14,6 +14,7 @@ class AppController: NSObject {
     static let shared = AppController()
     
     var coinArray:  [CoinModel] = [CoinModel]()
+    var appCoinModels : [String] = ["Bitcoin", "Ethereum", "Litecoin"] //,  "NEO", "Stellar"]
     
     override init() {
         super.init()
