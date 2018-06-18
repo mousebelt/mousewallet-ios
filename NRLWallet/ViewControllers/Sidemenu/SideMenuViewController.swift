@@ -22,6 +22,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var vi_Swap: UIView!
     @IBOutlet weak var vi_Mnemonic: UIView!
     @IBOutlet weak var vi_Logout: UIView!
+    @IBOutlet weak var vi_About: UIView!
     
 
     override func viewDidLoad() {
@@ -51,6 +52,7 @@ class SideMenuViewController: UIViewController {
         self.vi_Received.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         self.vi_Swap.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_About.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         self.vi_Logout.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         
     }
@@ -86,6 +88,14 @@ class SideMenuViewController: UIViewController {
     @IBAction func ActionMnemonic(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        self.revealViewController().revealToggle(animated:true)
+    }
+    @IBAction func ActionAbout(_ sender: Any) {
+        self.setDefaultBackground()
+        self.vi_About.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let aboutVC = storyboard.instantiateViewController(withIdentifier: "AboutNav") as! UINavigationController
+        self.revealViewController().setFront(aboutVC, animated: false)
         self.revealViewController().revealToggle(animated:true)
     }
     

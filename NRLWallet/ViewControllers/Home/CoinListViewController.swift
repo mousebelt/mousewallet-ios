@@ -65,7 +65,6 @@ class CoinListViewController: UIViewController {
     }
     
     func generateEthereumWallet() {
-        print("\n------------------------- Ethereum ----------------------------\n")
         // Ethereum : 60ß
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
         coinWallet?.generateExternalKeyPair(at: 0)
@@ -82,14 +81,13 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        print("\n------------------------- Bitcoin ----------------------------\n")
         // Ethereum : 60ß
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.bitcoin))
         coinWallet?.generateExternalKeyPair(at: 0)
         
         let coinmodel1 = CoinModel()
         coinmodel1.name = "BTC"
-        coinmodel1.fullname = "Ethereum"
+        coinmodel1.fullname = "Bitcoin"
         coinmodel1.image = "bitcoin"
         coinmodel1.balance = "$6450"
         coinmodel1.count = "3.333"
