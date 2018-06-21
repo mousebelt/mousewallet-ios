@@ -36,6 +36,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initViews()
         self.setupDelegate()
         self.setupViews()
         self.addDoneCancelToolbar()
@@ -43,6 +44,12 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title:"Send")
+    }
+    
+    func initViews() {
+//        self.btt_coinname.titleLabel?.text = String(format:"%@(%@)", (baseCoinModel?.symbol)!, (baseCoinModel?.fullname)!)
+        self.btt_coinname.setTitle(String(format:"%@(%@)", (baseCoinModel?.symbol)!, (baseCoinModel?.fullname)!), for: [])
+        self.img_coin.image = UIImage(named: (baseCoinModel?.image)!)
     }
     
     func setupDelegate() {
@@ -64,13 +71,13 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
         self.slider_speed.setThumbImage(UIImage(named: "oval"), for: .highlighted)
         
         dropDownCoin.anchorView = btt_coinname
-        dropDownCoin.dataSource = ["Bitcoin", "Ethereum", "OmiseGo"]
-        
-        dropDownCoin.selectionAction = { [weak self] (index, item) in
-            let coindata = AppController.shared.coinArray[index]
-            self?.btt_coinname.titleLabel?.text = String(format:"%@(%@)", (coindata.symbol)!, (coindata.fullname)!)
-            self?.img_coin.image = UIImage(named: coindata.image)
-        }
+//        dropDownCoin.dataSource = ["Bitcoin", "Ethereum", "OmiseGo"]
+//        
+//        dropDownCoin.selectionAction = { [weak self] (index, item) in
+//            let coindata = AppController.shared.coinArray[index]
+//            self?.btt_coinname.titleLabel?.text = String(format:"%@(%@)", (coindata.symbol)!, (coindata.fullname)!)
+//            self?.img_coin.image = UIImage(named: coindata.image)
+//        }
     }
     
     

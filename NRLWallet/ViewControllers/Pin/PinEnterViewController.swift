@@ -2,7 +2,7 @@
 //  PinEnterViewController.swift
 //  NRLWallet
 //
-//  Created by cheera on 12/06/2018.
+//  Created by Daniel on 12/06/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

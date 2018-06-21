@@ -8,16 +8,23 @@
 
 import UIKit
 import RNCryptor
+import Toast_Swift
 
 class AppController: NSObject {
 
     static let shared = AppController()
     
     var coinArray:  [CoinModel] = [CoinModel]()
-    var appCoinModels : [String] = ["Bitcoin", "Ethereum", "Litecoin"] //,  "NEO", "Stellar"]
+    var appCoinModels : [String] = ["Bitcoin", "Ethereum", "Litecoin", "Neo", "Stellar"]
     
     override init() {
         super.init()
+    }
+    
+    func ToastMessage(view: UIView, str: String){        
+        var style = ToastStyle()
+        style.backgroundColor = .gray
+        view.makeToast(str, duration: 3.0, position: .bottom, style: style)
     }
     
     

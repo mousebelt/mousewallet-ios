@@ -2,14 +2,13 @@
 //  PinInsertViewController.swift
 //  NRLWallet
 //
-//  Created by cheera on 13/06/2018.
+//  Created by Daniel on 13/06/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
 import UIKit
 import NRLWalletSDK
 import TagListView
-import Toast_Swift
 
 class InsertMNViewController: UIViewController, TagListViewDelegate  {
     
@@ -163,9 +162,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //Actions: Recommend button (3 buttons) action
     @IBAction func recommendClick(_ sender: UIButton) {
         if(mnemonicArray.count >= 12) {
-            var style = ToastStyle()
-            style.backgroundColor = .gray
-            self.view.makeToast("Mnemonic must be consist of 12 words", duration: 3.0, position: .bottom, style: style)
+            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic must be consist of 12 words!")
             return
         }
         if(sender.isHidden) {
@@ -213,9 +210,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //Actions: Verify input mnemonic list, go to PIN Navigation
     @IBAction func clickNext(_ sender: Any) {
         if( mnemonicArray.count != 12 ) {
-            var style = ToastStyle()
-            style.backgroundColor = .gray
-            self.view.makeToast("Mnemonic must be consist of 12 words", duration: 3.0, position: .bottom, style: style)
+            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic must be consist of 12 words!")
         } else {
             //need check valid mnemonic
             var validate = false
@@ -238,9 +233,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
                 PinViewController.mnemonicInitial = self.mnemonicArray
                 self.navigationController?.pushViewController(PinViewController, animated: true)
             } else {
-                var style = ToastStyle()
-                style.backgroundColor = .gray
-                self.view.makeToast("Invalid Mnemonic!", duration: 3.0, position: .bottom, style: style)
+                AppController.shared.ToastMessage(view: self.view, str: "Invalid Mnemonic!")
             }
             
         }

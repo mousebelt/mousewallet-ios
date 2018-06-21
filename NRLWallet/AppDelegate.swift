@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
             self.window?.rootViewController = tutorialViewController
         }
+        
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.custom)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
+        SVProgressHUD.setForegroundColor(Constants.Colors.MainColor)
+        SVProgressHUD.setBackgroundColor(UIColor.clear)
+        SVProgressHUD.setRingThickness(4)
+        
         DropDown.startListeningToKeyboard()
         return true
     }

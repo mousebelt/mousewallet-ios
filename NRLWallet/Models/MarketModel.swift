@@ -2,7 +2,7 @@
 //  MarketModel.swift
 //  NRLWallet
 //
-//  Created by cheera on 18/06/2018.
+//  Created by Daniel on 18/06/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

@@ -119,6 +119,8 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self?.img_fromCoin.image = UIImage(named: coindata.image)
         }
         self.txt_fromCoin.delegate = self
+        self.txt_fromCoin.placeholder = self.baseCoinModel?.symbol
+        self.txt_fromCoin.text = ""
     }
     
     func setupToView() {
@@ -138,9 +140,15 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         self.lb_toCoinSymbol.text = tocoin.symbol
         self.lb_toCoinBalance.text = tocoin.balance
         
+        self.txt_toCoin.placeholder = tocoin.symbol
+        self.txt_toCoin.text = ""
+        
         self.getMarketInfo()
         
         dropDownToCoin.selectionAction = { [weak self] (index, item) in
+            if(self?.selectedToCoinIndex == index) {
+                return
+            }
             let coindata = self?.toCoinArray[index]
             self?.selectedToCoinIndex = index
             self?.btt_toCoinName.sizeToFit()
@@ -148,6 +156,12 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self?.lb_toCoinBalance.text = coindata?.balance
             self?.lb_toCoinSymbol.text = coindata?.symbol
             self?.img_toCoin.image = UIImage(named: (coindata?.image)!)
+            
+            self?.txt_fromCoin.placeholder = self?.baseCoinModel?.symbol
+            self?.txt_fromCoin.text = ""
+            self?.txt_toCoin.placeholder = coindata?.symbol
+            self?.txt_toCoin.text = ""
+            
             
             self?.getMarketInfo()
         }
@@ -161,10 +175,31 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self.lb_CoinPowered.text = String(format: "%@ powered by shapeshife", self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
             self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
             self.lb_transactionFee.text = String(format: "%.4f %@ = %f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, 0.12, "USD")
+            self.txt_toCoin.isEnabled = true
+            self.txt_fromCoin.isEnabled = true
         } else {
-            
+            self.lb_CoinBalance.text = ""
+            self.lb_CoinPowered.text = ""
+            self.lb_minMax.text = ""
+            self.lb_transactionFee.text = ""
+            self.txt_toCoin.isEnabled = false
+            self.txt_fromCoin.isEnabled = false
         }
         
+    }
+    
+    func CheckAvailable() {
+        let fromValue = (self.txt_fromCoin.text! as NSString).doubleValue
+        let toValue = (self.txt_toCoin.text! as NSString).doubleValue
+        if(fromValue != 0 && fromValue < (marketModel?.minimum)!) {
+            if(toValue != 0 && toValue < (marketModel?.maxLimit)!) {
+                isAvailable = true
+                self.EnableView()
+                return
+            }
+        }
+        isAvailable = false
+        self.EnableView()
     }
 
     @IBAction func clickFromCoin(_ sender: Any) {
@@ -189,7 +224,29 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     @IBAction func clickSend(_ sender: Any) {
         if(isAvailable) {
+            let withdrawal = self.baseCoinModel?.address
+            let pair = String(format:"%@_%@", (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
+//            let returnAddress = self.toCoinArray[selectedToCoinIndex].address
+            let apiPubKey = "4a82a5f1610f1675fcbb54f8f3f64517687b6d8c2200411884ed601d8ef1874536cfbe5262543b1ae0c98e80ac16d4c94ff7c8ced0918101d56932b9b361b254"
             
+            var params:Parameters = [:]
+            params.updateValue(withdrawal!, forKey: "withdrawal")
+            params.updateValue(pair, forKey: "pair")
+//            params.updateValue(returnAddress!, forKey: "returnAddress")
+            params.updateValue(apiPubKey, forKey: "apiPubKey")
+            
+            SVProgressHUD.show()
+            Alamofire.request(Constants.URL_GET_MARKETINFO, method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    
+                    break
+                case .failure:
+                    SVProgressHUD.dismiss()
+                    break
+                }
+            }
         } else {
             
         }
@@ -223,7 +280,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     // MARK: - Network Delegate
     func getMarketInfo() {
-        let url =  String(format:"%@%@_%@", Constants.URL_SHAPESHIFT, (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
+        let url =  String(format:"%@%@_%@", Constants.URL_GET_MARKETINFO, (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
         print("url: \(url)")
         SVProgressHUD.show()
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { (response) in
@@ -231,6 +288,12 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             switch response.result {
             case .success:
                 if let json = response.result.value as? [String: AnyObject] {
+                    if((json["error"]) != nil){
+                        self.updateUIValues(update: false)
+                        SVProgressHUD.dismiss()
+                        AppController.shared.ToastMessage(view: self.view, str: "That pair is temporarily unavailable for trades.")
+                        return
+                    }
                     self.marketModel = MarketModel()
                     self.marketModel?.limit = json["limit"] as! Double
                     self.marketModel?.minimum = json["minimum"] as! Double
@@ -258,5 +321,9 @@ extension SwapViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.CheckAvailable()
     }
 }

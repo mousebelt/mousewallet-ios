@@ -25,7 +25,8 @@ class CoinListViewController: UIViewController {
         self.generateBitcoinWallet()
         self.generateEthereumWallet()
         self.generateLitecoinWallet()
-        //        self.initTempData()
+        self.generateNeoWallet()
+        self.generateStellarWallet()
         self.addMenuAction()
         self.setLeftMenu()
     }
@@ -113,28 +114,37 @@ class CoinListViewController: UIViewController {
         
     }
     
-    func initTempData() {
+    func generateNeoWallet() {
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.neo))
+        coinWallet?.generateExternalKeyPair(at: 0)
         
+        let coinmodel1 = CoinModel()
+        coinmodel1.symbol = "NEO"
+        coinmodel1.fullname = "Neo"
+        coinmodel1.image = "neo"
+        coinmodel1.balance = "$1.11"
+        coinmodel1.count = "1.111"
+        coinmodel1.address = coinWallet?.getAddress()
+        self.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel1)
         
-        let coinmodel = CoinModel()
-        coinmodel.symbol = "BTC"
-        coinmodel.fullname = "Bitcoin"
-        coinmodel.image = "bitcoin"
-        coinmodel.balance = "$450"
-        coinmodel.count = "0.123"
-        coinmodel.address = "Bitcoin address"
-        self.coinArray.append(coinmodel)
-        let coinmodel2 = CoinModel()
-        coinmodel2.symbol = "OMG"
-        coinmodel2.fullname = "OmiseGo"
-        coinmodel2.image = "omg"
-        coinmodel2.balance = "$10"
-        coinmodel2.count = "3.215"
-        coinmodel2.address = "OmiseGo address"
-        self.coinArray.append(coinmodel2)
-        AppController.shared.coinArray.append(coinmodel)
-        AppController.shared.coinArray.append(coinmodel2)
     }
+    
+    func generateStellarWallet() {
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.stellar))
+        coinWallet?.generateExternalKeyPair(at: 0)
+        
+        let coinmodel1 = CoinModel()
+        coinmodel1.symbol = "XLD"
+        coinmodel1.fullname = "Stellar"
+        coinmodel1.image = "stellar"
+        coinmodel1.balance = "$0.11"
+        coinmodel1.count = "0.111"
+        coinmodel1.address = coinWallet?.getAddress()
+        self.coinArray.append(coinmodel1)
+        AppController.shared.coinArray.append(coinmodel1)
+    }
+    
     func setLeftMenu() {
         self.revealViewController().rearViewRevealWidth = view.frame.size.width * 0.8
         self.revealViewController().panGestureRecognizer()

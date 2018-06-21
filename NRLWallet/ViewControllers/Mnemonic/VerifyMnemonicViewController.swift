@@ -8,7 +8,6 @@
 
 import UIKit
 import TagListView
-import Toast_Swift
 
 class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     
@@ -68,9 +67,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     @IBAction func onContinue(_ sender: Any) {
         //check mnemonic index
         if(self.mnemonicInitial.count != self.mnemonicList.tagViews.count) {
-            var style = ToastStyle()
-            style.backgroundColor = .gray
-            self.view.makeToast("Please sort all the Mnemonic!", duration: 3.0, position: .bottom, style: style)
+            AppController.shared.ToastMessage(view: self.view, str: "Please sort all the Mnemonic!")
             return
         }
         var isMatch = true
@@ -89,10 +86,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
             PinViewController.mnemonicInitial = self.mnemonicInitial
             self.navigationController?.pushViewController(PinViewController, animated: true)
         }else {
-            var style = ToastStyle()
-            style.backgroundColor = .gray
-            self.view.makeToast("Mnemonic is not matching!", duration: 3.0, position: .bottom, style: style)
-            
+            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic is not matching!")            
         }
     }
     
