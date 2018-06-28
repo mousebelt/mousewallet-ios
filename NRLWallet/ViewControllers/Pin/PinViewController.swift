@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RNCryptor
-import NRLWalletSDK
+//import RNCryptor
+//import NRLWalletSDK
 import AudioToolbox
 
 class PinViewController: UIViewController {
@@ -198,7 +198,9 @@ class PinViewController: UIViewController {
         for i in 0 ... self.mnemonicInitial.count - 1
         {
             message.append(self.mnemonicInitial[i])
-            message.append(" ")
+            if(i != self.mnemonicInitial.count-1){
+                message.append(" ")                
+            }
         }
         do {
             let encryptedMessage = try AppController.shared.encryptMessage(message: message, encryptionKey: encryptionKey)

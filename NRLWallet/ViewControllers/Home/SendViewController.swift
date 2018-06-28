@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import NRLWalletSDK
 import XLPagerTabStrip
 import DropDown
 
@@ -98,6 +99,24 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     }
     
     @IBAction func clickSend(_ sender: Any) {
+        let to = txt_receiveAddress.text;
+        let value = UInt64(txt_toCoin.text!)
+        let fee = UInt64(0.005)
+        
+//        guard let wallet = coinWallet else {
+//            print("setStellarWallet Error: cannot init wallet!")
+//            return
+//        }
+//        
+//        wallet.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
+//            switch (err) {
+//            case NRLWalletSDKError.nrlSuccess:
+//                self.textTransaction.text = "Successfully sent transaction. tx: \(tx)"
+//            default:
+//                self.textTransaction.text = "Failed: \(err)"
+//            }
+//            
+//        }
     }
     
     // Default actions:

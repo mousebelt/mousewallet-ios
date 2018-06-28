@@ -106,7 +106,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         self.img_fromCoin.image = UIImage(named: (baseCoinModel?.image)!)
         self.btt_fromCoinName.setTitle(baseCoinModel?.fullname, for: [])
         self.lb_fromCoinSymbol.text = baseCoinModel?.symbol
-        self.lb_fromCoinBalance.text = baseCoinModel?.balance
+        self.lb_fromCoinBalance.text = String(format:"$%@",(baseCoinModel?.balance)!)
         
         dropDownFromCoin.anchorView = btt_fromCoinName
         dropDownFromCoin.dataSource = [self.baseCoinModel?.fullname] as! [String]
@@ -138,7 +138,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         self.img_toCoin.image = UIImage(named: (tocoin.image)!)
         self.btt_toCoinName.setTitle(tocoin.fullname, for: [])
         self.lb_toCoinSymbol.text = tocoin.symbol
-        self.lb_toCoinBalance.text = tocoin.balance
+        self.lb_toCoinBalance.text = String(format: "$%@", tocoin.balance)
         
         self.txt_toCoin.placeholder = tocoin.symbol
         self.txt_toCoin.text = ""
@@ -153,7 +153,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self?.selectedToCoinIndex = index
             self?.btt_toCoinName.sizeToFit()
             self?.btt_toCoinName.setTitle(coindata?.fullname, for: [])
-            self?.lb_toCoinBalance.text = coindata?.balance
+            self?.lb_toCoinBalance.text = String(format:"$%@",(coindata?.balance)!)
             self?.lb_toCoinSymbol.text = coindata?.symbol
             self?.img_toCoin.image = UIImage(named: (coindata?.image)!)
             
@@ -171,10 +171,11 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     func updateUIValues(update : Bool) {
         if(update) {
+            var fee_usd = (self.marketModel?.minerFee)! * (baseCoinModel?.balance as! NSString).doubleValue
             self.lb_CoinBalance.text = String(format: "1 %@ = %f", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!)
             self.lb_CoinPowered.text = String(format: "%@ powered by shapeshife", self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
             self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
-            self.lb_transactionFee.text = String(format: "%.4f %@ = %f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, 0.12, "USD")
+            self.lb_transactionFee.text = String(format: "%.4f %@ = %.4f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, fee_usd, "USD")
             self.txt_toCoin.isEnabled = true
             self.txt_fromCoin.isEnabled = true
         } else {

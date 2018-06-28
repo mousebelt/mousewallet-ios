@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NRLWalletSDK
 
 class CoinModel: NSObject {
     var symbol:String!
@@ -15,4 +16,5 @@ class CoinModel: NSObject {
     var count:String!
     var balance:String!
     var address:String!
+    var wallet:NRLWallet!
 }

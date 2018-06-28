@@ -42,4 +42,6 @@ struct Constants {
         public static let CornerRadius = 5.0 as CGFloat?
         public static let CornerRadius3 = 3.0 as CGFloat?
     }
+    
+    
 }

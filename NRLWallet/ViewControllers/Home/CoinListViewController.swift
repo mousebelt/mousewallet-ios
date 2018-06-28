@@ -9,12 +9,15 @@
 import UIKit
 import SWRevealViewController
 import NRLWalletSDK
-
+import SVProgressHUD
 
 class CoinListViewController: UIViewController {
-    var coinWallet: NRLWallet?
+//    var coinWallet: NRLWallet?
     var seed: Data?
     var mnemonic: [String]?
+    
+    var blockFromHight: UInt32 = 0
+    var blockToHight: UInt32 = 0
     
     @IBOutlet weak var bttMenu: UIBarButtonItem!
     var coinArray : [CoinModel] = [CoinModel]()
@@ -60,89 +63,153 @@ class CoinListViewController: UIViewController {
         let tmpstr = self.getMnemonicFromStore()
         self.mnemonic = tmpstr.components(separatedBy: " ")
         do {
-            self.seed = try NRLMnemonic.mnemonicToSeed(from: self.mnemonic!, withPassphrase: "")
+            self.seed = try NRLMnemonic.mnemonicToSeed(from: self.mnemonic!)
         } catch {
             print(error)
         }
     }
     
     func generateEthereumWallet() {
-        // Ethereum : 60ß
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
-        coinWallet?.generateExternalKeyPair(at: 0)
         
-        let coinmodel1 = CoinModel()
-        coinmodel1.symbol = "ETH"
-        coinmodel1.fullname = "Ethereum"
-        coinmodel1.image = "ethereum"
-        coinmodel1.balance = "$100"
-        coinmodel1.count = "0.555"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
-        AppController.shared.coinArray.append(coinmodel1)
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
+        
+        let date = Date()
+        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+            print("Failed to create wallet")
+            return;
+        }
+        
+        let coinmodel = CoinModel()
+        coinmodel.balance = "0"
+        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+        })
+        let addresses = coinWallet.getReceiveAddress()
+        coinmodel.symbol = "ETH"
+        coinmodel.fullname = "Ethereum"
+        coinmodel.image = "ethereum"
+        coinmodel.count = "0.555"
+        coinmodel.address = String(describing: addresses)
+        coinmodel.wallet = coinWallet
+        self.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel)
+ 
     }
     
     func generateBitcoinWallet() {
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.bitcoin))
-        coinWallet?.generateExternalKeyPair(at: 0)
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.bitcoin)) as NRLWallet
         
-        let coinmodel1 = CoinModel()
-        coinmodel1.symbol = "BTC"
-        coinmodel1.fullname = "Bitcoin"
-        coinmodel1.image = "bitcoin"
-        coinmodel1.balance = "$6450"
-        coinmodel1.count = "3.333"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
-        AppController.shared.coinArray.append(coinmodel1)
+        let date = Date()
+        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+            print("Failed to create wallet")
+            return;
+        }
+        
+        let coinmodel = CoinModel()
+        coinmodel.balance = "0"
+        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+        })
+        let addresses = coinWallet.getReceiveAddress()
+        
+//        coinWallet.createPeerGroup()
+        
+        coinmodel.symbol = "BTC"
+        coinmodel.fullname = "Bitcoin"
+        coinmodel.image = "bitcoin"
+//        coinmodel.balance = "6450"
+        coinmodel.count = "3.333"
+        coinmodel.address = addresses
+        coinmodel.wallet = coinWallet
+        
+        self.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel)
         
     }
     
     func generateLitecoinWallet() {
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
-        coinWallet?.generateExternalKeyPair(at: 0)
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.litecoin)) as NRLWallet
         
-        let coinmodel1 = CoinModel()
-        coinmodel1.symbol = "LTC"
-        coinmodel1.fullname = "Litecoin"
-        coinmodel1.image = "litecoin"
-        coinmodel1.balance = "$94.05"
-        coinmodel1.count = "2.222"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
-        AppController.shared.coinArray.append(coinmodel1)
+        let date = Date()
+        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+            print("Failed to create wallet")
+            return;
+        }
         
+        let coinmodel = CoinModel()
+        coinmodel.balance = "0"
+        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+        })
+        let addresses = coinWallet.getReceiveAddress()
+        
+//        coinWallet.createPeerGroup()
+        
+        coinmodel.symbol = "LTC"
+        coinmodel.fullname = "Litecoin"
+        coinmodel.image = "litecoin"
+        coinmodel.count = "2.222"
+        coinmodel.address = addresses
+        coinmodel.wallet = coinWallet
+        
+        self.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel)
+        
+        //notification handlers from spv node events
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidDownloadBlock(notification:)), name: Notification.Name.LTC_PeerGroupDidDownloadBlock, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
     }
     
     func generateNeoWallet() {
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.neo))
-        coinWallet?.generateExternalKeyPair(at: 0)
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.neo)) as NRLWallet
         
-        let coinmodel1 = CoinModel()
-        coinmodel1.symbol = "NEO"
-        coinmodel1.fullname = "Neo"
-        coinmodel1.image = "neo"
-        coinmodel1.balance = "$1.11"
-        coinmodel1.count = "1.111"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
-        AppController.shared.coinArray.append(coinmodel1)
+        let date = Date()
+        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+            print("Failed to create wallet")
+            return;
+        }
         
+        let coinmodel = CoinModel()
+        coinmodel.balance = "0"
+        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+        })
+        let addresses = coinWallet.getReceiveAddress()
+        
+        coinmodel.symbol = "NEO"
+        coinmodel.fullname = "Neo"
+        coinmodel.image = "neo"
+        coinmodel.count = "1.111"
+        coinmodel.address = addresses
+        coinmodel.wallet = coinWallet
+        self.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel)
     }
     
     func generateStellarWallet() {
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.stellar))
-        coinWallet?.generateExternalKeyPair(at: 0)
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
         
-        let coinmodel1 = CoinModel()
-        coinmodel1.symbol = "XLD"
-        coinmodel1.fullname = "Stellar"
-        coinmodel1.image = "stellar"
-        coinmodel1.balance = "$0.11"
-        coinmodel1.count = "0.111"
-        coinmodel1.address = coinWallet?.getAddress()
-        self.coinArray.append(coinmodel1)
-        AppController.shared.coinArray.append(coinmodel1)
+        let date = Date()
+        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+            print("Failed to create wallet")
+            return;
+        }
+        
+        let coinmodel = CoinModel()
+        coinmodel.balance = "0"
+        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+        })
+        let addresses = coinWallet.getReceiveAddress()
+        coinmodel.symbol = "XLD"
+        coinmodel.fullname = "Stellar"
+        coinmodel.image = "stellar"
+        coinmodel.count = "0.111"
+        coinmodel.address = addresses
+        coinmodel.wallet = coinWallet
+        self.coinArray.append(coinmodel)
+        AppController.shared.coinArray.append(coinmodel)
     }
     
     func setLeftMenu() {
@@ -156,6 +223,103 @@ class CoinListViewController: UIViewController {
             self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         }
     }
+    
+    
+    @objc func WalletDidUpdateBalance(notification: Notification) {
+        /*
+        let walletObj = notification.object as! WSWallet;
+        
+        guard let wallet = coinWallet else {
+            print("WalletDidUpdateBalance Error: cannot init wallet!")
+            return
+        }
+        
+        print("Balance: \(walletObj.balance)")
+        
+//        wallet.getWalletBalance() { (err, value) -> () in
+//            self.lbBalance.text = value
+//        }
+ */
+    }
+    
+    @objc func PeerGroupDidStartDownload(notification: Notification) {
+        /*
+        guard let wallet = coinWallet else {
+            print("PeerGroupDidStartDownload Error: cannot init wallet!")
+            return
+        }
+        
+        guard let userInfo = notification.userInfo else {
+            print("PeerGroupDidStartDownload Error: invalid notification object.")
+            return
+        }
+        
+//        self.blockFromHight = userInfo[WSPeerGroupDownloadFromHeightKey] as! UInt32
+//        self.blockToHight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
+        
+//        wallet.getWalletBalance() { (err, value) -> () in
+//            self.lbBalance.text = value
+//        }
+//        self.lbAddress.text = wallet.getReceiveAddress();
+//
+//        var progressed = 0;
+//        if (self.blockFromHight == self.blockToHight) {
+//            progressed = 100
+//        }
+//        self.lbProgress.text = String(format: "%d/%d       %.2f%%", self.blockFromHight, self.blockToHight, Double(progressed))
+ */
+    }
+    
+    @objc func PeerGroupDidDownloadBlock(notification: Notification) {
+        /*
+        let block = notification.userInfo![WSPeerGroupDownloadBlockKey] as! WSStorableBlock
+        let currentHeight = block.height() as UInt32;
+        let total = self.blockToHight - self.blockFromHight
+        let progressed = currentHeight - self.blockFromHight
+        
+        if (total != 0 && progressed > 0) {
+            if (currentHeight <= self.blockToHight) {
+                if (currentHeight % 1000 == 0 || currentHeight == self.blockToHight) {
+//                    self.lbProgress.text = String(format: "%d/%d       %.2f%%", currentHeight, self.blockToHight, Double(progressed) * 100.0 / Double(total))
+                }
+            }
+        }
+ */
+    }
+    
+    @objc func On_LTC_PeerGroupDidDownloadBlock(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        
+        let progress = userinfo[PeerGroupDownloadBlockProgressKey] as! Double
+        let timestamp = userinfo[PeerGroupDownloadBlockTimestampKey] as! UInt32
+        
+//        let txt = dateFormatter.string(from: Date(timeIntervalSince1970: Double(timestamp)))
+//
+//        self.lbProgress.text = String(format: "Progress: %.2f %%  \(txt)", (progress * 100))
+    }
+    
+    @objc func On_LTC_WalletDidUpdateBalance(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        
+        let balance = userinfo[WalletBalanceKey] as! UInt64
+        
+//        self.lbBalance.text = String(format: "\(balance)")
+    }
+    
+    @objc func On_LTC_PeerGroupDidStartDownload(notification: Notification) {
+        /*
+        guard let wallet = coinWallet else {
+            print("On_LTC_PeerGroupDidStartDownload Error: cannot init wallet!")
+            return
+        }
+        
+        wallet.getWalletBalance() { (err, value) -> () in
+//            self.lbBalance.text = value
+        }
+//        self.lbAddress.text = wallet.getReceiveAddress();
+ */
+    }
+ 
 }
 
 extension CoinListViewController: UITableViewDataSource {

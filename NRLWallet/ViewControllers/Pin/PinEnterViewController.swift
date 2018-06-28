@@ -54,7 +54,6 @@ class PinEnterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     func setupViews() {
         txtTitle.text = "ENTER A PIN"
         txtError.isHidden = true
@@ -146,7 +145,7 @@ class PinEnterViewController: UIViewController {
         
         let window = UIApplication.shared.keyWindow
         if let window = window {
-            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {
+            UIView.transition(with: window, duration: 0, options: .beginFromCurrentState, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 window.rootViewController = homeViewController
