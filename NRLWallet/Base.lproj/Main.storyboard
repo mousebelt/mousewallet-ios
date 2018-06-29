@@ -131,7 +131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="Koo-Dn-btm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Koo-Dn-btm">
                                 <rect key="frame" x="87" y="30" width="200" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1891,103 +1891,6 @@
             </objects>
             <point key="canvasLocation" x="454" y="-548"/>
         </scene>
-        <!--Mnemonic-->
-        <scene sceneID="b7h-J3-UrB">
-            <objects>
-                <viewController storyboardIdentifier="ReviewMnemonicViewController" id="kC5-4e-NcP" customClass="ReviewMnemonicViewController" customModule="NRLWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gQh-gO-Rxu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-hD-z2n">
-                                <rect key="frame" x="36" y="583" width="303" height="48"/>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="IUy-Zo-amc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClickOK:" destination="kC5-4e-NcP" eventType="touchUpInside" id="O5d-qs-eYZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is your 12-word mnemonic to restore your wallet. Write this down and do not share it with anyone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kp7-17-UBe">
-                                <rect key="frame" x="36" y="52" width="303" height="68"/>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-uw-l9C">
-                                <rect key="frame" x="36" y="144" width="303" height="128"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cA8-xS-Azr" customClass="TagListView" customModule="TagListView">
-                                        <rect key="frame" x="8" y="8" width="287" height="20"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="pTd-j1-c0o"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                                <color key="value" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="marginY">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="marginX">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="M3f-cf-UQE"/>
-                                    <constraint firstItem="cA8-xS-Azr" firstAttribute="leading" secondItem="XXp-uw-l9C" secondAttribute="leading" constant="8" id="aD9-3t-JDd"/>
-                                    <constraint firstItem="cA8-xS-Azr" firstAttribute="top" secondItem="XXp-uw-l9C" secondAttribute="top" constant="8" id="gGZ-2n-Ctw"/>
-                                    <constraint firstAttribute="trailing" secondItem="cA8-xS-Azr" secondAttribute="trailing" constant="8" id="pSh-6z-Kdj"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="XXp-uw-l9C" firstAttribute="leading" secondItem="sQm-Ud-hYh" secondAttribute="leading" constant="36" id="5Vc-BR-l58"/>
-                            <constraint firstItem="sQm-Ud-hYh" firstAttribute="trailing" secondItem="XXp-uw-l9C" secondAttribute="trailing" constant="36" id="Bob-da-PY3"/>
-                            <constraint firstItem="sQm-Ud-hYh" firstAttribute="trailing" secondItem="Bbk-hD-z2n" secondAttribute="trailing" constant="36" id="Ctl-gl-U2L"/>
-                            <constraint firstItem="Bbk-hD-z2n" firstAttribute="leading" secondItem="sQm-Ud-hYh" secondAttribute="leading" constant="36" id="E0k-MW-52P"/>
-                            <constraint firstItem="XXp-uw-l9C" firstAttribute="top" secondItem="Kp7-17-UBe" secondAttribute="bottom" constant="24" id="VwR-6b-Ukk"/>
-                            <constraint firstItem="sQm-Ud-hYh" firstAttribute="bottom" secondItem="Bbk-hD-z2n" secondAttribute="bottom" constant="36" id="iXj-09-KUd"/>
-                            <constraint firstItem="Kp7-17-UBe" firstAttribute="top" secondItem="sQm-Ud-hYh" secondAttribute="top" constant="32" id="oQd-df-Xhf"/>
-                            <constraint firstItem="Kp7-17-UBe" firstAttribute="leading" secondItem="sQm-Ud-hYh" secondAttribute="leading" constant="36" id="owL-Jw-K9g"/>
-                            <constraint firstItem="sQm-Ud-hYh" firstAttribute="trailing" secondItem="Kp7-17-UBe" secondAttribute="trailing" constant="36" id="v1l-lx-GyA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="sQm-Ud-hYh"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Mnemonic" id="rFI-wU-wfl">
-                        <barButtonItem key="backBarButtonItem" title="BACK" id="d8y-cW-9nJ">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="bttOK" destination="Bbk-hD-z2n" id="Ndo-A9-YMh"/>
-                        <outlet property="mnemonicTagListView" destination="cA8-xS-Azr" id="9iR-P3-Kkk"/>
-                        <outlet property="mnemonicView" destination="XXp-uw-l9C" id="Ztf-lb-HgA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ka-If-hPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1297" y="-539"/>
-        </scene>
     </scenes>
     <resources>
         <image name="about" width="30" height="30"/>
@@ -2008,7 +1911,6 @@
         <image name="mousebelt" width="262" height="208"/>
         <image name="norestlabs" width="209" height="95"/>
         <image name="omg" width="42" height="42"/>
-        <image name="qr" width="210" height="210"/>
         <image name="setting" width="20" height="20"/>
         <image name="star" width="20" height="20"/>
         <image name="user" width="16" height="16"/>

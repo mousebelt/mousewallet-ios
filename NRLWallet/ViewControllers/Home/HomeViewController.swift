@@ -24,6 +24,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
         super.init(coder: aDecoder)
     }
     
+    
     override func viewDidLoad() {
 //        self.addMenuAction()
         self.revealViewController().panGestureRecognizer().isEnabled=false;
@@ -121,6 +122,7 @@ class HomeViewController: ButtonBarPagerTabStripViewController {
 //            self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
 //        }
     }
+    
 }
 extension UISearchBar {
     func changeSearchBarColor(color : UIColor) {

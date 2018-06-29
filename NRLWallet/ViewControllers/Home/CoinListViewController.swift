@@ -12,12 +12,10 @@ import NRLWalletSDK
 import SVProgressHUD
 
 class CoinListViewController: UIViewController {
-//    var coinWallet: NRLWallet?
+    var bitcoinWallet: NRLWallet?
     var seed: Data?
     var mnemonic: [String]?
     
-    var blockFromHight: UInt32 = 0
-    var blockToHight: UInt32 = 0
     
     @IBOutlet weak var bttMenu: UIBarButtonItem!
     var coinArray : [CoinModel] = [CoinModel]()
@@ -97,22 +95,27 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.bitcoin)) as NRLWallet
+        bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.bitcoin))
+        guard let wallet = bitcoinWallet else {
+            print("Error cannot init wallet!")
+            return
+        }
+        
         
         let date = Date()
-        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+        if(!(wallet.createOwnWallet(created: date, fnew: true))) {
             print("Failed to create wallet")
             return;
         }
         
+        
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+        wallet.getWalletBalance(callback: { (err, value) -> () in
             coinmodel.balance = String(describing: value)
         })
-        let addresses = coinWallet.getReceiveAddress()
+        let addresses = wallet.getReceiveAddress()
         
-//        coinWallet.createPeerGroup()
         
         coinmodel.symbol = "BTC"
         coinmodel.fullname = "Bitcoin"
@@ -120,7 +123,7 @@ class CoinListViewController: UIViewController {
 //        coinmodel.balance = "6450"
         coinmodel.count = "3.333"
         coinmodel.address = addresses
-        coinmodel.wallet = coinWallet
+        coinmodel.wallet = wallet
         
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
@@ -225,67 +228,6 @@ class CoinListViewController: UIViewController {
     }
     
     
-    @objc func WalletDidUpdateBalance(notification: Notification) {
-        /*
-        let walletObj = notification.object as! WSWallet;
-        
-        guard let wallet = coinWallet else {
-            print("WalletDidUpdateBalance Error: cannot init wallet!")
-            return
-        }
-        
-        print("Balance: \(walletObj.balance)")
-        
-//        wallet.getWalletBalance() { (err, value) -> () in
-//            self.lbBalance.text = value
-//        }
- */
-    }
-    
-    @objc func PeerGroupDidStartDownload(notification: Notification) {
-        /*
-        guard let wallet = coinWallet else {
-            print("PeerGroupDidStartDownload Error: cannot init wallet!")
-            return
-        }
-        
-        guard let userInfo = notification.userInfo else {
-            print("PeerGroupDidStartDownload Error: invalid notification object.")
-            return
-        }
-        
-//        self.blockFromHight = userInfo[WSPeerGroupDownloadFromHeightKey] as! UInt32
-//        self.blockToHight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
-        
-//        wallet.getWalletBalance() { (err, value) -> () in
-//            self.lbBalance.text = value
-//        }
-//        self.lbAddress.text = wallet.getReceiveAddress();
-//
-//        var progressed = 0;
-//        if (self.blockFromHight == self.blockToHight) {
-//            progressed = 100
-//        }
-//        self.lbProgress.text = String(format: "%d/%d       %.2f%%", self.blockFromHight, self.blockToHight, Double(progressed))
- */
-    }
-    
-    @objc func PeerGroupDidDownloadBlock(notification: Notification) {
-        /*
-        let block = notification.userInfo![WSPeerGroupDownloadBlockKey] as! WSStorableBlock
-        let currentHeight = block.height() as UInt32;
-        let total = self.blockToHight - self.blockFromHight
-        let progressed = currentHeight - self.blockFromHight
-        
-        if (total != 0 && progressed > 0) {
-            if (currentHeight <= self.blockToHight) {
-                if (currentHeight % 1000 == 0 || currentHeight == self.blockToHight) {
-//                    self.lbProgress.text = String(format: "%d/%d       %.2f%%", currentHeight, self.blockToHight, Double(progressed) * 100.0 / Double(total))
-                }
-            }
-        }
- */
-    }
     
     @objc func On_LTC_PeerGroupDidDownloadBlock(notification: Notification) {
         let userinfo = notification.userInfo as! [String: Any]

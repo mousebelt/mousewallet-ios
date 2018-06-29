@@ -35,6 +35,7 @@
 		D7A6E93620AEB0570075596E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A6E93420AEB0570075596E /* LaunchScreen.storyboard */; };
 		D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */; };
 		D7A6E97520AF11070075596E /* Tutorial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */; };
+		E10397E820E5CFDB00457B52 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E10397E720E5CFDB00457B52 /* WSCoreDataBlockStore.xcdatamodel */; };
 		E10820C420E4DF790053312A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10820B820E4DF640053312A /* Alamofire.framework */; };
 		E10820C520E4DF790053312A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E10820B820E4DF640053312A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E10820C620E4DF790053312A /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10820B720E4DF640053312A /* BigInt.framework */; };
@@ -68,7 +69,6 @@
 		E152DAB420DE40810009B01B /* NRLCoinNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152DAB320DE40810009B01B /* NRLCoinNotification.swift */; };
 		E161700220D234AB0003DD44 /* English.swift in Sources */ = {isa = PBXBuildFile; fileRef = E161700120D234AB0003DD44 /* English.swift */; };
 		E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */; };
-		E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */; };
 		E1E2ACF920D14B47008ED04D /* InsertMNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */; };
 		E1E2ACFB20D15299008ED04D /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */; };
 		E1EF17E320D7749400FF4540 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF17E220D7749400FF4540 /* AboutViewController.swift */; };
@@ -136,6 +136,7 @@
 		D7A6E97120AECDF90075596E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		D7A6E97220AF09BA0075596E /* Tutorial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial2ViewController.swift; sourceTree = "<group>"; };
 		D7A6E97420AF11070075596E /* Tutorial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial3ViewController.swift; sourceTree = "<group>"; };
+		E10397E720E5CFDB00457B52 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
 		E10820B020E4DF640053312A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = SOURCE_ROOT; };
 		E10820B120E4DF640053312A /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = SOURCE_ROOT; };
 		E10820B220E4DF640053312A /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = SOURCE_ROOT; };
@@ -161,7 +162,6 @@
 		E15C52EF20E42D40004DA7C5 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		E161700120D234AB0003DD44 /* English.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English.swift; sourceTree = "<group>"; };
 		E178CE1E20CFF945005C6732 /* PinEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEnterViewController.swift; sourceTree = "<group>"; };
-		E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMnemonicViewController.swift; sourceTree = "<group>"; };
 		E1DD75F020E3AEDE00CB2F75 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Volumes/Work/Workspace/Wallet/test/restless-wallet-ios-master/lib/CryptoSwift.framework"; sourceTree = "<absolute>"; };
 		E1E2ACF820D14B47008ED04D /* InsertMNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMNViewController.swift; sourceTree = "<group>"; };
 		E1E2ACFA20D15299008ED04D /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
@@ -254,7 +254,6 @@
 				84C052AA20BD169D0013A7FF /* SendViewController.swift */,
 				84C052AC20BD16A70013A7FF /* SwapViewController.swift */,
 				84E79E5120BEEF7400D08645 /* CoinListViewController.swift */,
-				E178CE2020D05C60005C6732 /* ReviewMnemonicViewController.swift */,
 				E1EF17E220D7749400FF4540 /* AboutViewController.swift */,
 			);
 			path = Home;
@@ -399,6 +398,7 @@
 		D7A6E96220AEC1A80075596E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				E10397E720E5CFDB00457B52 /* WSCoreDataBlockStore.xcdatamodel */,
 				D7A6E96320AEC1C60075596E /* Info.plist */,
 			);
 			name = Support;
@@ -614,7 +614,7 @@
 				84C052A920BD16900013A7FF /* ReceiveViewController.swift in Sources */,
 				D7A6E92E20AEB0570075596E /* Tutorial1ViewController.swift in Sources */,
 				D7A6E97320AF09BA0075596E /* Tutorial2ViewController.swift in Sources */,
-				E178CE2120D05C60005C6732 /* ReviewMnemonicViewController.swift in Sources */,
+				E10397E820E5CFDB00457B52 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				E152DAB420DE40810009B01B /* NRLCoinNotification.swift in Sources */,
 				84C052AD20BD16A70013A7FF /* SwapViewController.swift in Sources */,
 				84CA5C8020B7DB9A0064D1BC /* HomeViewController.swift in Sources */,
