@@ -1,0 +1,9 @@
+{
+  "commitish" : "v0.0.0.5",
+  "iOS" : [
+    {
+      "name" : "NRLWalletSDK",
+      "hash" : "37577360ea1fa1db9cdc4d931e7d8f18f88e6f92042e341fc27c3bf4cbfa6ff5"
+    }
+  ]
+}

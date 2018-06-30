@@ -67,7 +67,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
     @IBAction func onContinue(_ sender: Any) {
         //check mnemonic index
         if(self.mnemonicInitial.count != self.mnemonicList.tagViews.count) {
-            AppController.shared.ToastMessage(view: self.view, str: "Please sort all the Mnemonic!")
+            toastMessage(str: "Please sort all the Mnemonic!")
             return
         }
         var isMatch = true
@@ -86,7 +86,7 @@ class VerifyMnemonicViewController: UIViewController, TagListViewDelegate {
             PinViewController.mnemonicInitial = self.mnemonicInitial
             self.navigationController?.pushViewController(PinViewController, animated: true)
         }else {
-            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic is not matching!")            
+            toastMessage(str: "Mnemonic is not matching!")            
         }
     }
     

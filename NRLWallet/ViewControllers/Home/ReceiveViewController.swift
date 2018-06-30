@@ -49,6 +49,35 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
             if (!((wallet?.isConnected())!)) {
                 wallet?.connectPeers()
             }
+        } else if (self.baseCoinModel?.symbol == "ETH") {
+            wallet = self.baseCoinModel?.wallet
+            self.lb_coinAddress.text = wallet?.getReceiveAddress()
+            self.makeQRCode()
+            self.wallet?.getWalletBalance() { (err, value) -> () in
+                self.balance = String(describing: value)
+                self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
+                
+            }
+        } else if (self.baseCoinModel?.symbol == "NEO") {
+            wallet = self.baseCoinModel?.wallet
+            self.lb_coinAddress.text = wallet?.getReceiveAddress()
+            self.makeQRCode()
+            self.wallet?.getWalletBalance() { (err, value) -> () in
+                self.balance = String(describing: value)
+                self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
+                
+            }
+        } else if (self.baseCoinModel?.symbol == "XLD") {
+            wallet = self.baseCoinModel?.wallet
+            self.lb_coinAddress.text = wallet?.getReceiveAddress()
+            self.makeQRCode()
+            self.wallet?.getWalletBalance() { (err, value) -> () in
+                self.balance = String(describing: value)
+                self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
+                
+            }
+        } else if (self.baseCoinModel?.symbol == "LTC") {
+            
         }
     }
     // MARK: - IndicatorInfoProvider
@@ -80,8 +109,14 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
     }
     @IBAction func copyClick(_ sender: Any) {
         UIPasteboard.general.string = self.lb_coinAddress.text
-        AppController.shared.ToastMessage(view: self.view, str: "Address copied!")
+        toastMessage(str: "Address copied!")
     }
+    
+    
+}
+
+// MARK: - BITCOIN
+extension ReceiveViewController {
     
     func updateWalletInfo() {
         SVProgressHUD.dismiss()

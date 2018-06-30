@@ -162,7 +162,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //Actions: Recommend button (3 buttons) action
     @IBAction func recommendClick(_ sender: UIButton) {
         if(mnemonicArray.count >= 12) {
-            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic must be consist of 12 words!")
+            toastMessage(str: "Mnemonic must be consist of 12 words!")
             return
         }
         if(sender.isHidden) {
@@ -210,7 +210,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     //Actions: Verify input mnemonic list, go to PIN Navigation
     @IBAction func clickNext(_ sender: Any) {
         if( mnemonicArray.count != 12 ) {
-            AppController.shared.ToastMessage(view: self.view, str: "Mnemonic must be consist of 12 words!")
+            toastMessage(str: "Mnemonic must be consist of 12 words!")
         } else {
             //need check valid mnemonic
             var validate = false
@@ -233,7 +233,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
                 PinViewController.mnemonicInitial = self.mnemonicArray
                 self.navigationController?.pushViewController(PinViewController, animated: true)
             } else {
-                AppController.shared.ToastMessage(view: self.view, str: "Invalid Mnemonic!")
+                toastMessage(str: "Invalid Mnemonic!")
             }
             
         }
