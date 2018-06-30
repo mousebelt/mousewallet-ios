@@ -1,9 +1,0 @@
-{
-  "commitish" : "0.3.0",
-  "iOS" : [
-    {
-      "name" : "Web3",
-      "hash" : "ae02d67c784daf988188208ed92aef13001a737f06f48e306982e982d8af93c2"
-    }
-  ]
-}
