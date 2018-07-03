@@ -79,9 +79,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         coinmodel.symbol = "ETH"
         coinmodel.fullname = "Ethereum"
@@ -111,9 +111,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        wallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        wallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = wallet.getReceiveAddress()
         
         
@@ -141,9 +141,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         
 //        coinWallet.createPeerGroup()
@@ -175,9 +175,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         
         coinmodel.symbol = "NEO"
@@ -201,9 +201,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         coinmodel.symbol = "XLD"
         coinmodel.fullname = "Stellar"

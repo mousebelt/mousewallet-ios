@@ -77,7 +77,17 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 
             }
         } else if (self.baseCoinModel?.symbol == "LTC") {
+            SVProgressHUD.show()
+            wallet = self.baseCoinModel?.wallet
+            //notification handlers from spv node events
+            NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
             
+            wallet?.createPeerGroup()
+            if (!((wallet?.isConnected())!)) {
+                wallet?.connectPeers()
+            }
         }
     }
     // MARK: - IndicatorInfoProvider
