@@ -292,7 +292,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
                     if((json["error"]) != nil){
                         self.updateUIValues(update: false)
                         SVProgressHUD.dismiss()
-                        AppController.shared.ToastMessage(view: self.view, str: "That pair is temporarily unavailable for trades.")
+                        self.toastMessage(str: "That pair is temporarily unavailable for trades.")
                         return
                     }
                     self.marketModel = MarketModel()

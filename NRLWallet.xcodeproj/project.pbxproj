@@ -25,6 +25,7 @@
 		84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5120BEEF7400D08645 /* CoinListViewController.swift */; };
 		84E79E5420BEF75900D08645 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5320BEF75900D08645 /* CoinTableViewCell.swift */; };
 		84E79E5720BEFAFD00D08645 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E79E5620BEFAFD00D08645 /* CoinModel.swift */; };
+		B6D596B320E74AA0009B6D9E /* ViewController+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D596B220E74A9F009B6D9E /* ViewController+Toast.swift */; };
 		D792922D20B02BED00DC558C /* MnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922C20B02BEC00DC558C /* MnemonicViewController.swift */; };
 		D792923020B05FC100DC558C /* VerifyMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */; };
 		D792923120B090F900DC558C /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D792922E20B04D6D00DC558C /* SourceSansPro-SemiBold.ttf */; };
@@ -120,6 +121,7 @@
 		84E79E5120BEEF7400D08645 /* CoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewController.swift; sourceTree = "<group>"; };
 		84E79E5320BEF75900D08645 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
 		84E79E5620BEFAFD00D08645 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		B6D596B220E74A9F009B6D9E /* ViewController+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Toast.swift"; sourceTree = "<group>"; };
 		D792922C20B02BEC00DC558C /* MnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicViewController.swift; sourceTree = "<group>"; };
 		D792922E20B04D6D00DC558C /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		D792922F20B05FC100DC558C /* VerifyMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyMnemonicViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B6D596B120E74A8A009B6D9E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6D596B220E74A9F009B6D9E /* ViewController+Toast.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BAA59D1B2682781A7C8CDB8C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +333,7 @@
 		D7A6E92A20AEB0570075596E /* NRLWallet */ = {
 			isa = PBXGroup;
 			children = (
+				B6D596B120E74A8A009B6D9E /* Extension */,
 				D7A6E96520AEC21C0075596E /* Storyboards */,
 				D7A6E96220AEC1A80075596E /* Support */,
 				D7A6E96020AEC01F0075596E /* Resources */,
@@ -603,6 +614,7 @@
 				84E79E5720BEFAFD00D08645 /* CoinModel.swift in Sources */,
 				84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */,
 				84CA5C7B20B730750064D1BC /* PinViewController.swift in Sources */,
+				B6D596B320E74AA0009B6D9E /* ViewController+Toast.swift in Sources */,
 				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
@@ -703,7 +715,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -756,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -781,7 +793,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/library";
 				INFOPLIST_FILE = NRLWallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -813,7 +825,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/library";
 				INFOPLIST_FILE = NRLWallet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

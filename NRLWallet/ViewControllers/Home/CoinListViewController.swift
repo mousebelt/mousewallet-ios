@@ -69,7 +69,7 @@ class CoinListViewController: UIViewController {
     
     func generateEthereumWallet() {
         
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.ethereum)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -79,9 +79,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         coinmodel.symbol = "ETH"
         coinmodel.fullname = "Ethereum"
@@ -95,7 +95,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.bitcoin))
+        bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.bitcoin))
         guard let wallet = bitcoinWallet else {
             print("Error cannot init wallet!")
             return
@@ -111,9 +111,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        wallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        wallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = wallet.getReceiveAddress()
         
         
@@ -131,7 +131,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateLitecoinWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.litecoin)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.litecoin)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -141,9 +141,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         
 //        coinWallet.createPeerGroup()
@@ -165,7 +165,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateNeoWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.neo)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.neo)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -175,9 +175,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         
         coinmodel.symbol = "NEO"
@@ -191,7 +191,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateStellarWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.stellar)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -201,9 +201,9 @@ class CoinListViewController: UIViewController {
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
-        coinWallet.getWalletBalance(callback: { (err, value) -> () in
-            coinmodel.balance = String(describing: value)
-        })
+//        coinWallet.getWalletBalance(callback: { (err, value) -> () in
+//            coinmodel.balance = String(describing: value)
+//        })
         let addresses = coinWallet.getReceiveAddress()
         coinmodel.symbol = "XLD"
         coinmodel.fullname = "Stellar"
