@@ -69,7 +69,7 @@ class CoinListViewController: UIViewController {
     
     func generateEthereumWallet() {
         
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.ethereum)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -95,7 +95,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.bitcoin))
+        bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.bitcoin))
         guard let wallet = bitcoinWallet else {
             print("Error cannot init wallet!")
             return
@@ -131,7 +131,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateLitecoinWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.litecoin)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.litecoin)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -165,7 +165,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateNeoWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.neo)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.neo)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
@@ -191,7 +191,7 @@ class CoinListViewController: UIViewController {
     }
     
     func generateStellarWallet() {
-        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .test(.stellar)) as NRLWallet
+        let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.stellar)) as NRLWallet
         
         let date = Date()
         if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
