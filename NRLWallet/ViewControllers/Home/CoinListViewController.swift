@@ -134,7 +134,7 @@ class CoinListViewController: UIViewController {
         let coinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.litecoin)) as NRLWallet
         
         let date = Date()
-        if(!coinWallet.createOwnWallet(created: date, fnew: false)) {
+        if(!coinWallet.createOwnWallet(created: date, fnew: true)) {
             print("Failed to create wallet")
             return;
         }

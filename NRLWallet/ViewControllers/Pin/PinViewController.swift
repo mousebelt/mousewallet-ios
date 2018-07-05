@@ -189,7 +189,7 @@ class PinViewController: UIViewController {
     
     func prepairEncrypt() -> String {
         var encryptionKey = String()
-        for i in 0 ... self.pincodeArray.count - 1
+        for i in 0 ... 5
         {
             encryptionKey.append(self.pincodeArray[i])
         }
