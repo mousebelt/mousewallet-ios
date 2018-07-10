@@ -218,7 +218,7 @@ class PinViewController: UIViewController {
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.YES)
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedMessage, value: self.encryptedMessage)
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyEncryptedKey, value: self.encryptedKey)
-        
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyIsNewAccount, value: Constants.YES)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
         

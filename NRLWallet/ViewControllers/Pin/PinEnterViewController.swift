@@ -86,7 +86,7 @@ class PinEnterViewController: UIViewController {
         }
         if(pincodeArray.count == PIN_MAX) {
             if(self.checkWithSavedPinCode()){
-                Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.gotoMainview), userInfo: nil, repeats: false)
+                Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.gotoMainview), userInfo: nil, repeats: false)
             } else {
                 txtTitle.text = "ERROR"
                 txtError.isHidden = false
@@ -127,7 +127,7 @@ class PinEnterViewController: UIViewController {
     
     func checkWithSavedPinCode() -> Bool {
         var encryptionKey = String()
-        for i in 0 ... self.pincodeArray.count - 1
+        for i in 0 ... 5
         {
             encryptionKey.append(self.pincodeArray[i])
         }
@@ -140,6 +140,7 @@ class PinEnterViewController: UIViewController {
     
     @objc func gotoMainview() {
         UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.YES)
+        UserData.saveKeyData(Constants.DefaultsKeys.kKeyIsNewAccount, value: Constants.NO)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealVC")
         
@@ -159,7 +160,7 @@ class PinEnterViewController: UIViewController {
         let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
         let window = UIApplication.shared.keyWindow
         if let window = window {
-            UIView.transition(with: window, duration: 0.5, options: .beginFromCurrentState, animations: {
+            UIView.transition(with: window, duration: 0.1, options: .beginFromCurrentState, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled
                 UIView.setAnimationsEnabled(false)
                 window.rootViewController = tutorialViewController

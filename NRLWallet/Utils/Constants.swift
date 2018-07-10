@@ -14,6 +14,9 @@ struct Constants {
     
     public static let URL_GET_MARKETINFO = "https://shapeshift.io/marketinfo/"
     public static let URL_NORMAL_TRANSACTION = "https://shapeshift.io/shift"
+    public static let URL_GET_CONVERSION_RATE = "https://api.coinmarketcap.com/v2/ticker/?convert=USD"
+    public static let URL_GET_BTC_FEE = "https://bitcoinfees.earn.com/api/v1/fees/recommended"
+    public static let URL_GET_ETH_FEE = "https://www.etherchain.org/api/gasPriceOracle"
     
     public static let YES = "yes"
     public static let NO = "no"
@@ -24,6 +27,7 @@ struct Constants {
         public static let kKeyEncryptedMessage = "EncryptedMessage"
         public static let kKeyEncryptedKey = "EncryptedKey"
         public static let kKeyTutorialPass = "TutorialPass"
+        public static let kKeyIsNewAccount = "IsNewAccount"
     }
     struct Colors {
         public static let ActiveLayerBackgroundColor = UIColor(red: 250.0/255.0, green: 239.0/255.0, blue: 237.0/255.0, alpha: 1.0)
