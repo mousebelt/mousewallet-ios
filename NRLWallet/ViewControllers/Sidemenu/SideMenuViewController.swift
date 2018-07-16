@@ -11,20 +11,12 @@ import Contacts
 import SWRevealViewController
 
 class SideMenuViewController: UIViewController {
-    
-    @IBOutlet weak var imgUserAvatar: UIImageView!
-    @IBOutlet weak var lb_UserBalance: UILabel!
-    @IBOutlet weak var lb_UserName: UILabel!
-    
     @IBOutlet weak var vi_Home: UIView!
-    @IBOutlet weak var vi_Send: UIView!
-    @IBOutlet weak var vi_Received: UIView!
-    @IBOutlet weak var vi_Swap: UIView!
-    @IBOutlet weak var vi_Mnemonic: UIView!
-    @IBOutlet weak var vi_Logout: UIView!
+    @IBOutlet weak var vi_Settings: UIView!
     @IBOutlet weak var vi_About: UIView!
     
-
+    @IBOutlet weak var img_Settings: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
@@ -43,17 +35,14 @@ class SideMenuViewController: UIViewController {
     }
 
     func setupViews() {
-        self.imgUserAvatar.layer.cornerRadius = self.imgUserAvatar.frame.size.height/2
-        self.imgUserAvatar.clipsToBounds = true
+        img_Settings.image = img_Settings.image!.withRenderingMode(.alwaysTemplate)
+        img_Settings.tintColor = UIColor(red: 115.0/255.0, green: 110.0/255.0, blue: 109.0/255.0, alpha: 1)
     }
+    
     func setDefaultBackground() {
         self.vi_Home.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
-        self.vi_Send.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
-        self.vi_Received.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
-        self.vi_Swap.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
-        self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         self.vi_About.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
-        self.vi_Logout.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
+        self.vi_Settings.layer.backgroundColor = Constants.Colors.WhiteColor.cgColor
         
     }
 //    Actions
@@ -67,29 +56,6 @@ class SideMenuViewController: UIViewController {
         self.revealViewController().revealToggle(animated:true)
     }
     
-    @IBAction func ActionSend(_ sender: Any) {
-        self.setDefaultBackground()
-        self.vi_Send.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
-        self.revealViewController().revealToggle(animated:true)
-    }
-    
-    @IBAction func ActionReceived(_ sender: Any) {
-        self.setDefaultBackground()
-        self.vi_Received.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
-        self.revealViewController().revealToggle(animated:true)
-    }
-    
-    @IBAction func ActionSwap(_ sender: Any) {
-        self.setDefaultBackground()
-        self.vi_Swap.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
-        self.revealViewController().revealToggle(animated:true)
-    }
-    
-    @IBAction func ActionMnemonic(_ sender: Any) {
-        self.setDefaultBackground()
-        self.vi_Mnemonic.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
-        self.revealViewController().revealToggle(animated:true)
-    }
     @IBAction func ActionAbout(_ sender: Any) {
         self.setDefaultBackground()
         self.vi_About.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
@@ -99,16 +65,14 @@ class SideMenuViewController: UIViewController {
         self.revealViewController().revealToggle(animated:true)
     }
     
-    @IBAction func ActionLogout(_ sender: Any) {
-        self.setDefaultBackground()
-        UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.NO)
-        self.vi_Logout.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
-        self.revealViewController().revealToggle(animated:true)
+    @IBAction func ActionSettings(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
-        let tutorialViewController = storyboard.instantiateViewController(withIdentifier: "TutorialNavVC")
-        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDel.window?.rootViewController = tutorialViewController
+        self.setDefaultBackground()
+        self.vi_About.layer.backgroundColor = Constants.Colors.ActiveLayerBackgroundColor.cgColor
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsNav") as! UINavigationController
+        self.revealViewController().setFront(settingsVC, animated: false)
+        self.revealViewController().revealToggle(animated:true)
     }
     
 

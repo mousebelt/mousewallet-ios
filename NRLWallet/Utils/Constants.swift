@@ -13,7 +13,7 @@ struct Constants {
     public static let UserProfile = "USERPROFILE"
     
     public static let URL_GET_MARKETINFO = "https://shapeshift.io/marketinfo/"
-    public static let URL_NORMAL_TRANSACTION = "https://shapeshift.io/shift"
+    public static let URL_SHAPESHIFT_SWAP = "https://shapeshift.io/shift"
     public static let URL_GET_CONVERSION_RATE = "https://api.coinmarketcap.com/v2/ticker/?convert=USD"
     public static let URL_GET_BTC_FEE = "https://bitcoinfees.earn.com/api/v1/fees/recommended"
     public static let URL_GET_ETH_FEE = "https://www.etherchain.org/api/gasPriceOracle"

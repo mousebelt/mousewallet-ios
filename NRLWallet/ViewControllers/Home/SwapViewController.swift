@@ -11,6 +11,7 @@ import XLPagerTabStrip
 import DropDown
 import Alamofire
 import SVProgressHUD
+import BigInt
 
 class SwapViewController: UIViewController, IndicatorInfoProvider {
     
@@ -44,6 +45,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     //Send Button
     @IBOutlet weak var btt_send: UIButton!
     
+    @IBOutlet weak var viewTransactionFee: UIView!
     let dropDownFromCoin = DropDown()
     let dropDownToCoin = DropDown()
     var baseCoinModel : CoinModel?
@@ -51,6 +53,10 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     var toCoinArray:  [CoinModel] = [CoinModel]()
     var selectedToCoinIndex = 0
     var marketModel : MarketModel?
+    
+    var feeSlow : Float = 0.0
+    var feeFast : Float = 0.0
+    var feeMedium : Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +77,8 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
                 toCoinArray.append(coin)
             }
         }
+        
+        self.getTransferFee()
     }
     
     func setupViews() {
@@ -171,11 +179,12 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     func updateUIValues(update : Bool) {
         if(update) {
-            var fee_usd = (self.marketModel?.minerFee)! * (baseCoinModel?.balance as! NSString).doubleValue
+//            var fee_usd = (self.marketModel?.minerFee)! * (baseCoinModel?.balance as! NSString).doubleValue
             self.lb_CoinBalance.text = String(format: "1 %@ = %f", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!)
             self.lb_CoinPowered.text = String(format: "%@ powered by shapeshife", self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
-            self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
-            self.lb_transactionFee.text = String(format: "%.4f %@ = %.4f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, fee_usd, "USD")
+            self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, (baseCoinModel?.symbol.uppercased())!)
+//            self.lb_transactionFee.text = String(format: "%.4f %@ = %.4f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, fee_usd, "USD")
+            calculateFee()
             self.txt_toCoin.isEnabled = true
             self.txt_fromCoin.isEnabled = true
         } else {
@@ -192,7 +201,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     func CheckAvailable() {
         let fromValue = (self.txt_fromCoin.text! as NSString).doubleValue
         let toValue = (self.txt_toCoin.text! as NSString).doubleValue
-        if(fromValue != 0 && fromValue < (marketModel?.minimum)!) {
+        if(fromValue != 0 && fromValue > (marketModel?.minimum)!) {
             if(toValue != 0 && toValue < (marketModel?.maxLimit)!) {
                 isAvailable = true
                 self.EnableView()
@@ -202,9 +211,9 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         isAvailable = false
         self.EnableView()
     }
-
+    
     @IBAction func clickFromCoin(_ sender: Any) {
-//        dropDownFromCoin.show()
+        //        dropDownFromCoin.show()
     }
     @IBAction func clickToCoin(_ sender: Any) {
         dropDownToCoin.show()
@@ -212,39 +221,45 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     
     @IBAction func clickSlow(_ sender: Any) {
-        self.slider_speed.setValue(0.0, animated: true)
+        self.slider_speed.setValue(self.feeSlow, animated: true)
+        self.calculateFee()
     }
     
     @IBAction func clickMedium(_ sender: Any) {
-        self.slider_speed.setValue(0.5, animated: true)
+        self.slider_speed.setValue((self.feeFast+self.feeSlow)/2.0, animated: true)
+        self.calculateFee()
     }
     
     @IBAction func clickFast(_ sender: Any) {
-        self.slider_speed.setValue(1.0, animated: true)
+        self.slider_speed.setValue(self.feeFast, animated: true)
+        self.calculateFee()
     }
     
     @IBAction func clickSend(_ sender: Any) {
         if(isAvailable) {
-            let withdrawal = self.baseCoinModel?.address
-            let pair = String(format:"%@_%@", (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
-//            let returnAddress = self.toCoinArray[selectedToCoinIndex].address
+            let withdrawal = self.toCoinArray[selectedToCoinIndex].address
+            let pair = String(format:"%@_%@", (baseCoinModel?.symbol.lowercased())!, toCoinArray[selectedToCoinIndex].symbol.lowercased())
+            let returnAddress = self.baseCoinModel?.address
             let apiPubKey = "4a82a5f1610f1675fcbb54f8f3f64517687b6d8c2200411884ed601d8ef1874536cfbe5262543b1ae0c98e80ac16d4c94ff7c8ced0918101d56932b9b361b254"
             
             var params:Parameters = [:]
             params.updateValue(withdrawal!, forKey: "withdrawal")
+            params.updateValue(returnAddress!, forKey: "returnAddress")
             params.updateValue(pair, forKey: "pair")
-//            params.updateValue(returnAddress!, forKey: "returnAddress")
-            params.updateValue(apiPubKey, forKey: "apiPubKey")
+            params.updateValue(apiPubKey, forKey: "apiKey")
             
             SVProgressHUD.show()
-            Alamofire.request(Constants.URL_GET_MARKETINFO, method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
-                
+            Alamofire.request(Constants.URL_SHAPESHIFT_SWAP, method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
                 switch response.result {
                 case .success:
-                    
+                    if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
+                        print(String(describing: json))
+                        self.sendTransaction(toAddress: (json as! [String: Any])["deposit"] as! String)
+                    }
                     break
                 case .failure:
                     SVProgressHUD.dismiss()
+                    print(String(describing: response.data!))
                     break
                 }
             }
@@ -253,6 +268,93 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         }
     }
     
+    func calculateFee() {
+        if(self.baseCoinModel?.symbol == "BTC") {
+            self.lb_transactionFee.text = String(format: "%f %@", self.slider_speed.value, "sat")
+        } else if(self.baseCoinModel?.symbol == "ETH") {
+            self.lb_transactionFee.text = String(format: "%f %@", self.slider_speed.value, "gwei")
+        }
+    }
+    
+    func getTransferFee() {
+        if(self.baseCoinModel?.symbol == "BTC") {
+            Alamofire.request(Constants.URL_GET_BTC_FEE, method: .get).responseJSON { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
+                        if let dict = json as? [String: Any] {
+                            self.feeFast = dict["fastestFee"] as! Float
+                            self.feeMedium = dict["halfHourFee"] as! Float
+                            self.feeSlow = dict["hourFee"] as! Float
+                            self.slider_speed.maximumValue = self.feeFast
+                            self.slider_speed.minimumValue = self.feeSlow
+                            self.slider_speed.value = self.feeMedium
+                            self.calculateFee()
+                            self.viewTransactionFee.isHidden = false
+                        }
+                    }
+                    break
+                case .failure:
+                    break
+                }
+            }
+        } else if(self.baseCoinModel?.symbol == "ETH") {
+            Alamofire.request(Constants.URL_GET_ETH_FEE, method: .get).responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
+                        if let dict = json as? [String: Any] {
+                            self.feeFast = Float(dict["fastest"] as! String)!
+                            self.feeMedium = Float(dict["standard"] as! String)!
+                            self.feeSlow = Float(dict["safeLow"] as! String)!
+                            self.slider_speed.maximumValue = self.feeFast
+                            self.slider_speed.minimumValue = self.feeSlow
+                            self.slider_speed.value = self.feeMedium
+                            self.calculateFee()
+                            self.viewTransactionFee.isHidden = false
+                        }
+                    }
+                    break
+                case .failure:
+                    break
+                }
+            }
+        }
+    }
+    
+    func sendTransaction(toAddress: String) {
+        if(self.baseCoinModel?.symbol == "BTC" || self.baseCoinModel?.symbol == "LTC") {
+            let amount = Decimal(string: txt_fromCoin.text!)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: 8, significand: Decimal(1))
+            print((amount!*unitDecimal).description)
+            self.baseCoinModel?.wallet.sendTransaction(to: toAddress, value: UInt64((amount! * unitDecimal).description)!, fee: UInt64(slider_speed.value)) { (err, tx) -> () in
+                switch (err) {
+                case .nrlSuccess:
+                    SVProgressHUD.dismiss()
+                    self.toastMessage(str: "Successfully sent transaction. tx: \(tx)")
+                default:
+                    SVProgressHUD.dismiss()
+                    self.toastMessage(str: "Failed transaction: \(err)")
+                }
+            }
+        } else if(self.baseCoinModel?.symbol == "ETH") {
+            let amount = Decimal(string: txt_fromCoin.text!)
+            let fee = Decimal(Double(slider_speed.value))
+            let amountUnit = Decimal(sign: FloatingPointSign.plus, exponent: 18, significand: Decimal(1))
+            let feeUnit = Decimal(sign: FloatingPointSign.plus, exponent: 9, significand: Decimal(1))
+            self.baseCoinModel?.wallet.sendTransaction(contractHash: "", to: toAddress, value: BigUInt((amount! * amountUnit).description)! , fee: BigUInt((fee * feeUnit).description)!) { (err, tx) -> () in
+                switch (err) {
+                case .nrlSuccess:
+                    SVProgressHUD.dismiss()
+                    self.toastMessage(str: "Successfully sent transaction. tx: \(tx)")
+                default:
+                    SVProgressHUD.dismiss()
+                    self.toastMessage(str: "Failed transaction: \(err)")
+                }
+            }
+        }
+    }
     
     // Default actions:
     @objc func doneButtonTapped() {
@@ -311,6 +413,27 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
                 break
             }
         }
+    }
+    @IBAction func srcAmountChanged(_ sender: Any) {
+        if(self.marketModel?.rate != 0.0) {
+            if let srcAmount = Double(txt_fromCoin.text!) {
+                txt_toCoin.text = String(srcAmount * (self.marketModel?.rate)!)
+            }
+        }
+        
+        
+        
+    }
+    @IBAction func dstAmountChanged(_ sender: Any) {
+        if(self.marketModel?.rate != 0.0) {
+            if let dstAmount = Double(txt_toCoin.text!) {
+                txt_fromCoin.text = String(dstAmount / (self.marketModel?.rate)!)
+            }
+        }
+    }
+    
+    @IBAction func onFeeChange(_ sender: Any) {
+        self.calculateFee()
     }
 }
 

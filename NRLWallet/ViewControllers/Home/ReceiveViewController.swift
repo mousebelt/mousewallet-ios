@@ -20,17 +20,42 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
-        if(self.baseCoinModel?.symbol == "LTC") {
-            let transaction = self.transactions[indexPath.row] as! BRTransaction
-            cell.lblAddress.text = transaction.txHash.description
+        if(self.baseCoinModel?.symbol == "BTC") {
+            let transaction = self.transactions[indexPath.row] as! NSDictionary
+            cell.lblAddress.text = String(describing: transaction["txid"]!)
+            let satoshiStr = ((transaction["receive"] as! Int64) - (transaction["send"] as! Int64)).description
+            let amountDecimal = Decimal(string: satoshiStr)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+            cell.lblAmount.text = (amountDecimal! * unitDecimal).description
+        } else if(self.baseCoinModel?.symbol == "LTC") {
+            let transaction = self.transactions[indexPath.row] as! NSDictionary
+            cell.lblAddress.text = String(describing: transaction["hash"]!)
+            let litoshiStr = ((transaction["receive"] as! Int64) - (transaction["send"] as! Int64)).description
+            let amountDecimal = Decimal(string: litoshiStr)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+            cell.lblAmount.text = (amountDecimal! * unitDecimal).description
         } else if( self.baseCoinModel?.symbol == "ETH") {
             let transaction = self.transactions[indexPath.row] as! ETHTxDetailResponse
             cell.lblAddress.text = transaction.hash
-            cell.lblAmount.text = transaction.value?.description
-        } else if( self.baseCoinModel?.symbol == "XLD") {
+            let amountDecimal = Decimal(string: transaction.value!)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -18, significand: Decimal(1))
+            cell.lblAmount.text = (amountDecimal! * unitDecimal).description
+        } else if( self.baseCoinModel?.symbol == "XLM") {
             let transaction = self.transactions[indexPath.row] as! StellarTxDetailResponse
             cell.lblAddress.text = transaction.transaction_hash
-//            cell.lblAmount.text = transaction.amount
+            cell.lblAmount.text = transaction.amount
+        } else if(self.baseCoinModel?.symbol == "NEO") {
+            let transaction = self.transactions[indexPath.row] as! NeoTransactionDetailMap
+            cell.lblAddress.text = transaction.transactionID
+            var total_in = 0;
+            var total_out = 0.0;
+            for valIn in transaction.valueIns! {
+                total_in = total_in + valIn.valueOut!
+            }
+            for valOut in transaction.valueOuts! {
+                total_out = total_out + Double(valOut.value!)!
+            }
+            cell.lblAmount.text = String(format: "%f", total_out - Double(total_in))
         }
         return cell
     }
@@ -71,19 +96,26 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
             NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
             
+            if (!((self.wallet?.isConnected())!)) {
+                self.wallet?.connectPeers()
+            }
+            
             self.getBTCInfo()
             
         } else if (self.baseCoinModel?.symbol == "ETH") {
             self.getETHInfo()
         } else if (self.baseCoinModel?.symbol == "NEO") {
             self.getNEOInfo()
-        } else if (self.baseCoinModel?.symbol == "XLD") {
-            self.getXLDInfo()
+        } else if (self.baseCoinModel?.symbol == "XLM") {
+            self.getXLMInfo()
         } else if (self.baseCoinModel?.symbol == "LTC") {
             //notification handlers from spv node events
             NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidDownloadBlock(notification:)), name: Notification.Name.LTC_PeerGroupDidDownloadBlock, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
+            
+            if (!((self.wallet?.isConnected())!)) {
+                self.wallet?.connectPeers()
+            }
             
             self.getLTCInfo()
         }
@@ -107,7 +139,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
                 imageName = "ethereum"
             } else if(self.baseCoinModel?.symbol == "NEO") {
                 imageName = "neo"
-            } else if (self.baseCoinModel?.symbol == "XLD") {
+            } else if (self.baseCoinModel?.symbol == "XLM") {
                 imageName = "stellar"
             }
             cell.optionImage.image = UIImage(named: imageName)
@@ -164,15 +196,16 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
         self.lb_coinAddress.text = self.baseCoinModel?.address
         self.makeQRCode()
         self.wallet?.getWalletBalance() { (err, value) -> () in
-            self.balance = String(describing: value)
-            self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
+            let balanceDecimal = Decimal(value as! UInt64)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+            self.lb_coinName.text = String(format:"%@ %@", (balanceDecimal * unitDecimal).description, (self.baseCoinModel?.symbol)!)
         }
         
         self.wallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
-                self.transactions = tx as! NSArray
+                self.transactions = tx as! NSMutableArray
                 self.tbl_transactions.reloadData()
                 print("Success")
             case NRLWalletSDKError.responseError(.unexpected(let error)):
@@ -196,7 +229,9 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
                 var dropdownDataSource: [String] = []
                 for item in self.balances {
                     let balanceItem = item as! ETHGetBalanceMap
-                    dropdownDataSource.append(balanceItem.balance! + " " +  balanceItem.symbol!)
+                    if((balanceItem.balance) != nil) {
+                        dropdownDataSource.append(balanceItem.balance! + " " +  balanceItem.symbol!)
+                    }
                 }
                 self.dropDown.dataSource = dropdownDataSource
                 self.lb_coinName.text = dropdownDataSource[0]
@@ -208,15 +243,6 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
             default:
                 print("Failed: \(String(describing: err))")
             }
-            self.balances = value as! NSArray
-            
-            var dropdownDataSource: [String] = []
-            for item in self.balances {
-                let balanceItem = item as! ETHGetBalanceMap
-                dropdownDataSource.append(balanceItem.balance! + " " +  balanceItem.symbol!)
-            }
-            self.dropDown.dataSource = dropdownDataSource
-            self.lb_coinName.text = dropdownDataSource[0]
         }
         
         self.wallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
@@ -268,7 +294,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
             case NRLWalletSDKError.nrlSuccess:
                 //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
                 let res = tx as! NeoTransactionsMap
-                //                self.transactions = res.result as! NSArray
+                self.transactions = res.result as! NSArray
                 self.tbl_transactions.reloadData()
                 print("Success")
             case NRLWalletSDKError.responseError(.unexpected(let error)):
@@ -281,7 +307,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider, UITableVie
         }
     }
     
-    func getXLDInfo() {
+    func getXLMInfo() {
         self.lb_coinAddress.text = wallet?.getReceiveAddress()
         self.makeQRCode()
         self.wallet?.getWalletBalance() { (err, value) -> () in
@@ -366,14 +392,10 @@ extension ReceiveViewController {
     
     @objc func On_LTC_WalletDidUpdateBalance(notification: Notification) {
         let userinfo = notification.userInfo as! [String: Any]
-        
-        let balance = userinfo[WalletBalanceKey] as! UInt64
-        
-        self.lb_coinName.text = String(format:"%d %@", balance, (self.baseCoinModel?.symbol)!)
-    }
-    
-    @objc func On_LTC_PeerGroupDidStartDownload(notification: Notification) {
-        //        SVProgressHUD.show()
+        let balanceDecimal = Decimal(userinfo[WalletBalanceKey] as! UInt64)
+        let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+        self.lb_coinName.text = String(format:"%@ %@", (balanceDecimal * unitDecimal).description, (self.baseCoinModel?.symbol)!)
+
     }
 }
 

@@ -21,12 +21,19 @@ class CoinListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.decryptedMessage()
-        self.generateBitcoinWallet()
-        self.generateEthereumWallet()
-        self.generateLitecoinWallet()
-        self.generateNeoWallet()
-        self.generateStellarWallet()
+        
+        if(AppController.shared.coinArray.count == 0)
+        {
+            self.decryptedMessage()
+            self.generateBitcoinWallet()
+            self.generateEthereumWallet()
+            self.generateLitecoinWallet()
+            self.generateNeoWallet()
+            self.generateStellarWallet()
+        } else {
+            self.coinArray = AppController.shared.coinArray
+        }
+        
         self.addMenuAction()
         self.setLeftMenu()
     }
@@ -88,7 +95,7 @@ class CoinListViewController: UIViewController {
         coinmodel.symbol = "ETH"
         coinmodel.fullname = "Ethereum"
         coinmodel.image = "ethereum"
-        coinmodel.count = "0.555"
+        coinmodel.count = ""
         coinmodel.address = String(describing: addresses)
         coinmodel.wallet = coinWallet
         self.coinArray.append(coinmodel)
@@ -115,10 +122,10 @@ class CoinListViewController: UIViewController {
             return;
         }
         
-//        wallet.createPeerGroup()
-//        if (!((wallet.isConnected()))) {
-//            wallet.connectPeers()
-//        }
+        wallet.createPeerGroup()
+        if (!((wallet.isConnected()))) {
+            wallet.connectPeers()
+        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -132,7 +139,7 @@ class CoinListViewController: UIViewController {
         coinmodel.fullname = "Bitcoin"
         coinmodel.image = "bitcoin"
         //        coinmodel.balance = "6450"
-        coinmodel.count = "3.333"
+        coinmodel.count = ""
         coinmodel.address = addresses
         coinmodel.wallet = wallet
         
@@ -154,10 +161,10 @@ class CoinListViewController: UIViewController {
             return;
         }
         
-//        coinWallet.createPeerGroup()
-//        if (!((coinWallet.isConnected()))) {
-//            coinWallet.connectPeers()
-//        }
+        coinWallet.createPeerGroup()
+        if (!((coinWallet.isConnected()))) {
+            coinWallet.connectPeers()
+        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -171,7 +178,7 @@ class CoinListViewController: UIViewController {
         coinmodel.symbol = "LTC"
         coinmodel.fullname = "Litecoin"
         coinmodel.image = "litecoin"
-        coinmodel.count = "2.222"
+        coinmodel.count = ""
         coinmodel.address = addresses
         coinmodel.wallet = coinWallet
         
@@ -207,7 +214,7 @@ class CoinListViewController: UIViewController {
         coinmodel.symbol = "NEO"
         coinmodel.fullname = "Neo"
         coinmodel.image = "neo"
-        coinmodel.count = "1.111"
+        coinmodel.count = ""
         coinmodel.address = addresses
         coinmodel.wallet = coinWallet
         self.coinArray.append(coinmodel)
@@ -233,10 +240,10 @@ class CoinListViewController: UIViewController {
         //            coinmodel.balance = String(describing: value)
         //        })
         let addresses = coinWallet.getReceiveAddress()
-        coinmodel.symbol = "XLD"
+        coinmodel.symbol = "XLM"
         coinmodel.fullname = "Stellar"
         coinmodel.image = "stellar"
-        coinmodel.count = "0.111"
+        coinmodel.count = ""
         coinmodel.address = addresses
         coinmodel.wallet = coinWallet
         self.coinArray.append(coinmodel)

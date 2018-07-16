@@ -10,6 +10,7 @@
 		84006F9F20EFB3D7007F7E41 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84006F9E20EFB3D7007F7E41 /* TransactionCell.swift */; };
 		84029CF720ED07AB001E7AE5 /* BalanceDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84029CF520ED07AB001E7AE5 /* BalanceDropDownCell.swift */; };
 		84029CF820ED07AB001E7AE5 /* BalanceDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84029CF620ED07AB001E7AE5 /* BalanceDropDownCell.xib */; };
+		842E4E8020FC5E840029014F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E4E7F20FC5E840029014F /* SettingsViewController.swift */; };
 		84779D8820B9AC5700F36973 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8720B9AC5700F36973 /* SideMenuViewController.swift */; };
 		84779D8B20B9B08100F36973 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8A20B9B08100F36973 /* BaseViewController.swift */; };
 		84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */; };
@@ -109,6 +110,7 @@
 		84006F9E20EFB3D7007F7E41 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		84029CF520ED07AB001E7AE5 /* BalanceDropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDropDownCell.swift; sourceTree = "<group>"; };
 		84029CF620ED07AB001E7AE5 /* BalanceDropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceDropDownCell.xib; sourceTree = "<group>"; };
+		842E4E7F20FC5E840029014F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84779D8720B9AC5700F36973 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		84779D8A20B9B08100F36973 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		84779D8C20B9B1E500F36973 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				84C052AC20BD16A70013A7FF /* SwapViewController.swift */,
 				84E79E5120BEEF7400D08645 /* CoinListViewController.swift */,
 				E1EF17E220D7749400FF4540 /* AboutViewController.swift */,
+				842E4E7F20FC5E840029014F /* SettingsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				84CA5C8520B85C5C0064D1BC /* Constants.swift in Sources */,
 				84E79E5220BEEF7400D08645 /* CoinListViewController.swift in Sources */,
 				84779D8D20B9B1E500F36973 /* BaseNavViewController.swift in Sources */,
+				842E4E8020FC5E840029014F /* SettingsViewController.swift in Sources */,
 				E178CE1F20CFF945005C6732 /* PinEnterViewController.swift in Sources */,
 				E161700220D234AB0003DD44 /* English.swift in Sources */,
 				849ADB5320C138590060ED23 /* AppController.swift in Sources */,

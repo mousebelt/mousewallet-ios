@@ -39,7 +39,7 @@ class CoinTableViewCell: UITableViewCell {
         self.lb_coin.text = coinModel.symbol
         self.lb_coinname.text = coinModel.fullname
         self.lb_count.text = coinModel.count
-        self.lb_balance.text = String(format: "$%@", coinModel.balance)
+//        self.lb_balance.text = String(format: "$%@", coinModel.balance)
         self.img_coin.image = UIImage.init(named: coinModel.image)
     }
 
