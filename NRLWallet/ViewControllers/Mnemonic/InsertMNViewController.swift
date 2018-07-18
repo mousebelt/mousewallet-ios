@@ -39,7 +39,7 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         self.setupViews()
         self.setupKeyboard()
         
-        self.mnemonicArray = ["target", "crater", "noble", "virus", "album", "surge", "kidney", "tennis", "snow", "click", "faculty", "robust"]
+//        self.mnemonicArray = ["target", "crater", "noble", "virus", "album", "surge", "kidney", "tennis", "snow", "click", "faculty", "robust"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,11 +133,14 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         }
     }
     //auto add mnemonic
-    func autoAddMnemonic(search: String) {
+    func autoAddMnemonic(search: String, only: Bool = false) {
         filterdArray = mnemonicWords.filter { item in
             return item.lowercased().hasPrefix(search.lowercased())
         }
         if (filterdArray.count == 0) {
+            return
+        }
+        if(only && filterdArray.count > 1) {
             return
         }
         let str = filterdArray[0]
@@ -243,7 +246,8 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
     
     //Actions: Space button event, initializing the Recommend buttons
     @IBAction func clickSpace(_ sender: Any) {
-        self.initWords()
+        self.autoAddMnemonic(search: inputString, only: true)
+//        self.initWords()
     }
     
     //Actions: Backspace event
