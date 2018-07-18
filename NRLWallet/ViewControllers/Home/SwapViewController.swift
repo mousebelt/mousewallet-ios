@@ -29,6 +29,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     //Coin Balance
     @IBOutlet weak var lb_CoinBalance: UILabel!
     @IBOutlet weak var lb_CoinPowered: UILabel!
+    @IBOutlet weak var lb_ExchangeAvailable: UILabel!
     //Input Coin Value
     @IBOutlet weak var txt_fromCoin: UITextField!
     @IBOutlet weak var txt_toCoin: UITextField!
@@ -181,20 +182,28 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     func updateUIValues(update : Bool) {
         if(update) {
 //            var fee_usd = (self.marketModel?.minerFee)! * (baseCoinModel?.balance as! NSString).doubleValue
-            self.lb_CoinBalance.text = String(format: "Exchange available Rate: 1 %@ = %f %@", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!, toCoinArray[selectedToCoinIndex].symbol)
+            self.lb_ExchangeAvailable.text = "Exchange Available!"
+            self.lb_CoinBalance.text = String(format: "1 %@ = %f %@", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!, toCoinArray[selectedToCoinIndex].symbol)
             self.lb_CoinPowered.isHidden = false
             self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, (baseCoinModel?.symbol.uppercased())!)
 //            self.lb_transactionFee.text = String(format: "%.4f %@ = %.4f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, fee_usd, "USD")
             calculateFee()
-            self.txt_toCoin.isEnabled = true
-            self.txt_fromCoin.isEnabled = true
+            if(self.baseCoinModel?.symbol == "BTC" || self.baseCoinModel?.symbol == "ETH") {
+                self.viewTransactionFee.isHidden = false
+            } else {
+                self.viewTransactionFee.isHidden = true
+            }
+            self.viewAmount.isHidden = false
+            self.btt_send.isHidden = false
         } else {
+            self.lb_ExchangeAvailable.text = "Exchange Unavailable"
             self.lb_CoinBalance.text = ""
             self.lb_CoinPowered.isHidden = true
             self.lb_minMax.text = ""
             self.lb_transactionFee.text = ""
-            self.txt_toCoin.isEnabled = false
-            self.txt_fromCoin.isEnabled = false
+            self.viewTransactionFee.isHidden = true
+            self.viewAmount.isHidden = true
+            self.btt_send.isHidden = true
         }
         
     }

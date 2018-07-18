@@ -917,6 +917,7 @@
                         <outlet property="img_toCoin" destination="DSj-49-Rsb" id="SEJ-kG-bLb"/>
                         <outlet property="lb_CoinBalance" destination="rvo-yi-0Xk" id="cfi-k6-AGk"/>
                         <outlet property="lb_CoinPowered" destination="WFv-va-Gmu" id="SAY-S7-s5E"/>
+                        <outlet property="lb_ExchangeAvailable" destination="mJQ-Va-Es4" id="FTL-bl-lGq"/>
                         <outlet property="lb_fromCoinBalance" destination="2os-Fx-gLT" id="1Y6-nC-GMy"/>
                         <outlet property="lb_fromCoinSymbol" destination="aDZ-vz-pIU" id="Ptc-Vm-hhM"/>
                         <outlet property="lb_minMax" destination="M5o-91-WuR" id="08G-Yx-T99"/>
