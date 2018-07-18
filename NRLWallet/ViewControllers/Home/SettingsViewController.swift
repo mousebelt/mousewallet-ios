@@ -18,6 +18,12 @@ class SettingsViewController : UIViewController {
         let alert = UIAlertController(title: "Delete Account", message: "Are you sure? You can only recover from your mnemonic", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (alert: UIAlertAction!) -> Void in
             UserData.saveKeyData(Constants.DefaultsKeys.kKeyTutorialPass, value: Constants.NO)
+            
+            for coinModel in AppController.shared.coinArray {
+                if(coinModel.symbol == "BTC" || coinModel.symbol == "LTC") {
+                    coinModel.wallet.disConnectPeers()
+                }
+            }
             AppController.shared.coinArray.removeAll()
             self.revealViewController().revealToggle(animated:true)
             

@@ -603,7 +603,7 @@
     </scenes>
     <resources>
         <image name="ic_back" width="8" height="12"/>
-        <image name="ic_logo" width="76" height="126"/>
+        <image name="ic_logo" width="180" height="180"/>
         <image name="imageView:Jki-cF-ZXH:image" width="299" height="172">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU

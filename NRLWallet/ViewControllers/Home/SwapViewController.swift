@@ -46,6 +46,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var btt_send: UIButton!
     
     @IBOutlet weak var viewTransactionFee: UIView!
+    @IBOutlet weak var viewAmount: UIView!
     let dropDownFromCoin = DropDown()
     let dropDownToCoin = DropDown()
     var baseCoinModel : CoinModel?
@@ -180,8 +181,8 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     func updateUIValues(update : Bool) {
         if(update) {
 //            var fee_usd = (self.marketModel?.minerFee)! * (baseCoinModel?.balance as! NSString).doubleValue
-            self.lb_CoinBalance.text = String(format: "1 %@ = %f", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!)
-            self.lb_CoinPowered.text = String(format: "%@ powered by shapeshife", self.toCoinArray[selectedToCoinIndex].symbol.uppercased())
+            self.lb_CoinBalance.text = String(format: "Exchange available Rate: 1 %@ = %f %@", (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.rate)!, toCoinArray[selectedToCoinIndex].symbol)
+            self.lb_CoinPowered.isHidden = false
             self.lb_minMax.text = String(format: "min: %f %@ max: %f %@", (self.marketModel?.minimum)!, (baseCoinModel?.symbol.uppercased())!, (self.marketModel?.maxLimit)!, (baseCoinModel?.symbol.uppercased())!)
 //            self.lb_transactionFee.text = String(format: "%.4f %@ = %.4f %@", (self.marketModel?.minerFee)!, (self.baseCoinModel?.symbol.uppercased())!, fee_usd, "USD")
             calculateFee()
@@ -189,7 +190,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             self.txt_fromCoin.isEnabled = true
         } else {
             self.lb_CoinBalance.text = ""
-            self.lb_CoinPowered.text = ""
+            self.lb_CoinPowered.isHidden = true
             self.lb_minMax.text = ""
             self.lb_transactionFee.text = ""
             self.txt_toCoin.isEnabled = false

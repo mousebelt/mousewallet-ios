@@ -15,6 +15,7 @@ class CoinListViewController: UIViewController {
     var seed: Data?
     var mnemonic: [String]?
     
+    @IBOutlet weak var tblCoinList: UITableView!
     
     @IBOutlet weak var bttMenu: UIBarButtonItem!
     var coinArray : [CoinModel] = [CoinModel]()
@@ -49,6 +50,9 @@ class CoinListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {
+        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+    }
     func getMnemonicFromStore() -> String {
         let encryptedMessage = UserData.loadKeyData(Constants.DefaultsKeys.kKeyEncryptedMessage)
         let encryptionKey = UserData.loadKeyData(Constants.DefaultsKeys.kKeyEncryptedKey)
@@ -104,8 +108,6 @@ class CoinListViewController: UIViewController {
     }
     
     func generateBitcoinWallet() {
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
-        
         let isNewAccount = UserData.loadKeyData(Constants.DefaultsKeys.kKeyIsNewAccount)
         bitcoinWallet = NRLWallet(mnemonic: self.mnemonic!, passphrase: "", network: .main(.bitcoin))
         guard let wallet = bitcoinWallet else {
@@ -123,9 +125,6 @@ class CoinListViewController: UIViewController {
         }
         
         wallet.createPeerGroup()
-        if (!((wallet.isConnected()))) {
-            wallet.connectPeers()
-        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -162,9 +161,6 @@ class CoinListViewController: UIViewController {
         }
         
         coinWallet.createPeerGroup()
-        if (!((coinWallet.isConnected()))) {
-            coinWallet.connectPeers()
-        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -186,9 +182,6 @@ class CoinListViewController: UIViewController {
         AppController.shared.coinArray.append(coinmodel)
         
         //notification handlers from spv node events
-        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidDownloadBlock(notification:)), name: Notification.Name.LTC_PeerGroupDidDownloadBlock, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
     }
     
     func generateNeoWallet() {
@@ -261,53 +254,6 @@ class CoinListViewController: UIViewController {
             self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         }
     }
-    
-    @objc func PeerGroupDidStartDownload(notification: Notification) {
-        guard let userInfo = notification.userInfo else {
-            print("PeerGroupDidStartDownload Error: invalid notification object.")
-            return
-        }
-        let blockFromHight = userInfo[WSPeerGroupDownloadFromHeightKey] as! UInt32
-        let blockToHight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
-        
-        UserData.saveKeyData("BTC_BLOCK_FROM_HEIGHT", value: blockFromHight.description)
-        UserData.saveKeyData("BTC_BLOCK_TO_HEIGHT", value: blockToHight.description)
-    }
-    
-    
-    @objc func On_LTC_PeerGroupDidDownloadBlock(notification: Notification) {
-        let userinfo = notification.userInfo as! [String: Any]
-        
-        let progress = userinfo[PeerGroupDownloadBlockProgressKey] as! Double
-        let timestamp = userinfo[PeerGroupDownloadBlockTimestampKey] as! UInt32
-        
-        //        let txt = dateFormatter.string(from: Date(timeIntervalSince1970: Double(timestamp)))
-        //
-        //        self.lbProgress.text = String(format: "Progress: %.2f %%  \(txt)", (progress * 100))
-    }
-    
-    @objc func On_LTC_WalletDidUpdateBalance(notification: Notification) {
-        let userinfo = notification.userInfo as! [String: Any]
-        
-        let balance = userinfo[WalletBalanceKey] as! UInt64
-        
-        //        self.lbBalance.text = String(format: "\(balance)")
-    }
-    
-    @objc func On_LTC_PeerGroupDidStartDownload(notification: Notification) {
-        /*
-         guard let wallet = coinWallet else {
-         print("On_LTC_PeerGroupDidStartDownload Error: cannot init wallet!")
-         return
-         }
-         
-         wallet.getWalletBalance() { (err, value) -> () in
-         //            self.lbBalance.text = value
-         }
-         //        self.lbAddress.text = wallet.getReceiveAddress();
-         */
-    }
-    
 }
 
 extension CoinListViewController: UITableViewDataSource {
