@@ -109,6 +109,11 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
             self.lb_coinName.text = item
         }
         self.btt_coin.imageView?.contentMode = .scaleAspectFit
+        if(self.baseCoinModel?.symbol == "ETH" || self.baseCoinModel?.symbol == "NEO") {
+            btt_select.isHidden = false
+        } else {
+            btt_select.isHidden = true
+        }
     }
     
     func makeQRCode() {
