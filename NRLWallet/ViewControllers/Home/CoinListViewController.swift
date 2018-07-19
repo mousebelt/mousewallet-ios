@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import NRLWalletSDK
+import Alamofire
 
 class CoinListViewController: UIViewController {
     var bitcoinWallet: NRLWallet?
@@ -22,6 +23,8 @@ class CoinListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         
         if(AppController.shared.coinArray.count == 0)
         {
@@ -37,10 +40,12 @@ class CoinListViewController: UIViewController {
         
         self.addMenuAction()
         self.setLeftMenu()
+        self.fetchConversionRates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.revealViewController().panGestureRecognizer().isEnabled=true;
+        self.revealViewController().panGestureRecognizer().isEnabled=true
+        self.tblCoinList.reloadData()
     }
     
     
@@ -105,6 +110,31 @@ class CoinListViewController: UIViewController {
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
         
+        coinWallet.getWalletBalance() { (err, value) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                let balances = value as! NSArray
+                for item in balances {
+                    let balanceItem = item as! ETHGetBalanceMap
+                    if((balanceItem.balance) != nil) {
+                        if(balanceItem.symbol == "ETH") {
+                            coinmodel.balance = balanceItem.balance
+                            self.tblCoinList.reloadData()
+                        }
+                    }
+                }
+                print("Success")
+                break
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                print("Server request error: \(error)")
+                break
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                print("Server connection error: \(error)")
+                break
+            default:
+                print("Failed: \(String(describing: err))")
+            }
+        }
     }
     
     func generateBitcoinWallet() {
@@ -125,6 +155,9 @@ class CoinListViewController: UIViewController {
         }
         
         wallet.createPeerGroup()
+        if (!((wallet.isConnected()))) {
+            wallet.connectPeers()
+        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -145,6 +178,10 @@ class CoinListViewController: UIViewController {
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
         
+        bitcoinWallet?.getWalletBalance() { (err, value) -> () in
+            coinmodel.balance = String(describing: value)
+            self.tblCoinList.reloadData()
+        }
     }
     
     func generateLitecoinWallet() {
@@ -161,6 +198,9 @@ class CoinListViewController: UIViewController {
         }
         
         coinWallet.createPeerGroup()
+        if (!((coinWallet.isConnected()))) {
+            coinWallet.connectPeers()
+        }
         
         let coinmodel = CoinModel()
         coinmodel.balance = "0"
@@ -181,6 +221,12 @@ class CoinListViewController: UIViewController {
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
         
+        coinWallet.getWalletBalance() { (err, value) -> () in
+            let balanceDecimal = Decimal(value as! UInt64)
+            let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+            coinmodel.balance = (balanceDecimal * unitDecimal).description
+            self.tblCoinList.reloadData()
+        }
         //notification handlers from spv node events
     }
     
@@ -212,6 +258,31 @@ class CoinListViewController: UIViewController {
         coinmodel.wallet = coinWallet
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
+        
+        coinWallet.getWalletBalance() { (err, value) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
+                let balances = (value as! NeoGetBalanceResponse ).balance! as NSArray
+                for item in balances {
+                    let balanceItem = item as! NeoAssetMap
+                    if(balanceItem.symbol == "NEO") {
+                        coinmodel.balance = balanceItem.value?.description
+                        self.tblCoinList.reloadData()
+                    }
+                }
+                break
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                print("Server request error: \(error)")
+                break
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                print("Server connection error: \(error)")
+                break
+            default:
+                print("Failed: \(String(describing: err))")
+            }
+            
+        }
     }
     
     func generateStellarWallet() {
@@ -241,6 +312,31 @@ class CoinListViewController: UIViewController {
         coinmodel.wallet = coinWallet
         self.coinArray.append(coinmodel)
         AppController.shared.coinArray.append(coinmodel)
+        
+        coinWallet.getWalletBalance() { (err, value) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                let balances = value as! [StellarAccountBalanceResponse]
+                for balance in balances {
+                    if(balance.assetType == "native") {
+                        coinmodel.balance = balance.balance
+                        self.tblCoinList.reloadData()
+                    }
+                }
+                print("Success")
+                break
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                print("Server request error: \(error)")
+                break
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                print("Server connection error: \(error)")
+                break
+            case NRLWalletSDKError.accountError(.notCreated):
+                break
+            default:
+                print("Failed: \(String(describing: err))")
+            }
+        }
     }
     
     func setLeftMenu() {
@@ -252,6 +348,29 @@ class CoinListViewController: UIViewController {
         if self.revealViewController() != nil {
             self.bttMenu.target = self.revealViewController()
             self.bttMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        }
+    }
+    
+    func fetchConversionRates() {
+        Alamofire.request(Constants.URL_GET_CONVERSION_RATE, method: .get).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
+                    if let dict = json as? [String: Any], let dataDict = dict["data"] as? [String: Any] {
+                        AppController.shared.conversionRates.removeAll()
+                        for (_, item) in dataDict {
+                            if let itemDict = item as? [String: Any] {
+                                let price = ((itemDict["quotes"] as! [String:Any])["USD"] as! [String:Any])["price"]
+                                AppController.shared.conversionRates.append(ConversionRate(id: itemDict["id"] as! Int, name: itemDict["name"] as! String, symbol: itemDict["symbol"] as! String, price: (price as! NSNumber).doubleValue))
+                            }
+                        }
+                        self.tblCoinList.reloadData()
+                    }
+                }
+                break
+            case .failure:
+                break
+            }
         }
     }
 }
@@ -284,5 +403,52 @@ extension CoinListViewController: UITableViewDelegate{
         if let navVC = self.navigationController {
             navVC.pushViewController(homeVC, animated: true)
         }
+    }
+}
+
+extension CoinListViewController {
+    
+    @objc func WalletDidUpdateBalance(notification: Notification) {
+        
+        let walletObj = notification.object as! WSWallet;
+        
+        let balanceDecimal = Decimal(string: walletObj.balance().description)
+        let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: 1)
+//        self.balance =  (balanceDecimal! * unitDecimal).description
+//        self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
+        
+    }
+    
+    @objc func PeerGroupDidStartDownload(notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            print("PeerGroupDidStartDownload Error: invalid notification object.")
+            return
+        }
+        AppController.shared.btcBlockFromHeight = userInfo[WSPeerGroupDownloadFromHeightKey] as! UInt32
+        AppController.shared.btcBlockToHeight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
+    }
+    
+    @objc func PeerGroupDidDownloadBlock(notification: Notification) {
+        
+        let block = notification.userInfo![WSPeerGroupDownloadBlockKey] as! WSStorableBlock
+        let currentHeight = block.height() as UInt32
+        AppController.shared.btcCurrentHeight = currentHeight
+    }
+    
+    @objc func On_LTC_PeerGroupDidDownloadBlock(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        
+        let progress = userinfo[PeerGroupDownloadBlockProgressKey] as! Double
+        let timestamp = userinfo[PeerGroupDownloadBlockTimestampKey] as! UInt32
+        
+        AppController.shared.ltcSyncProgress = progress
+    }
+    
+    @objc func On_LTC_WalletDidUpdateBalance(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        let balanceDecimal = Decimal(userinfo[WalletBalanceKey] as! UInt64)
+        let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
+//        self.lb_coinName.text = String(format:"%@ %@", (balanceDecimal * unitDecimal).description, (self.baseCoinModel?.symbol)!)
+        
     }
 }

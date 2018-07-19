@@ -43,7 +43,6 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     var dropDown = DropDown()
     var ethTokens : [ETHToken] = []
     var curToken : ETHToken?
-    var conversionRates : [ConversionRate] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -302,9 +301,9 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
         if let amount = Double(self.txt_fromCoin.text!) {
             var price : Double = 0.0
             if(self.baseCoinModel?.symbol == "ETH") {
-                price = self.getConversionRate(symbol: (self.curToken?.symbol)!)
+                price = AppController.shared.getConversionRate(symbol: (self.curToken?.symbol)!)
             } else {
-                price = self.getConversionRate(symbol: (self.baseCoinModel?.symbol)!)
+                price = AppController.shared.getConversionRate(symbol: (self.baseCoinModel?.symbol)!)
             }
             let usdAmount = amount * price
             self.txt_toCoin.text = String(usdAmount)
@@ -315,9 +314,9 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
         if let usdAmount = Double(self.txt_toCoin.text!) {
             var price : Double = 0.0
             if(self.baseCoinModel?.symbol == "ETH") {
-                price = self.getConversionRate(symbol: (self.curToken?.symbol)!)
+                price = AppController.shared.getConversionRate(symbol: (self.curToken?.symbol)!)
             } else {
-                price = self.getConversionRate(symbol: (self.baseCoinModel?.symbol)!)
+                price = AppController.shared.getConversionRate(symbol: (self.baseCoinModel?.symbol)!)
             }
             let coinAmount = usdAmount / price
             self.txt_fromCoin.text = String(coinAmount)
@@ -372,11 +371,12 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
             case .success:
                 if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
                     if let dict = json as? [String: Any], let dataDict = dict["data"] as? [String: Any] {
+                        AppController.shared.conversionRates.removeAll()
                         for (id, item) in dataDict {
                             if let itemDict = item as? [String: Any] {
                                 let price = ((itemDict["quotes"] as! [String:Any])["USD"] as! [String:Any])["price"]
                                 print(itemDict, price)
-                                self.conversionRates.append(ConversionRate(id: itemDict["id"] as! Int, name: itemDict["name"] as! String, symbol: itemDict["symbol"] as! String, price: (price as! NSNumber).doubleValue))
+                                AppController.shared.conversionRates.append(ConversionRate(id: itemDict["id"] as! Int, name: itemDict["name"] as! String, symbol: itemDict["symbol"] as! String, price: (price as! NSNumber).doubleValue))
                             }
                         }
                     }
@@ -386,15 +386,6 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
                 break
             }
         }
-    }
-    
-    func getConversionRate(symbol: String) -> Double {
-        for item in self.conversionRates {
-            if(item.symbol == symbol) {
-                return item.price
-            }
-        }
-        return 0.0
     }
     
     func getTransferFee() {

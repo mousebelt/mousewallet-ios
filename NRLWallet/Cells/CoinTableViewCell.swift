@@ -38,8 +38,17 @@ class CoinTableViewCell: UITableViewCell {
     func configureTableCell(_ coinModel: CoinModel){
         self.lb_coin.text = coinModel.symbol
         self.lb_coinname.text = coinModel.fullname
-        self.lb_count.text = coinModel.count
-//        self.lb_balance.text = String(format: "$%@", coinModel.balance)
+        self.lb_count.text = coinModel.balance
+        let rate = AppController.shared.getConversionRate(symbol: coinModel.symbol)
+        if let amountDecimal = Decimal(string: coinModel.balance) {
+            var usdAmount = amountDecimal * Decimal(floatLiteral: rate)
+            var resDecimal = Decimal()
+            NSDecimalRound(&resDecimal, &usdAmount, 3, NSDecimalNumber.RoundingMode.plain)
+            self.lb_balance.text = String(format: "%@ USD", resDecimal.description)
+        } else {
+            self.lb_balance.text = "0.0 USD"
+        }
+        
         self.img_coin.image = UIImage.init(named: coinModel.image)
     }
 

@@ -17,6 +17,14 @@ class AppController: NSObject {
     var coinArray:  [CoinModel] = [CoinModel]()
     var appCoinModels : [String] = ["Bitcoin", "Ethereum", "Litecoin", "Neo", "Stellar"]
     
+    var btcBlockFromHeight: UInt32 = 0
+    var btcBlockToHeight: UInt32 = 0
+    var btcCurrentHeight: UInt32 = 0
+    
+    var ltcSyncProgress : Double = 0.0
+    
+    var conversionRates : [ConversionRate] = []
+    
     override init() {
         super.init()
     }
@@ -41,5 +49,14 @@ class AppController: NSObject {
         let decryptedString = String(data: decryptedData, encoding: .utf8)!
         
         return decryptedString
+    }
+    
+    func getConversionRate(symbol: String) -> Double {
+        for item in self.conversionRates {
+            if(item.symbol == symbol) {
+                return item.price
+            }
+        }
+        return 0.0
     }
 }

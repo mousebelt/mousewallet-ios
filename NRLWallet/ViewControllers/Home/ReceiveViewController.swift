@@ -48,12 +48,8 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         wallet = self.baseCoinModel?.wallet
         if(self.baseCoinModel?.symbol == "BTC") {
             //notification handlers from spv node events
-            NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
-            
-            self.blockFromHight = UInt32(UserData.loadKeyData("BTC_BLOCK_FROM_HEIGHT")!)!
-            self.blockToHight = UInt32(UserData.loadKeyData("BTC_BLOCK_TO_HEIGHT")!)!
             
             if (!((self.wallet?.isConnected())!)) {
                 self.wallet?.connectPeers()
@@ -137,6 +133,7 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         self.makeQRCode()
         self.wallet?.getWalletBalance() { (err, value) -> () in
             self.balance = String(describing: value)
+            self.baseCoinModel?.balance = self.balance
             self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
         }
         self.wallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
@@ -146,10 +143,13 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 self.transactions = tx as! NSArray
                 self.tbl_transactions.reloadData()
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -162,7 +162,9 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
         self.wallet?.getWalletBalance() { (err, value) -> () in
             let balanceDecimal = Decimal(value as! UInt64)
             let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: Decimal(1))
-            self.lb_coinName.text = String(format:"%@ %@", (balanceDecimal * unitDecimal).description, (self.baseCoinModel?.symbol)!)
+            self.balance = (balanceDecimal * unitDecimal).description
+            self.baseCoinModel?.balance = self.balance
+            self.lb_coinName.text = String(format:"%@ %@", self.balance!, (self.baseCoinModel?.symbol)!)
         }
         
         self.wallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
@@ -172,10 +174,13 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 self.transactions = tx as! NSMutableArray
                 self.tbl_transactions.reloadData()
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -196,14 +201,20 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                     if((balanceItem.balance) != nil) {
                         dropdownDataSource.append(balanceItem.balance! + " " +  balanceItem.symbol!)
                     }
+                    if(balanceItem.symbol == self.baseCoinModel?.symbol) {
+                        self.baseCoinModel?.balance = balanceItem.balance
+                    }
                 }
                 self.dropDown.dataSource = dropdownDataSource
                 self.lb_coinName.text = dropdownDataSource[0]
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -217,10 +228,13 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 self.transactions = res.result as! NSArray
                 self.tbl_transactions.reloadData()
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -239,14 +253,20 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 for item in self.balances {
                     let balanceItem = item as! NeoAssetMap
                     dropdownDataSource.append(String(format: "%.8f %@", balanceItem.value!, balanceItem.symbol!))
+                    if(balanceItem.symbol == self.baseCoinModel?.symbol) {
+                        self.baseCoinModel?.balance = balanceItem.value?.description
+                    }
                 }
                 self.dropDown.dataSource = dropdownDataSource
                 self.lb_coinName.text = dropdownDataSource[0]
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -261,10 +281,13 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 self.transactions = res.result as! NSArray
                 self.tbl_transactions.reloadData()
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -281,17 +304,22 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 for balance in balances {
                     if(balance.assetType == "native") {
                         self.balance = balance.balance
+                        self.baseCoinModel?.balance = self.balance
                         self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
                     }
                 }
                 
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             case NRLWalletSDKError.accountError(.notCreated):
                 self.lb_coinName.text = "You need to send small amount of lumens to your new account to enable your account"
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -305,12 +333,16 @@ class ReceiveViewController: UIViewController, IndicatorInfoProvider {
                 self.transactions = res.result as! NSArray
                 self.tbl_transactions.reloadData()
                 print("Success")
+                break
             case NRLWalletSDKError.responseError(.unexpected(let error)):
                 print("Server request error: \(error)")
+                break
             case NRLWalletSDKError.responseError(.connectionError(let error)):
                 print("Server connection error: \(error)")
+                break
             case NRLWalletSDKError.accountError(.notCreated):
                 print("You need to send small amount of lumens to your new account to enable your account")
+                break
             default:
                 print("Failed: \(String(describing: err))")
             }
@@ -325,32 +357,24 @@ extension ReceiveViewController {
         
         let walletObj = notification.object as! WSWallet;
         
-        self.balance =  String(describing: walletObj.balance())
+        let balanceDecimal = Decimal(string: walletObj.balance().description)
+        let unitDecimal = Decimal(sign: FloatingPointSign.plus, exponent: -8, significand: 1)
+        self.balance =  (balanceDecimal! * unitDecimal).description
         self.lb_coinName.text = String(format:"%@ %@", (self.balance)!, (self.baseCoinModel?.symbol)!)
         
-    }
-    
-    @objc func PeerGroupDidStartDownload(notification: Notification) {
-        guard let userInfo = notification.userInfo else {
-            print("PeerGroupDidStartDownload Error: invalid notification object.")
-            return
-        }
-        self.blockFromHight = userInfo[WSPeerGroupDownloadFromHeightKey] as! UInt32
-        self.blockToHight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
-        
-        UserData.saveKeyData("BTC_BLOCK_FROM_HEIGHT", value: blockFromHight.description)
-        UserData.saveKeyData("BTC_BLOCK_TO_HEIGHT", value: blockToHight.description)
     }
     
     @objc func PeerGroupDidDownloadBlock(notification: Notification) {
         
         let block = notification.userInfo![WSPeerGroupDownloadBlockKey] as! WSStorableBlock
         let currentHeight = block.height() as UInt32
+        let blockFromHeight = AppController.shared.btcBlockFromHeight
+        let blockToHeight = AppController.shared.btcBlockToHeight
         if(currentHeight >= self.blockToHight) {
             self.getBTCInfo()
             view_sync.isHidden = true
         } else {
-            let progress = (currentHeight - self.blockFromHight) * 100 / (self.blockToHight - self.blockFromHight)
+            let progress = (currentHeight - blockFromHeight) * 100 / (blockFromHeight - blockToHeight)
             prog_sync.progress = Float(progress) / 100.0
             view_sync.isHidden = false
         }
