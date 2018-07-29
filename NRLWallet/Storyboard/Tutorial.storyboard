@@ -52,7 +52,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                         <state key="normal" title="RESTORE FROM BACKUP">
-                                            <color key="titleColor" red="0.8901960784313725" green="0.25490196078431371" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onRestoreFromBackup:" destination="Mx9-Fr-kJt" eventType="touchUpInside" id="SmI-FK-Ulk"/>
@@ -60,7 +60,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRj-2k-L36">
                                         <rect key="frame" x="16" y="382" width="342" height="42"/>
-                                        <color key="backgroundColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="947-4a-LPY"/>
                                         </constraints>
@@ -92,13 +92,13 @@
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="YqK-L9-4go">
-                                <rect key="frame" x="176.66666666666666" y="679" width="60" height="37"/>
+                                <rect key="frame" x="177" y="679" width="60" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="7sW-FZ-HLV"/>
                                     <constraint firstAttribute="height" constant="37" id="g2m-OG-3kc"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.82738083600000001" green="0.82749760149999996" blue="0.82734394069999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.8901960784313725" green="0.25490196078431371" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,7 +252,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-fN-RoJ">
                                                                 <rect key="frame" x="16" y="456" width="342" height="40"/>
-                                                                <color key="backgroundColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="hhk-kq-qOg"/>
                                                                 </constraints>
@@ -271,7 +271,7 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                                                 <state key="normal" title="SKIP">
-                                                                    <color key="titleColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                             </button>
                                                         </subviews>
@@ -333,7 +333,7 @@
                                     <constraint firstAttribute="width" constant="80" id="s9c-Pp-27F"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.82738083600000001" green="0.82749760149999996" blue="0.82734394069999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.9227108359336853" green="0.34727966785430908" blue="0.25009715557098389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,7 +414,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                         <state key="normal" title="RESTORE FROM BACKUP">
-                                            <color key="titleColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onRestoreFromBackup:" destination="eRa-Y1-T7U" eventType="touchUpInside" id="78N-Cc-e6h"/>
@@ -422,7 +422,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWw-LA-STZ">
                                         <rect key="frame" x="16" y="473" width="342" height="42"/>
-                                        <color key="backgroundColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="Hyw-dL-bPr"/>
                                         </constraints>
@@ -454,7 +454,7 @@
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lgj-Cc-TrY">
-                                <rect key="frame" x="176.66666666666666" y="679" width="60" height="37"/>
+                                <rect key="frame" x="177" y="679" width="60" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="9zW-dJ-47Q"/>
                                     <constraint firstAttribute="width" constant="60" id="mV0-gZ-F5D"/>
@@ -526,7 +526,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                         <state key="normal" title="SKIP">
-                                            <color key="titleColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onSkip:" destination="8N7-qD-rht" eventType="touchUpInside" id="fHB-ah-wO4"/>
@@ -534,7 +534,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-T0-9M6">
                                         <rect key="frame" x="16" y="473" width="342" height="42"/>
-                                        <color key="backgroundColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="4CX-dp-2ls"/>
                                         </constraints>
@@ -566,13 +566,13 @@
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="x98-2P-mTM">
-                                <rect key="frame" x="176.66666666666666" y="679" width="60" height="37"/>
+                                <rect key="frame" x="177" y="679" width="60" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="1kR-EX-URd"/>
                                     <constraint firstAttribute="height" constant="37" id="r76-zZ-Lz6"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.82738083600000001" green="0.82749760149999996" blue="0.82734394069999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.89019607840000003" green="0.25490196079999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.96470588239999999" green="0.69411764710000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
