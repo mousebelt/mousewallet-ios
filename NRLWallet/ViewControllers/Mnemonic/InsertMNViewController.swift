@@ -38,8 +38,6 @@ class InsertMNViewController: UIViewController, TagListViewDelegate  {
         super.viewDidLoad()
         self.setupViews()
         self.setupKeyboard()
-        
-        self.mnemonicArray = ["target", "crater", "noble", "virus", "album", "surge", "kidney", "tennis", "snow", "click", "faculty", "robust"]
     }
     
     override func didReceiveMemoryWarning() {
