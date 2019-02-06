@@ -259,7 +259,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
             params.updateValue(apiPubKey, forKey: "apiKey")
             
             SVProgressHUD.show()
-            Alamofire.request(Constants.URL_SHAPESHIFT_SWAP, method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+            AF.request(Constants.URL_SHAPESHIFT_SWAP, method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
                 switch response.result {
                 case .success:
                     if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
@@ -288,7 +288,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
     
     func getTransferFee() {
         if(self.baseCoinModel?.symbol == "BTC") {
-            Alamofire.request(Constants.URL_GET_BTC_FEE, method: .get).responseJSON { (response) in
+            AF.request(Constants.URL_GET_BTC_FEE, method: .get).responseJSON { (response) in
                 
                 switch response.result {
                 case .success:
@@ -310,7 +310,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
                 }
             }
         } else if(self.baseCoinModel?.symbol == "ETH") {
-            Alamofire.request(Constants.URL_GET_ETH_FEE, method: .get).responseJSON { (response) in
+            AF.request(Constants.URL_GET_ETH_FEE, method: .get).responseJSON { (response) in
                 switch response.result {
                 case .success:
                     if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
@@ -396,7 +396,7 @@ class SwapViewController: UIViewController, IndicatorInfoProvider {
         let url =  String(format:"%@%@_%@", Constants.URL_GET_MARKETINFO, (baseCoinModel?.symbol)!, toCoinArray[selectedToCoinIndex].symbol)
         print("url: \(url)")
         SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { (response) in
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { (response) in
             
             switch response.result {
             case .success:

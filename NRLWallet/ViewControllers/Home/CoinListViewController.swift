@@ -352,7 +352,7 @@ class CoinListViewController: UIViewController {
     }
     
     func fetchConversionRates() {
-        Alamofire.request(Constants.URL_GET_CONVERSION_RATE, method: .get).responseJSON { (response) in
+        AF.request(Constants.URL_GET_CONVERSION_RATE, method: .get).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {

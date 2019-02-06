@@ -366,7 +366,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func fetchConversionRates() {
-        Alamofire.request(Constants.URL_GET_CONVERSION_RATE, method: .get).responseJSON { (response) in
+        AF.request(Constants.URL_GET_CONVERSION_RATE, method: .get).responseJSON { (response) in
             switch response.result {
             case .success:
                 if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
@@ -390,7 +390,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
     
     func getTransferFee() {
         if(self.baseCoinModel?.symbol == "BTC") {
-            Alamofire.request(Constants.URL_GET_BTC_FEE, method: .get).responseJSON { (response) in
+            AF.request(Constants.URL_GET_BTC_FEE, method: .get).responseJSON { (response) in
                 
                 switch response.result {
                 case .success:
@@ -412,7 +412,7 @@ class SendViewController: UIViewController, IndicatorInfoProvider {
                 }
             }
         } else if(self.baseCoinModel?.symbol == "ETH") {
-            Alamofire.request(Constants.URL_GET_ETH_FEE, method: .get).responseJSON { (response) in
+            AF.request(Constants.URL_GET_ETH_FEE, method: .get).responseJSON { (response) in
                 switch response.result {
                 case .success:
                     if let json = try? JSONSerialization.jsonObject(with: response.data!, options: []) {
